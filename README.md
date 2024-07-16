@@ -7,3 +7,29 @@ _ `...` ~
 
 + 1
 + 2
+
+--- 
+_ `...` ~
+
++ classSchedule
++ studentProfiles
++ paymentInformation
++ studentAttenance
++ classEvent
++ studentHomework
++ studentFeildtrip
++ classQuestions
++ classMovies
++ studentWorkshops
++ listClass
++ loadClass
++ joinClass
++ leaveClass 
++ addHomework 
++ startClass 
++ meetTeacher
++ askQuestions 
++ meetStudents
+
+
+
