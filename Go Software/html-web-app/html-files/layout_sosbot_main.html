@@ -156,15 +156,23 @@ _ `...` ~</p>
 <div class="button_wrap"><button>Use</button></div>
 </div>
 <div class="func_wrap">+ askQuestions
-<div class="code_wrap"><div class="code_data"> ... </div></div>
-<div class="button_wrap"><button>Use</button></div>
+<div class="code_wrap"><div class="code_data"> ... 
+<div id="code_output_askQuestions"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_askQuestions()">Clean</button>
+<button onClick="useFunc_askQuestions()">Use</button></div>
 </div>
+
+
 <div class="func_wrap">+ meetStudents
 <div class="code_wrap"><div class="code_data"> ...
-<div id="code_output"></div>
+<div id="code_output_meetStudents"></div>
 
  </div></div>
-<div class="button_wrap"><button onClick="useFunc_meetStudents()">Use</button></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_meetStudents()">Clean</button>
+<button onClick="useFunc_meetStudents()">Use</button></div>
 </div>
 
 </div>
@@ -175,8 +183,19 @@ _ `...` ~</p>
 
 <script>
 
+
+function useFunc_askQuestions() {
+	code_output_askQuestions.innerHTML = "5";
+}
+function cleanFunc_askQuestions() {
+	code_output_askQuestions.innerHTML = "";
+}
+
 function useFunc_meetStudents() {
-	code_output.innerHTML = "5";
+	code_output_meetStudents.innerHTML = "5";
+}
+function cleanFunc_meetStudents() {
+	code_output_meetStudents.innerHTML = "";
 }
 	
 	
