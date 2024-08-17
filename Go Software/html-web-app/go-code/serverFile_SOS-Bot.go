@@ -589,51 +589,38 @@ func main() {
   http.HandleFunc("/", indexHandler)
 // . ° ~ +
   http.HandleFunc("/action/about", aboutBot)
+  
 // . ° ~ +
   http.HandleFunc("/action/listclass", listClass)
-// . ° ~ +
   http.HandleFunc("/action/loadclass", loadClass)
-  // . ° ~ +
   http.HandleFunc("/action/joinclass", joinClass)
-  
-  // . ° ~ +
   http.HandleFunc("/action/leaveclass", leaveClass)
 
 // . ° ~ +
  http.HandleFunc("/action/classSchedule", classSchedule)
 
 // . ° ~ +
- http.HandleFunc("/action/paymentInformation", paymentInformation)
-
-
-// . ° ~ +
  http.HandleFunc("/action/startclass", startClass)
+ http.HandleFunc("/action/endclass", endClass)
  
  // . ° ~ +
- http.HandleFunc("/action/endclass", endClass)
+  http.HandleFunc("/action/meetteacher", meetTeacher)
+  http.HandleFunc("/action/meetstudents", meetStudents)
+ 
+ // . ° ~ +
+  http.HandleFunc("/action/askquestions", askQuestions)
+ 
 // . ° ~ +
  http.HandleFunc("/action/veiwprojects", veiwProjects)
+ http.HandleFunc("/action/homework", homework)
 
 // . ° ~ +
  http.HandleFunc("/action/doevent", doEvents)
  
- // . ° ~ +
- http.HandleFunc("/action/homework", homework)
- 
 // . ° ~ +
  http.HandleFunc("/action/watchmovie", watchMovie)
- 
- // . ° ~ +
  http.HandleFunc("/action/studentfeildtrip", studentFeildtrip)
-
-// . ° ~ +
-  http.HandleFunc("/action/meetteacher", meetTeacher)
   
-  // . ° ~ +
-  http.HandleFunc("/action/meetstudents", meetStudents)
-  
-  // . ° ~ +
-  http.HandleFunc("/action/askquestions", askQuestions)
 
 // ~ addNew, Routes
   http.HandleFunc("/action/addNewTeacher", addNew)
@@ -648,6 +635,9 @@ func main() {
   http.HandleFunc("/action/addNewSpeaker", addNew)
   http.HandleFunc("/action/addNewLecture", addNew)
 
+
+// . ° ~ +
+ http.HandleFunc("/action/paymentInformation", paymentInformation)
 
 // . ° ~ +
  http.HandleFunc("/homepage", indexHandler)
