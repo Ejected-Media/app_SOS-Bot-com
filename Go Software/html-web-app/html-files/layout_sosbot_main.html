@@ -160,8 +160,11 @@ _ `...` ~</p>
 <div class="button_wrap"><button>Use</button></div>
 </div>
 <div class="func_wrap">+ meetStudents
-<div class="code_wrap"><div class="code_data"> ... </div></div>
-<div class="button_wrap"><button>Use</button></div>
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output"></div>
+
+ </div></div>
+<div class="button_wrap"><button onClick="useFunc_meetStudents()">Use</button></div>
 </div>
 
 </div>
@@ -169,6 +172,16 @@ _ `...` ~</p>
 </div>
 
 </main>
+
+<script>
+
+function useFunc_meetStudents() {
+	code_output.innerHTML = "5";
+}
+	
+	
+
+</script>
 
 </body>
 </html>
