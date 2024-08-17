@@ -225,6 +225,8 @@ func startClass() {
     addStudentAttendece(attendenceData)
 
 }
+
+
 // . ° ~ +
 func meetTeacher() {
     var user := studentProfiles[] {}
@@ -368,6 +370,113 @@ func studentWorkshops() {
 }
 
 
+// ~ addNewTeacher
+func addTeacherToList(ctx context.Context, client *firestore.Client, addMovie) error {
+  _MovieListData := addMovie
+
+  _, err := client.Collection("MovieList").Doc("MovieList").Set(ctx, _MovieListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
+
+// ~ addNewStudent
+func addStudentToList(ctx context.Context, client *firestore.Client, addMovie) error {
+  _MovieListData := addMovie
+
+  _, err := client.Collection("MovieList").Doc("MovieList").Set(ctx, _MovieListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
+
+// ~ addNewMentor
+func addMentorToList(ctx context.Context, client *firestore.Client, addMovie) error {
+  _MovieListData := addMovie
+
+  _, err := client.Collection("MovieList").Doc("MovieList").Set(ctx, _MovieListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
+
+// ~ addNewStaff
+func addStaffToList(ctx context.Context, client *firestore.Client, addMovie) error {
+  _MovieListData := addMovie
+
+  _, err := client.Collection("MovieList").Doc("MovieList").Set(ctx, _MovieListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
+
+// ~ addNewProject
+func addProjectToList(ctx context.Context, client *firestore.Client, addMovie) error {
+  _MovieListData := addMovie
+
+  _, err := client.Collection("MovieList").Doc("MovieList").Set(ctx, _MovieListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
+
+// . ° ~ +
+func openProject() {
+    var class := classSchedule[] {}
+    var here := studentAttendence[] {}
+
+}
+
+
+
+// ~ addNewSpeaker
+func addSpeakerToList(ctx context.Context, client *firestore.Client, addSpeaker) error {
+  _MovieListData := addMovie
+
+  _, err := client.Collection("SpeakerList").Doc("SpeakerList").Set(ctx, _SpeakerListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
+
+// ~ addNewLecture
+func addLectureToList(ctx context.Context, client *firestore.Client, addMovie) error {
+  _MovieListData := addMovie
+
+  _, err := client.Collection("MovieList").Doc("MovieList").Set(ctx, _MovieListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
+
+// . ° ~ +
+func attendLecture() {
+    var class := classSchedule[] {}
+    var here := studentAttendence[] {}
+
+}
+
 
 // . ° ~ +
 func endClass() {
@@ -379,66 +488,62 @@ func endClass() {
 
 }
 
-// . ° ~ +
+// ~ addNew, Function 
 func addNew(w http.ResponseWriter, r *http.Request) {
 
+
+// ~ addNewTeacher
     if r.URL.Path == "addNewTeacher" {
-
-
+    	addTeacherToList();
     }
 
-
+// ~ addNewStudent
     if r.URL.Path == "addNewStudent" {
-
-
+    	addStudentToList();
     }
 
-
-
+// ~ addNewMentor
     if r.URL.Path == "addNewMentor" {
-
-
+    	addMentorToList();
     }
 
+// ~ addNewStaff
     if r.URL.Path == "addNewStaff" {
-
-
+    	addStaffToList();
     }
 
-
+// ~ addNewProject
     if r.URL.Path == "addNewProject" {
-
-
+    	addProjectToList();
     }
 
+// ~ addNewMovie
     if r.URL.Path == "addNewMovie" {
-
-
+    	addMovieToList();
     }
 
+// ~ addNewFeildtrip
     if r.URL.Path == "addNewFeildtrip" {
-
-
+    	addFeildtripToList();
     }
 
+// ~ addNewWorkshop
     if r.URL.Path == "addNewWorkshop" {
-
-
+    	addWorkshopToList();
     }
 
+// ~ addNewSpeaker
     if r.URL.Path == "addNewSpeaker" {
-
-
+    	addSpeakerToList();
     }
 
+// ~ addNewLecture
     if r.URL.Path == "addNewLecture" {
-
-
+    	addLectureToList();
     }
 
 
-
-} // addNew func
+} // END ~ addNew func
 
 
 
@@ -488,31 +593,52 @@ func main() {
   http.HandleFunc("/action/listclass", listClass)
 // . ° ~ +
   http.HandleFunc("/action/loadclass", loadClass)
+  // . ° ~ +
   http.HandleFunc("/action/joinclass", joinClass)
+  
+  // . ° ~ +
   http.HandleFunc("/action/leaveclass", leaveClass)
+
+// . ° ~ +
+ http.HandleFunc("/action/classSchedule", classSchedule)
+
+// . ° ~ +
+ http.HandleFunc("/action/paymentInformation", paymentInformation)
 
 
 // . ° ~ +
  http.HandleFunc("/action/startclass", startClass)
+ 
+ // . ° ~ +
  http.HandleFunc("/action/endclass", endClass)
 // . ° ~ +
  http.HandleFunc("/action/veiwprojects", veiwProjects)
 
 // . ° ~ +
  http.HandleFunc("/action/doevent", doEvents)
+ 
+ // . ° ~ +
  http.HandleFunc("/action/homework", homework)
+ 
 // . ° ~ +
  http.HandleFunc("/action/watchmovie", watchMovie)
+ 
+ // . ° ~ +
  http.HandleFunc("/action/studentfeildtrip", studentFeildtrip)
 
 // . ° ~ +
   http.HandleFunc("/action/meetteacher", meetTeacher)
+  
+  // . ° ~ +
   http.HandleFunc("/action/meetstudents", meetStudents)
+  
+  // . ° ~ +
   http.HandleFunc("/action/askquestions", askQuestions)
 
-// . ° ~ +
+// ~ addNew, Routes
   http.HandleFunc("/action/addNewTeacher", addNew)
   http.HandleFunc("/action/addNewStudent", addNew)
+  http.HandleFunc("/action/addNewHomework", addNew)
   http.HandleFunc("/action/addNewMentor", addNew)
   http.HandleFunc("/action/addNewStaff", addNew)
   http.HandleFunc("/action/addNewProject", addNew)
