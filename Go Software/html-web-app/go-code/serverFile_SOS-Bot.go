@@ -742,6 +742,14 @@ func main() {
   http.HandleFunc("/action/getDataList_Speaker", getDataList)
   http.HandleFunc("/action/getDataList_Lecture", getDataList)
   http.HandleFunc("/action/getDataList_Question", getDataList)
+    http.HandleFunc("/action/getDataList_Schedule", getDataList)
+    http.HandleFunc("/action/getDataList_Payments", getDataList)
+    http.HandleFunc("/action/getDataList_Attenance", getDataList)
+    http.HandleFunc("/action/getDataList_Events", getDataList)
+    http.HandleFunc("/action/getDataList_Claases", getDataList)
+    
+    
+    http.HandleFunc("/action/loadID_Class", loadID)
 
 
 // . ° ~ +
