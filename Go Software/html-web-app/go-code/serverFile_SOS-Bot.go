@@ -578,62 +578,62 @@ func addNew(w http.ResponseWriter, r *http.Request) {
 
 // ~ getDataList_Teacher
     if r.URL.Path == "getDataList_Teacher" {
-    	addTeacherToList();
+    	getDataTeacher_List();
     }
 
 // ~ getDataList_Student
     if r.URL.Path == "getDataList_Student" {
-    	addStudentToList();
+    	getDataStudent_List();
     }
 
 // ~ getDataList_Mentor
     if r.URL.Path == "getDataList_Mentor" {
-    	addMentorToList();
+    	getDataMentor_List();
     }
 
 // ~ getDataList_Staff
     if r.URL.Path == "getDataList_Staff" {
-    	addStaffToList();
+    	getDataStaff_List();
     }
 
 // ~ getDataList_Homework
     if r.URL.Path == "getDataList_Homework" {
-    	addHomeworkToList();
+    	getDataHomework_List();
     }
 
 // ~ getDataList_Project
     if r.URL.Path == "getDataList_Project" {
-    	addProjectToList();
+    	getDataProject_List();
     }
 
 // ~ getDataList_Movie
     if r.URL.Path == "getDataList_Movie" {
-    	addMovieToList();
+    	getDataMovie_List();
     }
 
 // ~ getDataList_Feildtrip
     if r.URL.Path == "getDataList_Feildtrip" {
-    	addFeildtripToList();
+    	getDataFeildtrip_List();
     }
 
 // ~ getDataList_Workshop
     if r.URL.Path == "getDataList_Workshop" {
-    	addWorkshopToList();
+    	getDataWorkshop_List();
     }
 
 // ~ getDataList_Speaker
     if r.URL.Path == "getDataList_Speaker" {
-    	addSpeakerToList();
+    	getDataSpeaker_List();
     }
 
 // ~ getDataList_Lecture
     if r.URL.Path == "getDataList_Lecture" {
-    	addLectureToList();
+    	getDataLecture_List();
     }
 
 // ~ getDataList_Question
     if r.URL.Path == "getDataList_Question" {
-    	addQuestionToList();
+    	getDataQuestion_List();
     }
 
 
