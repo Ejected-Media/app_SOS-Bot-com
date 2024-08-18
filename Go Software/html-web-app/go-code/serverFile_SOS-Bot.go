@@ -572,6 +572,73 @@ func addNew(w http.ResponseWriter, r *http.Request) {
 } // END ~ addNew func
 
 
+// ~ getDataList, Function 
+func addNew(w http.ResponseWriter, r *http.Request) {
+
+
+// ~ getDataList_Teacher
+    if r.URL.Path == "getDataList_Teacher" {
+    	addTeacherToList();
+    }
+
+// ~ getDataList_Student
+    if r.URL.Path == "getDataList_Student" {
+    	addStudentToList();
+    }
+
+// ~ getDataList_Mentor
+    if r.URL.Path == "getDataList_Mentor" {
+    	addMentorToList();
+    }
+
+// ~ getDataList_Staff
+    if r.URL.Path == "getDataList_Staff" {
+    	addStaffToList();
+    }
+
+// ~ getDataList_Homework
+    if r.URL.Path == "getDataList_Homework" {
+    	addHomeworkToList();
+    }
+
+// ~ getDataList_Project
+    if r.URL.Path == "getDataList_Project" {
+    	addProjectToList();
+    }
+
+// ~ getDataList_Movie
+    if r.URL.Path == "getDataList_Movie" {
+    	addMovieToList();
+    }
+
+// ~ getDataList_Feildtrip
+    if r.URL.Path == "getDataList_Feildtrip" {
+    	addFeildtripToList();
+    }
+
+// ~ getDataList_Workshop
+    if r.URL.Path == "getDataList_Workshop" {
+    	addWorkshopToList();
+    }
+
+// ~ getDataList_Speaker
+    if r.URL.Path == "getDataList_Speaker" {
+    	addSpeakerToList();
+    }
+
+// ~ getDataList_Lecture
+    if r.URL.Path == "getDataList_Lecture" {
+    	addLectureToList();
+    }
+
+// ~ getDataList_Question
+    if r.URL.Path == "getDataList_Question" {
+    	addQuestionToList();
+    }
+
+
+} // END ~ getDataList func
+
 
 // . ° ~ +
 // . indexHandler
@@ -661,6 +728,20 @@ func main() {
   http.HandleFunc("/action/addNewSpeaker", addNew)
   http.HandleFunc("/action/addNewLecture", addNew)
   http.HandleFunc("/action/addNewQuestion", addNew)
+  
+  // ~ getDataList, Routes
+  http.HandleFunc("/action/getDataList_Teacher", getDataList)
+  http.HandleFunc("/action/getDataList_Student", getDataList)
+  http.HandleFunc("/action/getDataList_Homework", getDataList)
+  http.HandleFunc("/action/getDataList_Mentor", getDataList)
+  http.HandleFunc("/action/getDataList_Staff", getDataList)
+  http.HandleFunc("/action/getDataList_Project", getDataList)
+  http.HandleFunc("/action/getDataList_Movie", getDataList)
+  http.HandleFunc("/action/getDataList_Feildtrip", getDataList)
+  http.HandleFunc("/action/getDataList_Workshop", getDataList)
+  http.HandleFunc("/action/getDataList_Speaker", getDataList)
+  http.HandleFunc("/action/getDataList_Lecture", getDataList)
+  http.HandleFunc("/action/getDataList_Question", getDataList)
 
 
 // . ° ~ +
