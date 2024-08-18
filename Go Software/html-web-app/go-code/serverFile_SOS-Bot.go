@@ -259,29 +259,45 @@ func doEvent() {
 }
 
 
+// . ° ~ +
+func addHomeworkToList(ctx context.Context, client *firestore.Client, addFeildtrip) error {
+  _FeildtripListData := addFeildtrip
 
+  _, err := client.Collection("FeildtripList").Doc("FeildtripList").Set(ctx, _FeildtripListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
 
 // . ° ~ +
 func homework() {
     var user := studentProfiles[] {}
     var class := classSchedule[] {}
-
 // receives homework files from Discord User Interface
-
     var saveHomework := homeworkData[] {}
-
     action := getActionType() {
-
     }
     if action == turnIn {
-
         addHomeworkToFile(saveHomework)
-
-
     }
-
-
 }
+
+// . ° ~ +
+func addQuestionToList(ctx context.Context, client *firestore.Client, addFeildtrip) error {
+  _FeildtripListData := addFeildtrip
+
+  _, err := client.Collection("FeildtripList").Doc("FeildtripList").Set(ctx, _FeildtripListData)
+
+  if err != nil {
+    // Handle any errors
+    log.Printf("An error has occurred: %s", err)
+  }
+  return err
+}
+
 // . ° ~ +
 func askQuestions() {
     var user := studentProfiles[] {}
@@ -350,7 +366,7 @@ func watchMovie() {
 }
 
 
-// . ° ~ +
+// ~ addNewWorkehop
 func addWorkshopToList(ctx context.Context, client *firestore.Client, addWorkshop) error {
   _WorkshopListData := addWorkshop
 
@@ -512,6 +528,11 @@ func addNew(w http.ResponseWriter, r *http.Request) {
     	addStaffToList();
     }
 
+// ~ addNewHomework
+    if r.URL.Path == "addNewHomework" {
+    	addHomeworkToList();
+    }
+
 // ~ addNewProject
     if r.URL.Path == "addNewProject" {
     	addProjectToList();
@@ -540,6 +561,11 @@ func addNew(w http.ResponseWriter, r *http.Request) {
 // ~ addNewLecture
     if r.URL.Path == "addNewLecture" {
     	addLectureToList();
+    }
+
+// ~ addNewQuestion
+    if r.URL.Path == "addNewQuestion" {
+    	addQuestionToList();
     }
 
 
@@ -634,6 +660,7 @@ func main() {
   http.HandleFunc("/action/addNewWorkshop", addNew)
   http.HandleFunc("/action/addNewSpeaker", addNew)
   http.HandleFunc("/action/addNewLecture", addNew)
+  http.HandleFunc("/action/addNewQuestion", addNew)
 
 
 // . ° ~ +
