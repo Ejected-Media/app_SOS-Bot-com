@@ -12,7 +12,7 @@ div.subtitle { font-size: 14px; margin-top: 5px; }
 
 .home_button_wrap { position: absolute; right: 10px; top: 125px; padding: 25px; outline: 1px solid #777; }
 
-.hero_wrap { min-height: 175px; }
+.hero_wrap { min-height: 65px; }
 
 .extra_help_wrap { outline: 1px dashed #888; width: 85%; margin: 0 auto; padding: 15px; margin-top: 15px; border-top: 4px solid #555; }
 .extra_help_wrap ul li { margin-bottom: 5px; }
@@ -25,31 +25,46 @@ div.subtitle { font-size: 14px; margin-top: 5px; }
 </style>
 </head>
 <body>
-<span class="sitename"># app ~ SOS-Bot.com/learn</span><br />
-<div class="subtitle">https://github.com/Ejected-Media/app_SOS-Bot-com</div>
+  <span class="sitename"># app ~ SOS-Bot.com/learn</span><br />
+  <div class="subtitle">https://github.com/Ejected-Media/app_SOS-Bot-com</div>
 <hr />
 
-<button onclick="window.location.href='https://github.com/Ejected-Media/app_SOS-Bot-com'">Repo</button>
-<div class="home_button_wrap">Home</div>
-<div class="hero_wrap"></div>
-
+  <button onclick="window.location.href='https://github.com/Ejected-Media/app_SOS-Bot-com'">Repo</button>
+  <div class="home_button_wrap">Home</div>
+  <div class="hero_wrap"></div>
 
 <nav><p>
---- <br />
-_ `...` ~
-</p>
-<ul>
-<li>+ 1</li>
-<li>+ 2</li>
-</ul>
+  --- <br />
+  _ `...` ~
+  </p><ul>
+    <li>+ 1</li>
+    <li>+ 2</li>
+  </ul></p>
 </nav>
 <p>classSchedule</p>
 <hr />
 
 <main>
---- 
-_ `...` ~
+	
+	<div class="extra_help_wrap">
 
+<!-- - . classSchedule - -->
+<div class="func_wrap">+ classSchedule
+<div class="code_wrap"><div class="code_data"> ... 
+<div id="code_output_classSchedule"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_classSchedule()">Clean</button>
+<button onClick="useFunc_classSchedule()">Use</button></div>
+</div>
+
+</div>
+	
+	
+	<p>
+  ---<br /> 
+  _ `...` ~
+</p>
 
 <div class="extra_help_wrap">
 	<button onClick="closeNavList()">Close</button>
@@ -111,16 +126,21 @@ _ Major Bot Function Categories . .
 
 </div>
 
+	<p>
+  ---<br /> 
+  _ `...` ~
+</p>
+
 <div class="extra_help_wrap">
 
 <!-- - . classSchedule - -->
 <div class="func_wrap">+ classSchedule
 <div class="code_wrap"><div class="code_data"> ... 
-<div id="code_output_classSchedule"></div>
+<div id="code_output_classSchedule1"></div>
 </div></div>
 <div class="button_wrap">
-<button onClick="cleanFunc_classSchedule()">Clean</button>
-<button onClick="useFunc_classSchedule()">Use</button></div>
+<button onClick="cleanFunc_classSchedule1()">Clean</button>
+<button onClick="useFunc_classSchedule1()">Use</button></div>
 </div>
 
 </div>
@@ -149,8 +169,6 @@ function closeNavList() {
 	}
 	
 	
-	
-	
 // ~ classSchedule
 function useFunc_classSchedule() {
 	var useURL = "/action/getDataList_Schedule";
@@ -159,6 +177,16 @@ function useFunc_classSchedule() {
 }
 function cleanFunc_classSchedule() {
 	code_output_classSchedule.innerHTML = "";
+}
+
+// ~ classSchedule
+function useFunc_classSchedule1() {
+	var useURL = "/action/getDataList_Schedule";
+	
+	code_output_classSchedule1.innerHTML = "5";
+}
+function cleanFunc_classSchedule1() {
+	code_output_classSchedule1.innerHTML = "";
 }
 
 </script>
