@@ -75,32 +75,45 @@ ul.navList_data li { margin: 15px; }
 	<button onClick="openNavList()">Open</button>
 	
 <div id="navList_data_wrap">
-	
+	<div id="changePage_name">.</div>
 <p><ul class="navList_data">
   <li><b>+ classSchedule ~</b> 🐡</li>
   <li>+ studentProfiles &nbsp;
-<button>Open</open></li>
+<button onClick="changePage('studentProfiles')">Open</open></li>
   <li>+ paymentInformation &nbsp;
-<button>Open</open></li>
+<button onClick="changePage('paymentInformation')">Open</open></li>
   <li>+ studentAttenance &nbsp;
-<button>Open</open></li>
+<button onClick="changePage('studentAttenance')">Open</open></li>
   <li>+ classEvent &nbsp;
-<button>Open</open></li>
+<button onClick="changePage('classEvent')">Open</open></li>
   <li>+ studentHomework &nbsp;
-<button>Open</open></li>
-  <li>+ studentFeildtrip</li>
-  <li>+ classQuestions</li>
-  <li>+ classMovies</li>
-  <li>+ studentWorkshops</li>
-  <li>+ listClass</li>
-  <li>+ loadClass</li>
-  <li>+ joinClass</li>
-  <li>+ leaveClass </li>
-  <li>+ addHomework </li>
-  <li>+ startClass </li>
-  <li>+ meetTeacher</li>
-  <li>+ askQuestions </li>
-  <li>+ meetStudents</li>
+<button onClick="changePage('studentHomework')">Open</open></li>
+  <li>+ studentFeildtrip &nbsp;
+<button onClick="changePage('studentFeildtrip')">Open</open></li>
+  <li>+ classQuestions &nbsp;
+<button onClick="changePage('classQuestions')">Open</open></li>
+  <li>+ classMovies &nbsp;
+<button onClick="changePage('classMovies')">Open</open></li>
+  <li>+ studentWorkshops &nbsp;
+<button onClick="changePage('studentWorkshops')">Open</open></li>
+  <li>+ listClass &nbsp;
+<button onClick="changePage('listClass')">Open</open></li>
+  <li>+ loadClass &nbsp;
+<button onClick="changePage('loadClass')">Open</open></li>
+  <li>+ joinClass &nbsp;
+<button onClick="changePage('joinClass')">Open</open></li>
+  <li>+ leaveClass  &nbsp;
+<button onClick="changePage('leaveClass')">Open</open></li>
+  <li>+ addHomework &nbsp;
+<button onClick="changePage('addHomework')">Open</open></li>
+  <li>+ startClass &nbsp;
+<button onClick="changePage('startClass')">Open</open></li>
+  <li>+ meetTeacher &nbsp;
+<button onClick="changePage('meetTeacher')">Open</open></li>
+  <li>+ askQuestions &nbsp;
+<button onClick="changePage('askQuestions')">Open</open></li>
+  <li>+ meetStudents &nbsp;
+<button onClick="changePage('meetStudents')">Open</open></li>
 </ul></p>
 
 </div><!-- - . navList_data_wrap - -->
@@ -155,6 +168,9 @@ _ Major Bot Function Categories . .
 
 <script>
 
+function changePage(data_name) {
+	changePage_name.innerHTML = data_name;
+}
 
 function closeNavList() {
 	navList_data_wrap.style.display = "none";
