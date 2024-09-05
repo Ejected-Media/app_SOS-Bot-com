@@ -52,6 +52,12 @@ _ `...` ~
 
 
 <div class="extra_help_wrap">
+	<button onClick="closeNavList()">Close</button>
+	&nbsp;
+	<button onClick="openNavList()">Open</button>
+	
+<div id="navList_data_wrap">
+	
 <p><ul>
 <li>+ classSchedule ~ ðŸ¡</li>
 <li>+ studentProfiles</li>
@@ -75,11 +81,16 @@ _ `...` ~
 
 </ul>
 </p>
-
+</div><!-- - . navList_data_wrap - -->
 </div>
 
 <div class="extra_help_wrap">
----
+---<br />
+<button onClick="closeFunctionList()">Close</button>
+&nbsp;
+<button onClick="openFunctionList()">Open</button>
+
+<div id="functionList_data_wrap">
 <p>
 hi<br />
 Â° Featuring SOS-Bot ~ Students Online Study Â°
@@ -96,6 +107,8 @@ _ Major Bot Function Categories . .
 
 </ul>
 </p>
+</div>
+
 </div>
 
 <div class="extra_help_wrap">
@@ -115,6 +128,27 @@ _ Major Bot Function Categories . .
 
 
 <script>
+
+
+function closeNavList() {
+	navList_data_wrap.style.display = "none";
+	}
+	
+	function openNavList() {
+	navList_data_wrap.style.display = "block";
+	}
+	
+	
+	
+	function closeFunctionList() {
+	functionList_data_wrap.style.display = "none";
+	}
+	
+	function openFunctionList() {
+	functionList_data_wrap.style.display = "block";
+	}
+	
+	
 	
 	
 // ~ classSchedule
