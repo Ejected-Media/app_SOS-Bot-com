@@ -160,7 +160,7 @@ func main() {
   http.HandleFunc("/one", testHandler)
 
 // . ° ~ +
- http.HandleFunc("/page/classSchedule", indexHandler)
+ // http.HandleFunc("/page/classSchedule", indexHandler)
 
 // -- -
   port := os.Getenv("PORT")
