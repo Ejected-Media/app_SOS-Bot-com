@@ -135,7 +135,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 }
 func world(w http.ResponseWriter, r *http.Request) {
     fmt.Fprintf(w, "World!")
-
+}
 
 //  .  html url routes 
 //  .  as well as terminal cli logs
