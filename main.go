@@ -75,7 +75,7 @@ pageData := htmlPageData {
     if pagePath == "/page/classSchedule" {
       pageTitle = "classSchedule Page"
  //     pageList = pageList
- pageHTML = "/Go-Software/html-web-app/html-files/layout_sosbot/classSchedule.html";
+ pageHTML = "/Go-Software/html-web-app/html-files/layout_sosbot_classSchedule.html";
   }
 
 
