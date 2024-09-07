@@ -159,7 +159,7 @@ func world(w http.ResponseWriter, r *http.Request) {
     pageData := pagePath
     
     data := TodoPageData{
-            PageTitle: "My TODO list",
+            PageTitle: pageData,
             Todos: []Todo{
                 {Title: "Task 1", Done: false},
                 {Title: "Task 2", Done: true},
