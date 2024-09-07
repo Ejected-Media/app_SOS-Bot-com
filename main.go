@@ -66,15 +66,22 @@ pageData := htmlPageData {
   	
   }  //. .  pageData
   
-  
+  pageHTML := "layout_main_page.html";
   if pagePath == "/" {
       pageTitle = "Index Page"
  //     pageList = pageList
   }
+  
+    if pagePath == "/page/classSchedule" {
+      pageTitle = "classSchedule Page"
+ //     pageList = pageList
+ pageHTML = "/Go-Software/html-web-app/html-files/layout_sosbot/classSchedule.html";
+  }
 
 
 // ,  ° . +
-  pageFilePath := template.Must(template.ParseFiles("layout_main_page.html"))
+  pageFilePath := template.Must(
+    template.ParseFiles(pageHTML)
   pageFilePath.Execute(w, pageData)
   
 }  //  .  indexHandler
@@ -92,7 +99,8 @@ func main() {
 // ,  ° . +
   http.HandleFunc("/", indexHandler)
 
-
+// . ° ~ +
+ http.HandleFunc("/page/classSchedule", indexHandler)
 
 // -- -
   port := os.Getenv("PORT")
