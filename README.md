@@ -2,6 +2,10 @@
 
 https://github.com/Ejected-Media/app_SOS-Bot-com 
 
+
+https://test-sos-bot.appspot.com/
+
+
 --- 
 _ `...` ~
 
