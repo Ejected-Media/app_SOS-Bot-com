@@ -81,7 +81,7 @@ pageData := htmlPageData {
 
 // ,  ° . +
   pageFilePath := template.Must(
-    template.ParseFiles(pageHTML)
+    template.ParseFiles(pageHTML))
   pageFilePath.Execute(w, pageData)
   
 }  //  .  indexHandler
