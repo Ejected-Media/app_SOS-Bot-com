@@ -5,6 +5,8 @@ package main
 import (
     "os"
     "log"
+    
+    "fmt"
 		
 	"text/template"
 	"net/http"
@@ -128,7 +130,11 @@ pageData := htmlPageData {
   
 }  //  .  testHandler
 
-
+func hello(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello!")
+}
+func world(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "World!")
 
 
 //  .  html url routes 
@@ -137,6 +143,9 @@ pageData := htmlPageData {
 func main() {
 // ,  ° . +
   appName := "~ . - // - Website App"
+  
+  http.HandleFunc("/hello", hello)
+    http.HandleFunc("/world", world)
 
 // ,  ° . +
   http.HandleFunc("/", indexHandler)
