@@ -149,6 +149,9 @@ func main() {
   
   http.HandleFunc("/hello", hello)
     http.HandleFunc("/world", world)
+    http.HandleFunc("/page/classSchedule", world)
+    http.HandleFunc("/page/studentFeildtrip", world)
+    http.HandleFunc("/page/classMovies", world)
 
 // ,  ° . +
   http.HandleFunc("/", indexHandler)
