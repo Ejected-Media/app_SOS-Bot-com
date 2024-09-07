@@ -138,6 +138,15 @@ func world(w http.ResponseWriter, r *http.Request) {
 	pagePath := r.URL.Path
     fmt.Fprintf(w, "World!")
     fmt.Fprintf(w, pagePath)
+ 
+ pageHTML := "layout_main_page.html";
+ 
+  // ,  ° . +
+  pageFilePath := template.Must(
+    template.ParseFiles(pageHTML))
+  pageFilePath.Execute(w, pageData)
+  
+  
 }
 
 //  .  html url routes 
