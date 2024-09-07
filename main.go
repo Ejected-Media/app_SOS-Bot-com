@@ -131,10 +131,13 @@ pageData := htmlPageData {
 }  //  .  testHandler
 
 func hello(w http.ResponseWriter, r *http.Request) {
+	pagePath := r.URL.Path
     fmt.Fprintf(w, "Hello!")
 }
 func world(w http.ResponseWriter, r *http.Request) {
+	pagePath := r.URL.Path
     fmt.Fprintf(w, "World!")
+    fmt.Fprintf(w, pagePath)
 }
 
 //  .  html url routes 
