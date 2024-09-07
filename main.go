@@ -86,6 +86,48 @@ pageData := htmlPageData {
   
 }  //  .  indexHandler
 
+// . testHandler,  ~ for Public Pages °
+func testHandler(w http.ResponseWriter, r *http.Request) {
+// ,  ° . +
+    if r.URL.Path != "/" {
+    	http.NotFound(w, r)
+    	return
+    }
+
+// , ° . +
+  pageTitle := "~ . - // - Website App"
+  pagePath := r.URL.Path
+  // pageType := ".."
+
+
+// ,  ° . +
+pageData := htmlPageData {
+      pageTitle: pageTitle,
+      pagePath: pagePath,
+      
+    //  pageList: []pageNav {
+  //        { pageTitle: "one", pageLink: "one"},
+//          { pageTitle: "two", pageLink: "two"},
+   //       { pageTitle: "three", pageLink: "three"},
+    //  },
+  	
+  }  //. .  pageData
+  
+  pageHTML := "layout_main_page.html";
+  if pagePath == "/" {
+      pageTitle = "Index Page"
+ //     pageList = pageList
+  }
+ 
+
+
+// ,  ° . +
+  pageFilePath := template.Must(
+    template.ParseFiles(pageHTML))
+  pageFilePath.Execute(w, pageData)
+  
+}  //  .  testHandler
+
 
 
 
@@ -98,6 +140,9 @@ func main() {
 
 // ,  ° . +
   http.HandleFunc("/", indexHandler)
+  
+  // ,  ° . +
+  http.HandleFunc("/one", testHandler)
 
 // . ° ~ +
  http.HandleFunc("/page/classSchedule", indexHandler)
