@@ -157,9 +157,20 @@ func world(w http.ResponseWriter, r *http.Request) {
    // fmt.Fprintf(w, pagePath)
     
     pageData := pagePath
+    pageName := "hi test"
+    
+    if pagePath == "page/classSchedule" {
+      pageName = "classSchedule Page"
+ //     pageList = pageList
+  }
+  
+      if pagePath == "page/studentAttenance" {
+      pageName = "studentAttenance Page"
+ //     pageList = pageList
+  }
     
     data := TodoPageData{
-            PageTitle: pageData,
+            PageTitle: pageData + pageName,
             Todos: []Todo{
                 {Title: "classSchedule", Done: false},
                 {Title: "studentProfiles", Done: true},
@@ -203,6 +214,7 @@ func main() {
   
   http.HandleFunc("/hello", hello)
     http.HandleFunc("/world", world)
+  // ,  ° . +
     http.HandleFunc("/page/classSchedule", world)
     http.HandleFunc("/page/studentFeildtrip", world)
     http.HandleFunc("/page/classMovies", world)
