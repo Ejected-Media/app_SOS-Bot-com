@@ -206,6 +206,23 @@ func main() {
     http.HandleFunc("/page/classSchedule", world)
     http.HandleFunc("/page/studentFeildtrip", world)
     http.HandleFunc("/page/classMovies", world)
+    http.HandleFunc("/page/studentProfiles", world)
+    http.HandleFunc("/page/paymentInformation", world)
+    http.HandleFunc("/page/studentAttenance", world)
+    http.HandleFunc("/page/classEvent", world)
+    http.HandleFunc("/page/studentHomework", world)
+      http.HandleFunc("/page/classQuestions", world)
+      http.HandleFunc("/page/studentWorkshops", world)
+      http.HandleFunc("/page/listClass", world)
+      http.HandleFunc("/page/loadClass", world)
+      http.HandleFunc("/page/joinClass", world)
+      http.HandleFunc("/page/leaveClass", world)
+      http.HandleFunc("/page/addHomework", world)
+      http.HandleFunc("/page/startClass", world)
+         http.HandleFunc("/page/meetTeacher", world)
+          http.HandleFunc("/page/askQuestions", world)
+         http.HandleFunc("/page/meetStudents", world)
+          
 
 // ,  ° . +
   http.HandleFunc("/", indexHandler)
