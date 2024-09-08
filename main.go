@@ -164,7 +164,7 @@ func world(w http.ResponseWriter, r *http.Request) {
  //     pageList = pageList
   }
   
-      if pagePath == "page/studentAttenance" {
+      if pagePath == "/page/studentAttenance" {
       pageName = "studentAttenance Page"
  //     pageList = pageList
   }
