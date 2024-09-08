@@ -56,15 +56,6 @@ _ `...` ~
 
 <div>
 	<h1>{{.PageTitle}}</h1>
-<ul>
-    {{range .Todos}}
-        {{if .Done}}
-            <li class="done">{{.Title}}</li>
-        {{else}}
-            <li>{{.Title}}</li>
-        {{end}}
-    {{end}}
-</ul>
 
 <p><ul class="navList_data">    {{range .Todos}}
 <li>+ {{.Title}} &nbsp;{{if .Done}} <button onClick="changePage('{{.Title}}')">Open</button>
@@ -97,29 +88,7 @@ function worldPage() {
 	
 </script>
 
-<p><ul class="navList_data">
-<li>+ classSchedule &nbsp; <button onClick="changePage('classSchedule')">Open</button></li>
-<li>+ studentProfiles &nbsp; <button onClick="testPage()">Open</button></li>
-<li>+ paymentInformation  &nbsp; <button onClick="helloPage()">Hello</button></li>
-<li>+ studentAttenance  &nbsp; <button onClick="worldPage()">World</button></li>
-<li>+ classEvent &nbsp; <button onClick="changePage('classEvent')">Open</button></li>
-<li>+ studentHomework &nbsp; <button onClick="changePage('studentHomework')">Open</button></li>
-<li>+ studentFeildtrip &nbsp; <button onClick="changePage('studentFeildtrip')">Open</button></li>
-<li>+ classQuestions &nbsp; <button onClick="changePage('classQuestions')">Open</button></li>
-<li>+ classMovies &nbsp; <button onClick="changePage('classMovies')">Open</button></li>
-<li>+ studentWorkshops &nbsp; <button onClick="changePage('studentWorkshops')">Open</button></li>
-<li>+ listClass &nbsp; <button onClick="changePage('listClass')">Open</button></li>
-<li>+ loadClass &nbsp; <button onClick="changePage('loadClass')">Open</button></li>
-<li>+ joinClass &nbsp; <button onClick="changePage('classSchedule')">Open</button></li>
-<li>+ leaveClass  &nbsp; <button onClick="changePage('leaveClass')">Open</button></li>
-<li>+ addHomework &nbsp; <button onClick="changePage('addHomework')">Open</button></li>
-<li>+ startClass &nbsp; <button onClick="changePage('startClass')">Open</button></li>
-<li>+ meetTeacher &nbsp; <button onClick="changePage('meetTeacher')">Open</button></li>
-<li>+ askQuestions &nbsp; <button onClick="changePage('askQuestions')">Open</button></li>
-<li>+ meetStudents &nbsp; <button onClick="changePage('meetStudents')">Open</button></li>
 
-</ul>
-</p>
 
 <div>
 ---
