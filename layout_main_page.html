@@ -66,6 +66,11 @@ _ `...` ~
     {{end}}
 </ul>
 
+<p><ul class="navList_data">    {{range .Todos}}
+<li>+ {{.Title}} &nbsp; <button onClick="changePage('{{.Title}}')">Open</button></li>
+    {{end}}
+</ul></p>
+
 </div>
 
 <script>
