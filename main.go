@@ -1,356 +1,511 @@
- // # ~ . ~
-// ,  ° . +
-package main
+<!DOCTYPE html>
+<html>
+<head>
+<title>Main ~ SOS-Bot com/ +</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-import (
-    "os"
-    "log"
-    
-    "fmt"
-		
-	"text/template"
-	"net/http"
+<style>
+body {  }
 	
-//	"time"
+.sitename { font-size: 24px; }
+div.subtitle { font-size: 14px; margin-top: 5px; }
 
-)
+.home_button_wrap { position: absolute; right: 10px; top: 125px; padding: 25px; outline: 1px solid #777; }
 
-// ,  ° . +
-type htmlPageData struct {
-    pageTitle string
-    pagePath string
-    pageList []pageNav
-    
+.hero_wrap { min-height: 175px; }
+
+.extra_help_wrap { outline: 1px dashed #888; width: 85%; margin: 0 auto; padding: 15px; margin-top: 15px; border-top: 4px solid #555; }
+.extra_help_wrap ul li { margin-bottom: 5px; }
+
+ul.navList_data li { margin: 15px; }
+
+.func_wrap { margin: 15px;  position: relative; min-height: 125px;  }
+.code_wrap { width: 95%; margin: 0 auto; background-color: #e4e4e4; margin-bottom: 45px; }
+.code_data { margin: 10px; min-height: 65px; }
+.button_wrap { position: absolute; right: 15px; bottom: 5px; }
+
+</style>
+</head>
+<body>
+<span class="sitename"># app ~ SOS-Bot.com/learn</span><br />
+<div class="subtitle">https://github.com/Ejected-Media/app_SOS-Bot-com</div>
+<hr />
+
+<button onclick="window.location.href='https://github.com/Ejected-Media/app_SOS-Bot-com'">Repo</button>
+<div class="home_button_wrap">Home</div>
+<div class="hero_wrap">
+https://test-sos-bot.appspot.com/
+</div>
+https://test-sos-bot.appspot.com/
+
+<nav><p>
+--- <br />
+_ `...` ~
+</p>
+<ul>
+<li>+ 1</li>
+<li>+ 2</li>
+</ul>
+</nav>
+
+<hr />
+https://test-sos-bot.appspot.com/
+<main>
+--- <br />
+_ `...` ~
+
+<div>
+	<h1>{{.PageTitle}}</h1>
+	<h1>{{.PageName}}</h1>
+	<h1>{{.PagePath}}</h1>
+
+<p><ul class="navList_data">    {{range .SOSNav}}
+<li>+ {{.Title}} &nbsp;{{if .Done}} <button onClick="changePage('{{.Title}}')">Open</button>
+   {{else}}
+    <button onClick="closePage('{{.Title}}')">Close</button>
+     {{end}}
+</li>
+    {{end}}
+</ul></p>
+
+</div>
+
+<script>
+
+function changePage(pageName) {
+  window.location.href = "/page/" + pageName;
+};
+
+function testPage() {
+	window.location.href = "/one";
+};
+
+function helloPage() {
+	window.location.href = "/hello";
+};
+
+function worldPage() {
+	window.location.href = "/world";
+};
+	
+</script>
+
+
+
+<div>
+---
+<p>
+hi<br />
+° Featuring SOS-Bot ~ Students Online Study °
+</p>
+<p>
+_ Major Bot Function Categories . .
+
+<ul>
+<li>+ Classes</li>
+<li>+ Events</li>
+<li>+ People</li>
+<li>+ Projects</li>
+<li>+ Manage</li>
+
+</ul>
+</p>
+</div>
+
+<div>
+<p>
+--- <br />
+_ `...` ~</p>
+
+<div>
+	
+	
+<!-- - . classSchedule - -->
+<div class="func_wrap">+ classSchedule
+<div class="code_wrap"><div class="code_data"> ... 
+<div id="code_output_classSchedule"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_classSchedule()">Clean</button>
+<button onClick="useFunc_classSchedule()">Use</button></div>
+</div>
+
+<!-- - . studentProfiles - -->
+<div class="func_wrap">+ studentProfiles
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_studentProfiles"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_studentProfiles()">Clean</button>
+<button onClick="useFunc_studentProfiles()">Use</button></div>
+</div>
+
+<!-- - . paymentInformation - -->
+<div class="func_wrap">+ paymentInformation
+<div class="code_wrap"><div class="code_data"> ... 
+<div id="code_output_paymentInformation"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_paymentInformation()">Clean</button>
+<button onClick="useFunc_paymentInformation()">Use</button></div>
+</div>
+
+<!-- - . studentAttenance - -->
+<div class="func_wrap">+ studentAttenance
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_studentAttenance"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_studentAttenance()">Clean</button>
+<button onClick="useFunc_studentAttenance()">Use</button></div>
+</div>
+
+<!-- - . classEvent - -->
+<div class="func_wrap">+ classEvent
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_classEvent"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_classEvent()">Clean</button>
+<button onClick="useFunc_classEvent()">Use</button></div>
+</div>
+
+<!-- - . studentHomework - -->
+<div class="func_wrap">+ studentHomework
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_studentHomework"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_studentHomework()">Clean</button>
+<button onClick="useFunc_studentHomework()">Use</button></div>
+</div>
+
+<!-- - . studentFeildtrip - -->
+<div class="func_wrap">+ studentFeildtrip
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_studentFeildtrip"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_studentFeildtrip()">Clean</button>
+<button onClick="useFunc_studentFeildtrip()">Use</button></div>
+</div>
+
+<!-- - .classQuestions - -->
+<div class="func_wrap">+ classQuestions
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_classQuestions"></div>
+ </div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_classQuestions()">Clean</button>
+<button onClick="useFunc_classQuestions()">Use</button></div>
+</div>
+
+<!-- - . classMovies - -->
+<div class="func_wrap">+ classMovies
+<div class="code_wrap"><div class="code_data"> ... 
+<div id="code_output_classMovies"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_classMovies()">Clean</button>
+<button onClick="useFunc_classMovies()">Use</button></div>
+</div>
+
+<!-- - . studentWorkshops - -->
+<div class="func_wrap">+ studentWorkshops
+<div class="code_wrap"><div class="code_data"> ... 
+<div id="code_output_studentWorkshops"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_studentWorkshops()">Clean</button>
+<button onClick="useFunc_studentWorkshops()">Use</button></div>
+</div>
+
+<!-- - . listClass - -->
+<div class="func_wrap">+ listClass
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_listClass"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_listClass()">Clean</button>
+<button onClick="useFunc_listClass()">Use</button></div>
+</div>
+
+<!-- - . loadClass - -->
+<div class="func_wrap">+ loadClass
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_loadClass"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_loadClass()">Clean</button>
+<button onClick="useFunc_loadClass()">Use</button></div>
+</div>
+
+<!-- - . joinClass - -->
+<div class="func_wrap">+ joinClass
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_joinClass"></div>
+</div></div>
+<div class="button_wrap">,
+<button onClick="cleanFunc_joinClass()">Clean</button>
+<button onClick="useFunc_joinClass()">Use</button></div>
+</div>
+
+<!-- - . leaveClass - -->
+<div class="func_wrap">+ leaveClass 
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_leaveClass"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_leaveClass()">Clean</button>
+<button onClick="useFunc_leaveClass()">Use</button></div>
+</div>
+
+<!-- - . addHomework - -->
+<div class="func_wrap">+ addHomework
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_addHomework"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_addHomework()">Clean</button>
+<button onClick="useFunc_addHomework()">Use</button></div>
+</div>
+
+<!-- - . startClass - -->
+<div class="func_wrap">+ startClass
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_startClass"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_startClass()">Clean</button>
+<button onClick="useFunc_startClass()">Use</button></div>
+</div>
+
+<!-- - . meetTeacher - -->
+<div class="func_wrap">+ meetTeacher
+<div class="code_wrap"><div class="code_data"> ... 
+<div id="code_output_meetTeacher"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_meetTeacher()">Clean</button>
+<button onClick="useFunc_meetTeacher()">Use</button></div>
+</div>
+
+<!-- - . askQuestions - -->
+<div class="func_wrap">+ askQuestions
+<div class="code_wrap"><div class="code_data"> ... 
+<div id="code_output_askQuestions"></div>
+</div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_askQuestions()">Clean</button>
+<button onClick="useFunc_askQuestions()">Use</button></div>
+</div>
+
+<!--  - .meetStudents - -->
+<div class="func_wrap">+ meetStudents
+<div class="code_wrap"><div class="code_data"> ...
+<div id="code_output_meetStudents"></div>
+ </div></div>
+<div class="button_wrap">
+<button onClick="cleanFunc_meetStudents()">Clean</button>
+<button onClick="useFunc_meetStudents()">Use</button></div>
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<script>
+
+// ~ classSchedule
+function useFunc_classSchedule() {
+	var useURL = "/action/getDataList_Schedule";
+	
+	code_output_classSchedule.innerHTML = "5";
+}
+function cleanFunc_classSchedule() {
+	code_output_classSchedule.innerHTML = "";
 }
 
-type pageNav struct {
-    pageTitle string
-    pageLink string
+// ~ studentProfiles
+function useFunc_studentProfiles() {
+	var useURL = "/action/getDataList_Student";
+	
+	code_output_studentProfiles.innerHTML = "5";
+}
+function cleanFunc_studentProfiles() {
+	code_output_studentProfiles.innerHTML = "";
 }
 
-type pageList struct {
-    pageTitle string
-    pageLink string
+// ~ paymentInformation
+function useFunc_paymentInformation() {
+	var useURL = "/action/getDataList_Payments";
+	
+	code_output_paymentInformation.innerHTML = "5";
+}
+function cleanFunc_paymentInformation() {
+	code_output_paymentInformation.innerHTML = "";
 }
 
-
-type Todo struct {
-    Title string
-    Done  bool
+// ~ studentAttenance
+function useFunc_studentAttenance() {
+	var useURL = "/action/getDataList_Attenance";
+	
+	code_output_studentAttenance.innerHTML = "5";
+}
+function cleanFunc_studentAttenance() {
+	code_output_studentAttenance.innerHTML = "";
 }
 
-
-// ,  ° . +
-type SOSPageData struct {
-    PageTitle string
-    PagePath string
-    PageName string
-    Todos     []Todo
+// ~ classEvent
+function useFunc_classEvent() {
+	var useURL = "/action/getDataList_Events";
+	
+	code_output_classEvent.innerHTML = "5";
 }
-
-
-
-
-// ,  ° . +
-func app_welcome_center_page() {
-
-
+function cleanFunc_classEvent() {
+	code_output_classEvent.innerHTML = "";
 }
-
-
-// . indexHandler,  ~ for Public Pages °
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-// ,  ° . +
-    if r.URL.Path != "/" {
-    	http.NotFound(w, r)
-    	return
-    }
-
-// , ° . +
-  pageTitle := "~ . - // - Website App"
-  pagePath := r.URL.Path
-  // pageType := ".."
-
-
-// ,  ° . +
-pageData := htmlPageData {
-      pageTitle: pageTitle,
-      pagePath: pagePath,
-      
-    //  pageList: []pageNav {
-  //        { pageTitle: "one", pageLink: "one"},
-//          { pageTitle: "two", pageLink: "two"},
-   //       { pageTitle: "three", pageLink: "three"},
-    //  },
-  	
-  }  //. .  pageData
-  
-  pageHTML := "layout_main_page.html";
-  if pagePath == "/" {
-      pageTitle = "Index Page"
- //     pageList = pageList
-  }
-  
-    if pagePath == "/page/classSchedule" {
-      pageTitle = "classSchedule Page"
- //     pageList = pageList
- pageHTML = "/Go-Software/html-web-app/html-files/layout_sosbot_classSchedule.html";
-  }
-
-
-// ,  ° . +
-  pageFilePath := template.Must(
-    template.ParseFiles(pageHTML))
-  pageFilePath.Execute(w, pageData)
-  
-}  //  .  indexHandler
-
-// . testHandler,  ~ for Public Pages °
-func testHandler(w http.ResponseWriter, r *http.Request) {
-// ,  ° . +
-    if r.URL.Path != "/" {
-    	http.NotFound(w, r)
-    	return
-    }
-
-// , ° . +
-  pageTitle := "~ . - // - Website App"
-  pagePath := r.URL.Path
-  // pageType := ".."
-
-
-// ,  ° . +
-pageData := htmlPageData {
-      pageTitle: pageTitle,
-      pagePath: pagePath,
-      
-    //  pageList: []pageNav {
-  //        { pageTitle: "one", pageLink: "one"},
-//          { pageTitle: "two", pageLink: "two"},
-   //       { pageTitle: "three", pageLink: "three"},
-    //  },
-  	
-  }  //. .  pageData
-  
-  pageHTML := "layout_main_page.html";
-  if pagePath == "/" {
-      pageTitle = "Index Page"
- //     pageList = pageList
-  }
- 
-
-
-// ,  ° . +
-  pageFilePath := template.Must(
-    template.ParseFiles(pageHTML))
-  pageFilePath.Execute(w, pageData)
-  
-}  //  .  testHandler
-
-func hello(w http.ResponseWriter, r *http.Request) {
-//	pagePath := r.URL.Path
-    fmt.Fprintf(w, "Hello!")
+	
+// ~ studentHomework
+function useFunc_studentHomework() {
+	var useURL = "/action/getDataList_Homework";
+	
+	code_output_studentHomework.innerHTML = "5";
+}
+function cleanFunc_studentHomework() {
+	code_output_studentHomework.innerHTML = "";
+}
+	
+// ~ classMovies
+function useFunc_classMovies() {
+	var useURL = "/action/getDataList_Movie";
+	
+	code_output_classMovies.innerHTML = "5";
+}
+function cleanFunc_classMovies() {
+	code_output_classMovies.innerHTML = "";
 }
 
 
-func world(w http.ResponseWriter, r *http.Request) {
-	pagePath := r.URL.Path
-   // fmt.Fprintf(w, "World!")
-   // fmt.Fprintf(w, pagePath)
-    
-    pageData := pagePath
-    pageName := "hi test"
-    
-    if pagePath == "page/classSchedule" {
-      pageName = "classSchedule Page"
- //     pageList = pageList
-  }
-  
-  if pagePath == "/page/studentAttenance" {
-    pageName = "studentAttenance Page"
-    //     pageList = pageList
-  }
-  
-    if pagePath == "/page/studentProfiles" {
-    pageName = "studentProfiles Page"
-    //     pageList = pageList
-  }
-  
-    if pagePath == "/page/paymentInformation" {
-    pageName = "paymentInformation Page"
-    //     pageList = pageList
-  }
-  
-      if pagePath == "/page/classEvent" {
-    pageName = "classEvent Page"
-    //     pageList = pageList
-  }
-  
-      if pagePath == "/page/studentHomework" {
-    pageName = "studentHomework Page"
-    //     pageList = pageList
-  }
-  
-      if pagePath == "/page/classQuestions" {
-    pageName = "classQuestions Page"
-    //     pageList = pageList
-  }
-  
-        if pagePath == "/page/studentFeildtrip" {
-    pageName = "studentFeildtrip Page"
-    //     pageList = pageList
-  }
-  
-        if pagePath == "/page/classMovies" {
-    pageName = "classMovies Page"
-    //     pageList = pageList
-  }
-  
-        if pagePath == "/page/studentWorkshops" {
-    pageName = "studentWorkshops Page"
-    //     pageList = pageList
-  }
-  
-       if pagePath == "/page/listClass" {
-    pageName = "listClass Page"
-    //     pageList = pageList
-  }
-  
-       if pagePath == "/page/loadClass" {
-    pageName = "loadClass Page"
-    //     pageList = pageList
-  }
-  
-       if pagePath == "/page/joinClass" {
-    pageName = "joinClass Page"
-    //     pageList = pageList
-  }
-  
-         if pagePath == "/page/leaveClass" {
-    pageName = "leaveClass Page"
-    //     pageList = pageList
-  }
-  
-         if pagePath == "/page/addHomework" {
-    pageName = "addHomework Page"
-    //     pageList = pageList
-  }
-  
-         if pagePath == "/page/startClass" {
-    pageName = "startClass Page"
-    //     pageList = pageList
-  }
-  
-           if pagePath == "/page/meetTeacher" {
-    pageName = "meetTeacher Page"
-    //     pageList = pageList
-  }
-  
-           if pagePath == "/page/askQuestions" {
-    pageName = "askQuestions Page"
-    //     pageList = pageList
-  }
-  
-           if pagePath == "/page/meetStudents" {
-    pageName = "meetStudents Page"
-    //     pageList = pageList
-  }
-
-
-// ,  ° . +
-    data := SOSPageData{
-            PageTitle: pageData,
-            PagePath: pageData,
-            PageName: pageName,
-            Todos: []Todo{
-                {Title: "classSchedule", Done: false},
-                {Title: "studentProfiles", Done: true},
-                {Title: "paymentInformation", Done: true},
-                {Title: "studentAttenance", Done: true},
-                {Title: "classEvent", Done: true},
-                {Title: "studentHomework", Done: true},
-                {Title: "studentFeildtrip", Done: true},
-                {Title: "classQuestions", Done: true},
-                {Title: "classMovies", Done: true},
-                {Title: "studentWorkshops", Done: true},
-                {Title: "listClass", Done: true},
-                {Title: "loadClass", Done: true},
-                {Title: "joinClass", Done: true},
-                {Title: "leaveClass", Done: true},
-                {Title: "addHomework", Done: true},
-                {Title: "startClass", Done: true},
-                {Title: "meetTeacher", Done: true},
-                {Title: "askQuestions", Done: true},
-                {Title: "meetStudents", Done: true},
-        
-            },
-        }
- 
- pageHTML := "layout_main_page.html";
- 
-  // ,  ° . +
-  pageFilePath := template.Must(
-    template.ParseFiles(pageHTML))
-  pageFilePath.Execute(w, data)
-  
-  
+// ~ studentFeildtrip
+function useFunc_studentFeildtrip() {
+	var useURL = "/action/getDataList_Feildtrip";
+	
+	code_output_studentFeildtrip.innerHTML = "5";
+}
+function cleanFunc_studentFeildtrip() {
+	code_output_studentFeildtrip.innerHTML = "";
 }
 
-//  .  html url routes 
-//  .  as well as terminal cli logs
+// ~ classQuestions
+function useFunc_classQuestions() {
+	var useURL = "/action/getDataList_Question";
+	
+	code_output_classQuestions.innerHTML = "5";
+}
+function cleanFunc_classQuestions() {
+	code_output_classQuestions.innerHTML = "";
+}
 
-func main() {
-// ,  ° . +
-  appName := "~ . - // - Website App"
-  
-  http.HandleFunc("/hello", hello)
-    http.HandleFunc("/world", world)
-  // ,  ° . +
-    http.HandleFunc("/page/classSchedule", world)
-    http.HandleFunc("/page/studentFeildtrip", world)
-    http.HandleFunc("/page/classMovies", world)
-    http.HandleFunc("/page/studentProfiles", world)
-    http.HandleFunc("/page/paymentInformation", world)
-    http.HandleFunc("/page/studentAttenance", world)
-    http.HandleFunc("/page/classEvent", world)
-    http.HandleFunc("/page/studentHomework", world)
-      http.HandleFunc("/page/classQuestions", world)
-      http.HandleFunc("/page/studentWorkshops", world)
-      http.HandleFunc("/page/listClass", world)
-      http.HandleFunc("/page/loadClass", world)
-      http.HandleFunc("/page/joinClass", world)
-      http.HandleFunc("/page/leaveClass", world)
-      http.HandleFunc("/page/addHomework", world)
-      http.HandleFunc("/page/startClass", world)
-         http.HandleFunc("/page/meetTeacher", world)
-          http.HandleFunc("/page/askQuestions", world)
-         http.HandleFunc("/page/meetStudents", world)
-          
+// ~ classMovies
+function useFunc_classMovies() {
+	code_output_classMovies.innerHTML = "5";
+}
+function cleanFunc_classMovies() {
+	code_output_classMovies.innerHTML = "";
+}
 
-// ,  ° . +
-  http.HandleFunc("/", indexHandler)
-  
-  // ,  ° . +
-  http.HandleFunc("/one", testHandler)
+// ~ studentWorkshops
+function useFunc_studentWorkshops() {
+	var useURL = "/action/getDataList_Workshop";
+	
+	code_output_studentWorkshops.innerHTML = "5";
+}
+function cleanFunc_studentWorkshops() {
+	code_output_studentWorkshops.innerHTML = "";
+}
 
-// . ° ~ +
- // http.HandleFunc("/page/classSchedule", indexHandler)
+// ~ listClass
+function useFunc_listClass() {
+	var useURL = "/action/getDataList_Claases";
+	
+	code_output_listClass.innerHTML = "5";
+}
+function cleanFunc_listClass() {
+	code_output_listClass.innerHTML = "";
+}
 
-// -- -
-  port := os.Getenv("PORT")
-  if port == "" {
-    port = "8080"
-    log.Printf("Loading _webapp with default port")
-  }
-  
-// ,  ° . +
-  log.Printf("_webapp is active and Listening on port %s", port)
+// ~ loadClass
+function useFunc_loadClass() {
+	var useURL = "/action/loadID_Class";
+	
+	code_output_loadClass.innerHTML = "5";
+}
+function cleanFunc_loadClass() {
+	code_output_loadClass.innerHTML = "";
+}
 
-  log.Printf("// -- - %s", appName)
-  log.Printf("_webapp now loaded and running at http://localhost:%s", port)
+// ~ joinClass
+function useFunc_joinClass() {
+	code_output_joinClass.innerHTML = "5";
+}
+function cleanFunc_joinClass() {
+	code_output_joinClass.innerHTML = "";
+}
 
-// -- - 
-  if err := http.ListenAndServe(":"+port, nil); err != nil {
-    log.Fatal("Error Starting the HTTP Server :", err)
-    return
-  }}
+// ~ leaveClass
+function useFunc_leaveClass() {
+	code_output_leaveClass.innerHTML = "5";
+}
+function cleanFunc_leaveClass() {
+	code_output_leaveClass.innerHTML = "";
+}
+
+// ~ addHomework
+function useFunc_addHomework() {
+	code_output_addHomework.innerHTML = "5";
+}
+function cleanFunc_addHomework() {
+	code_output_addHomework.innerHTML = "";
+}
+
+// ~ startClass
+function useFunc_startClass() {
+	code_output_startClass.innerHTML = "5";
+}
+function cleanFunc_startClass() {
+	code_output_startClass.innerHTML = "";
+}
+
+// ~ meetTeacher
+function useFunc_meetTeacher() {
+	code_output_meetTeacher.innerHTML = "5";
+}
+function cleanFunc_meetTeacher() {
+	code_output_meetTeacher.innerHTML = "";
+}
+
+// ~ askQuestions
+function useFunc_askQuestions() {
+	code_output_askQuestions.innerHTML = "5";
+}
+function cleanFunc_askQuestions() {
+	code_output_askQuestions.innerHTML = "";
+}
+
+// ~ meetStudents
+function useFunc_meetStudents() {
+	code_output_meetStudents.innerHTML = "5";
+}
+function cleanFunc_meetStudents() {
+	code_output_meetStudents.innerHTML = "";
+}
+	
+	
+
+</script>
+
+</body>
+</html>
