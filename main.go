@@ -43,6 +43,8 @@ type Todo struct {
 
 type TodoPageData struct {
     PageTitle string
+    PagePath string
+    PageName string
     Todos     []Todo
 }
 
@@ -170,7 +172,9 @@ func world(w http.ResponseWriter, r *http.Request) {
   }
     
     data := TodoPageData{
-            PageTitle: pageData + pageName,
+            PageTitle: pageData,
+            PagePath: pageData,
+            PageName: pageName,
             Todos: []Todo{
                 {Title: "classSchedule", Done: false},
                 {Title: "studentProfiles", Done: true},
