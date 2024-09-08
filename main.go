@@ -161,9 +161,26 @@ func world(w http.ResponseWriter, r *http.Request) {
     data := TodoPageData{
             PageTitle: pageData,
             Todos: []Todo{
-                {Title: "Task 1", Done: false},
-                {Title: "Task 2", Done: true},
-                {Title: "Task 3", Done: true},
+                {Title: "classSchedule", Done: false},
+                {Title: "studentProfiles", Done: true},
+                {Title: "paymentInformation", Done: true},
+                {Title: "studentAttenance", Done: true},
+                {Title: "classEvent", Done: true},
+                {Title: "studentHomework", Done: true},
+                {Title: "studentFeildtrip", Done: true},
+                {Title: "classQuestions", Done: true},
+                {Title: "classMovies", Done: true},
+                {Title: "studentWorkshops", Done: true},
+                {Title: "listClass", Done: true},
+                {Title: "loadClass", Done: true},
+                {Title: "joinClass", Done: true},
+                {Title: "leaveClass", Done: true},
+                {Title: "addHomework", Done: true},
+                {Title: "startClass", Done: true},
+                {Title: "meetTeacher", Done: true},
+                {Title: "askQuestions", Done: true},
+                {Title: "meetStudents", Done: true},
+        
             },
         }
  
