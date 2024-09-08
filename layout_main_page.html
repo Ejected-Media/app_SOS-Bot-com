@@ -59,7 +59,7 @@ _ `...` ~
 	<h1>{{.PageName}}</h1>
 	<h1>{{.PagePath}}</h1>
 
-<p><ul class="navList_data">    {{range .Todos}}
+<p><ul class="navList_data">    {{range .SOSNav}}
 <li>+ {{.Title}} &nbsp;{{if .Done}} <button onClick="changePage('{{.Title}}')">Open</button>
    {{else}}
     <button onClick="closePage('{{.Title}}')">Close</button>
