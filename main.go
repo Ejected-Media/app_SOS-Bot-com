@@ -40,8 +40,8 @@ type Todo struct {
 }
 
 
-
-type TodoPageData struct {
+// ,  ° . +
+type SOSPageData struct {
     PageTitle string
     PagePath string
     PageName string
@@ -166,12 +166,99 @@ func world(w http.ResponseWriter, r *http.Request) {
  //     pageList = pageList
   }
   
-      if pagePath == "/page/studentAttenance" {
-      pageName = "studentAttenance Page"
- //     pageList = pageList
+  if pagePath == "/page/studentAttenance" {
+    pageName = "studentAttenance Page"
+    //     pageList = pageList
   }
-    
-    data := TodoPageData{
+  
+    if pagePath == "/page/studentProfiles" {
+    pageName = "studentProfiles Page"
+    //     pageList = pageList
+  }
+  
+    if pagePath == "/page/paymentInformation" {
+    pageName = "paymentInformation Page"
+    //     pageList = pageList
+  }
+  
+      if pagePath == "/page/classEvent" {
+    pageName = "classEvent Page"
+    //     pageList = pageList
+  }
+  
+      if pagePath == "/page/studentHomework" {
+    pageName = "studentHomework Page"
+    //     pageList = pageList
+  }
+  
+      if pagePath == "/page/classQuestions" {
+    pageName = "classQuestions Page"
+    //     pageList = pageList
+  }
+  
+        if pagePath == "/page/studentFeildtrip" {
+    pageName = "studentFeildtrip Page"
+    //     pageList = pageList
+  }
+  
+        if pagePath == "/page/classMovies" {
+    pageName = "classMovies Page"
+    //     pageList = pageList
+  }
+  
+        if pagePath == "/page/studentWorkshops" {
+    pageName = "studentWorkshops Page"
+    //     pageList = pageList
+  }
+  
+       if pagePath == "/page/listClass" {
+    pageName = "listClass Page"
+    //     pageList = pageList
+  }
+  
+       if pagePath == "/page/loadClass" {
+    pageName = "loadClass Page"
+    //     pageList = pageList
+  }
+  
+       if pagePath == "/page/joinClass" {
+    pageName = "joinClass Page"
+    //     pageList = pageList
+  }
+  
+         if pagePath == "/page/leaveClass" {
+    pageName = "leaveClass Page"
+    //     pageList = pageList
+  }
+  
+         if pagePath == "/page/addHomework" {
+    pageName = "addHomework Page"
+    //     pageList = pageList
+  }
+  
+         if pagePath == "/page/startClass" {
+    pageName = "startClass Page"
+    //     pageList = pageList
+  }
+  
+           if pagePath == "/page/meetTeacher" {
+    pageName = "meetTeacher Page"
+    //     pageList = pageList
+  }
+  
+           if pagePath == "/page/askQuestions" {
+    pageName = "askQuestions Page"
+    //     pageList = pageList
+  }
+  
+           if pagePath == "/page/meetStudents" {
+    pageName = "meetStudents Page"
+    //     pageList = pageList
+  }
+
+
+// ,  ° . +
+    data := SOSPageData{
             PageTitle: pageData,
             PagePath: pageData,
             PageName: pageName,
