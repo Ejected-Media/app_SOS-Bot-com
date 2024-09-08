@@ -67,7 +67,11 @@ _ `...` ~
 </ul>
 
 <p><ul class="navList_data">    {{range .Todos}}
-<li>+ {{.Title}} &nbsp; <button onClick="changePage('{{.Title}}')">Open</button></li>
+<li>+ {{.Title}} &nbsp;{{if .Done}} <button onClick="changePage('{{.Title}}')">Open</button>
+   {{else}}
+    <button onClick="closePage('{{.Title}}')">Close</button>
+     {{end}}
+</li>
     {{end}}
 </ul></p>
 
