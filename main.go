@@ -45,7 +45,7 @@ type SOSPageData struct {
     PageTitle string
     PagePath string
     PageName string
-    SOSNav     []navList
+    SOSNav     []Todo
 }
 
 
@@ -262,7 +262,7 @@ func world(w http.ResponseWriter, r *http.Request) {
             PageTitle: pageData,
             PagePath: pageData,
             PageName: pageName,
-            SOSNav: []navList{
+            SOSNav: []Todo{
                 {Title: "classSchedule", Done: false},
                 {Title: "studentProfiles", Done: true},
                 {Title: "paymentInformation", Done: true},
