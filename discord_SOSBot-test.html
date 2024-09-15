@@ -153,17 +153,19 @@ Example Message
 <p>
 All of the following limits are measured inclusively. Leading and trailing whitespace characters are not included (they are trimmed automatically).
 </p>
-<p>
-Field	Limit
-title	256 characters
-description	4096 characters
-fields	Up to 25 field objects
-field.name	256 characters
-field.value	1024 characters
-footer.text	2048 characters
-author.name	256 characters
-Additionally, the combined sum of characters in all title, description, field.name, field.value, footer.text, and author.name fields across all embeds attached to a message must not exceed 6000 characters.
-</p>
+<p><table>
+<tr><th>Field</th>	<th>Limit</th></tr>
+<tr><td>title</td>	<td>256 characters</td></tr>
+<tr><td>description</td>	<td>4096 characters</td></tr>
+<tr><td>fields</td>	<td>Up to 25 field objects</td></tr>
+<tr><td>field.name</td>	<td>256 characters</td></tr>
+<tr><td>field.value</td>	<td>1024 characters</td></tr>
+<tr><td>footer.text</td>	<td>2048 characters</td></tr>
+<tr><td>author.name</td>	<td>256 characters</td></tr>
+</table>
+<table>
+<tr><td>Additionally, the combined sum of characters in all title, description, field.name, field.value, footer.text, and author.name fields across all embeds attached to a message</td><td> must not exceed 6000 characters.</td></tr>
+</table></p>
 
 <p>
 Get Channel Messages
