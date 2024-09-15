@@ -229,8 +229,10 @@ type	integer	type of message</tr>
 <tr><td>CHANNEL_FOLLOW_ADD</td>	<td>12</td>	<td>true</td></tr>
 <tr><td>GUILD_DISCOVERY_DISQUALIFIED</td>	<td>14</td>	<td>true</td></tr>
 <tr><td>GUILD_DISCOVERY_REQUALIFIED</td>	<td>15</td>	<td>true</td></tr>
-<tr><td>GUILD_DISCOVERY_GRACE_PERIOD_INITIAL_WARNING</td>	<td>16</td>	<td>true</td></tr>
-<tr><td>GUILD_DISCOVERY_GRACE_PERIOD_FINAL_WARNING</td>	<td>17</td>	<td>true</td></tr>
+<tr><td>GUILD_DISCOVERY_
+GRACE_PERIOD_INITIAL_WARNING</td>	<td>16</td>	<td>true</td></tr>
+<tr><td>GUILD_DISCOVERY_
+GRACE_PERIOD_FINAL_WARNING</td>	<td>17</td>	<td>true</td></tr>
 <tr><td>THREAD_CREATED</td>	<td>18</td>	<td>true</td></tr>
 <tr><td>REPLY</td>	<td>19</td>	<td>true</td></tr>
 <tr><td>CHAT_INPUT_COMMAND</td>	<td>20</td>	<td>true</td></tr>
@@ -244,11 +246,15 @@ type	integer	type of message</tr>
 <tr><td>STAGE_END</td>	<td>28</td>	<td>true</td></tr>
 <tr><td>STAGE_SPEAKER</td>	<td>29</td>	<td>true</td></tr>
 <tr><td>STAGE_TOPIC</td>	<td>31<td>	<td>true</td></tr>
-<tr><td>GUILD_APPLICATION_PREMIUM_SUBSCRIPTION</td>	<td>32</td>	<td>true</td></tr>
-<tr><td>GUILD_INCIDENT_ALERT_MODE_ENABLED</td>	<td>36</td>	<td>true</td></tr>
-<tr><td>GUILD_INCIDENT_ALERT_MODE_DISABLED</td>	<td>37</td>	<td>true</td></tr>
+<tr><td>GUILD_APPLICATION_
+PREMIUM_SUBSCRIPTION</td>	<td>32</td>	<td>true</td></tr>
+<tr><td>GUILD_INCIDENT_ALERT_
+MODE_ENABLED</td>	<td>36</td>	<td>true</td></tr>
+<tr><td>GUILD_INCIDENT_ALERT_
+MODE_DISABLED</td>	<td>37</td>	<td>true</td></tr>
 <tr><td>GUILD_INCIDENT_REPORT_RAID</td>	<td>38</td>	<td>true</td></tr>
-<tr><td>GUILD_INCIDENT_REPORT_FALSE_ALARM</td>	<td>39</td>	<td>true</td></tr>
+<tr><td>GUILD_INCIDENT_
+REPORT_FALSE_ALARM</td>	<td>39</td>	<td>true</td></tr>
 <tr><td>PURCHASE_NOTIFICATION</td>	<td>44</td>	<td>true</td></tr>
 <tr><td>POLL_RESULT</td>	<td>46</td>	<td>true</td></tr>
 </table>
@@ -324,13 +330,13 @@ Copy
 <p>Metadata about the interaction, including the source of the interaction and relevant server and user IDs.</p>
 </div>
 <div>
-Message Interaction Metadata Structure
+<p><b>Message Interaction Metadata Structure</b></p>
 
 <table>
 <tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr>id	snowflake	ID of the interaction</tr>
-<tr>type	interaction type	Type of interaction</tr>
-<tr>user	user object	User who triggered the interaction</tr>
+<tr><td>id</td>	<td>snowflake</td>	<td>ID of the interaction</td></tr>
+<tr><td>type</td>	<td>interaction type</td>	<td>Type of interaction</td></tr>
+<tr><td>user</td>	<td>user object</td>	<td>User who triggered the interaction</td></tr>
 
 </table>
 <p>authorizing_integration_owners	dictionary with keys of application integration types	IDs for installation context(s) related to an interaction. Details in Authorizing Integration </p>
@@ -351,12 +357,12 @@ Message Reference Object
 Message Reference Structure
 
 <table>
-<tr>Field	Type	Description</tr>
-<tr>type? *	integer	type of reference.</tr>
-<tr>message_id?	snowflake	id of the originating message</tr>
-<tr>channel_id? **	snowflake	id of the originating message's channel</tr>
-<tr>guild_id?	snowflake	id of the originating message's guild</tr>
-<tr>fail_if_not_exists?	boolean	when sending, whether to error if the referenced message doesn't exist instead of sending as a normal (non-reply) message, default true</tr>
+<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
+<tr><td>type? *</td>	<td>integer</td>	<td>type of reference.</td></tr>
+<tr><td>message_id?</td>	<td>snowflake</td>	<td>id of the originating message</td></tr>
+<tr><td>channel_id? **</td>	<td>snowflake</td>	<td>id of the originating message's channel</tD></tr>
+<tr><td>guild_id?</td>	<td>snowflake</td>	<td>id of the originating message's guild</td></tr>
+<tr><td>fail_if_not_exists?</td>	<td>boolean</td>	<td>when sending, whether to error if the referenced message doesn't exist instead of sending as a normal (non-reply) message, default true</td></tr>
 </table>
 </div>
 
@@ -370,8 +376,8 @@ Reaction Count Details Structure</b></p>
 
 <table>
 <tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr>burst	integer	Count of super reactions</tr>
-<tr>normal	integer	Count of normal reactions</tr>
+<tr><td>burst</td>	<td>integer</td>	<td>Count of super reactions</td></tr>
+<tr><td>normal</td>	<td>integer</td>	<td>Count of normal reactions</td></tr>
 
 </table>
 Embed Object
@@ -379,19 +385,19 @@ Embed Structure
 
 <table>
 <tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr>title?	string	title of embed</tr>
-<tr>type?	string	type of embed (always "rich" for webhook embeds)</tr>
-<tr>description?	string	description of embed</tr>
-<tr>url?	string	url of embed</tr>
-<tr>timestamp?	ISO8601 timestamp	timestamp of embed content</tr>
-<tr>color?	integer	color code of the embed</tr>
-<tr>footer?	embed footer object	footer information</tr>
-<tr>image?	embed image object	image information</tr>
-<tr>thumbnail?	embed thumbnail object	thumbnail information</tr>
-<tr>video?	embed video object	video information</tr>
-<tr>provider?	embed provider object	provider information</tr>
-<tr>author?	embed author object	author information</tr>
-<tr>fields?	array of embed field objects	fields information, max of 25</tr>
+<tr><td>title?</td>	<td>string</td>	<td>title of embed</td></tr>
+<tr><td>type?</td>	<td>string</td>	<td>type of embed (always "rich" for webhook embeds)</td></tr>
+<tr><td>description?</td>	<td>string</td>	<td>description of embed</td></tr>
+<tr><td>url?</td>	<td>string</td>	<td>url of embed</td></tr>
+<tr><td>timestamp?</td>	<td>ISO8601 timestamp</td>	<td>timestamp of embed content</td></tr>
+<tr><td>color?</td>	<td>integer</td>	<td>color code of the embed</td></tr>
+<tr><td>footer?</td>	<td>embed footer object</td>	<td>footer information</td></tr>
+<tr><td>image?</td>	<td>embed image object</td>	<td>image information</td></tr>
+<tr><td>thumbnail?</td>	<td>embed thumbnail object</td>	<td>thumbnail information</td></tr>
+<tr><td>video?</td>	<td>embed video object</td>	<td>video information</td></tr>
+<tr><td>provider?</td>	<td>embed provider object</td>	<td>provider information</td></tr>
+<tr><td>author?</td>	<td>embed author object</td>	<td>author information</td></tr>
+<tr><td>fields?</td>	<td>array of embed field objects</td>	<td>fields information, max of 25</td></tr>
 
 </table>
 <p><b>Embed Types</b></p>
@@ -435,19 +441,19 @@ Embed Image Structure</b></p>
 <p><b>
 Embed Provider Structure</b></p>
 <table>
-<tr>Field	Type	Description</tr>
-<tr>name?	string	name of provider</tr>
-<tr>url?	string	url of provider</tr>
+<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
+<tr><td>name?</td>	<td>string</td>	<td>name of provider</td></tr>
+<tr><td>url?</td>	<td>string</td>	<td>url of provider</td></tr>
 
 </table>
 <p>
 <b>Embed Author Structure</b></p>
 <table>
 <tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr>name	string	name of author</tr>
-<tr>url?	string	url of author (only supports http(s))</tr>
-<tr>icon_url?	string	url of author icon (only supports http(s) and attachments)</tr>
-<tr>proxy_icon_url?	string	a proxied url of author icon</tr>
+<tr><td>name</td>	<td>string</td>	<td>name of author</td></tr>
+<tr><td>url?</td>	<td>string</td>	<td>url of author (only supports http(s))</td></tr>
+<tr><td>icon_url?</td>	<td>string</td>	<td>url of author icon (only supports http(s) and attachments)</td></tr>
+<tr><td>proxy_icon_url?</td>	<td>string</td>	<td>a proxied url of author icon</td></tr>
 </table>
 <p>
 <b>Embed Footer Structure</b></p>
@@ -461,9 +467,9 @@ Embed Provider Structure</b></p>
 <table>
 <tr>Embed Field Structure</tr>
 <tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr>name	string	name of the field</tr>
-<tr>value	string	value of the field</tr>
-<tr>inline?	boolean	whether or not this field should display inline</tr>
+<tr><td>name</td>	<td>string</td>	<td>name of the field</td></tr>
+<tr><td>value</td>	<td>string</td>	<td>value of the field</td></tr>
+<tr><td>inline?</td>	<td>boolean</td>	<td>whether or not this field should display inline</td></tr>
 
 </table>
 <p><b>Embed Limits</b></p>
@@ -687,15 +693,15 @@ The following restrictions are additionally enforced for usernames:<ul>
 <table>
 <tr><th>Field</th>	<th>Type</th>	<th>Description</th>	<th>Required OAuth2 Scope</th></tr>
 <tr><td>id</td>	<td>snowflake</td>	<td>the user's id	identify</td></tr>
-<tr>username	string	the user's username, not unique across the platform	identify</tr>
-<tr>discriminator	string	the user's Discord-tag	identify</tr>
-<tr>global_name	?string	the user's display name, if it is set. For bots, this is the application name	identify</tr>
-<tr>avatar	?string	the user's avatar hash	identify</tr>
-<tr>bot?	boolean	whether the user belongs to an OAuth2 application	identify</tr>
-<tr>system?	boolean	whether the user is an Official Discord System user (part of the urgent message system)	identify</tr>
-<tr>mfa_enabled?	boolean	whether the user has two factor enabled on their account	identify</tr>
-<tr>banner?	?string	the user's banner hash	identify</tr>
-<tr>accent_color?	?integer	the user's banner color encoded as an integer representation of hexadecimal color code	identify</tr>
+<tr><td>username</td>	<td>string</td>	<td>the user's username, not unique across the platform</td>	<td>identify</td></tr>
+<tr><td>discriminator</td>	<td>string</td>	<td>the user's Discord-tag</td>	<td>identify</td></tr>
+<tr><td>global_name</td>	<td>?string</td>	<td>the user's display name, if it is set. For bots, this is the application name</td>	<td>identify</td></tr>
+<tr><td>avatar</td>	<td>?string</td>	<td>the user's avatar hash</td>	<td>identify</td></tr>
+<tr><td>bot?</td>	<td>boolean</td>	<td>whether the user belongs to an OAuth2 application</td>	<td>identify</td></tr>
+<tr><td>system?</td>	<td>boolean</td>	<td>whether the user is an Official Discord System user (part of the urgent message system)</td>	<td>identify</td></tr>
+<tr><td>mfa_enabled?</td>	<td>boolean</td>	<td>whether the user has two factor enabled on their account</td>	<td>identify</td></tr>
+<tr><td>banner?</td>	<td>?string</td>	<td>the user's banner hash</td>	<td>identify</td></tr>
+<tr><td>accent_color?</td>	<td>?integer</td>	<td>the user's banner color encoded as an integer representation of hexadecimal color code</td>	<td>identify</td></tr>
 <tr><td>locale?</td>	<td>string</td>	<td>the user's chosen language option</td> <td>identify</td></tr>
 <tr><td>verified?</td>	<td>boolean</td>	<td>whether the email on this account has been verified</td>	<td>email</td></tr>
 <tr><td>email?</td>	<td>?string</td>	<td>the user's email</td>	<td>email</td></tr>
@@ -946,61 +952,61 @@ Subscription status should not be used to grant perks. Use entitlements as an in
 <tr>Auto Moderation Rule Update	Auto Moderation rule was updated</tr>
 <tr>Auto Moderation Rule Delete	Auto Moderation rule was deleted</tr>
 <tr>Auto Moderation Action Execution	Auto Moderation rule was triggered and an action was executed (e.g. a message was blocked)</tr>
-<tr>Channel Create	New guild channel created</tr>
-<tr>Channel Update	Channel was updated</tr>
-<tr>Channel Delete	Channel was deleted</tr>
-<tr>Channel Pins Update	Message was pinned or unpinned</tr>
-<tr>Thread Create	Thread created, also sent when being added to a private thread</tr>
-<tr>Thread Update	Thread was updated</tr>
-<tr>Thread Delete	Thread was deleted</tr>
-<tr>Thread List Sync	Sent when gaining access to a channel, contains all active threads in that channel</tr>
-<tr>Thread Member Update	Thread member for the current user was updated</tr>
-<tr>Thread Members Update	Some user(s) were added to or removed from a thread</tr>
-<tr>Entitlement Create	Entitlement was created</tr>
-<tr>Entitlement Update	Entitlement was updated or renewed</tr>
-<tr>Entitlement Delete	Entitlement was deleted</tr>
+<tr><td>Channel</td> <td>Create</td>	<td>New guild channel created</td></tr>
+<tr><td>Channel</td> <td>Update</td>	<td>Channel was updated</td></tr>
+<tr><td>Channel</td> <td>Delete</td>	<td>Channel was deleted</td></tr>
+<tr><td>Channel Pins</td> <td>Update</td>	<td>Message was pinned or unpinned</td></tr>
+<tr><td>Thread</td> <td>Create</td>	<td>Thread created, also sent when being added to a private thread</td></tr>
+<tr><td>Thread</td> <td>Update</td>	<td>Thread was updated</td></tr>
+<tr><td>Thread</td> <td>Delete</td>	<td>Thread was deleted</td></tr>
+<tr><td>Thread List</td> <td>Sync</td>	<td>Sent when gaining access to a channel, contains all active threads in that channel</td></tr>
+<tr><td>Thread Member</td> <td>Update</td>	<td>Thread member for the current user was updated</td></tr>
+<tr><td>Thread Members</td> <td>Update</td>	<td>Some user(s) were added to or removed from a thread</td></tr>
+<tr><td>Entitlement</td> <td>Create</td>	<td>Entitlement was created</td></tr>
+<tr><td>Entitlement</td> <td>Update</td>	<td>Entitlement was updated or renewed</td></tr>
+<tr><td>Entitlement</td> <td>Delete</td>	<td>Entitlement was deleted</td></tr>
 <tr>Guild Create	Lazy-load for unavailable guild, guild became available, or user joined a new guild</tr>
 <tr>Guild Update	Guild was updated</tr>
 <tr>Guild Delete	Guild became unavailable, or user left/was removed from a guild</tr>
 <tr>Guild Audit Log Entry Create	A guild audit log entry was created</tr>
-<tr>Guild Ban Add	User was banned from a guild</tr>
-<tr>rGuild Ban Remove	User was unbanned from a guild</tr>
-<tr>Guild Emojis Update	Guild emojis were updated</tr>
-<tr>Guild Stickers Update	Guild stickers were updated</tr>
-<tr>Guild Integrations Update	Guild integration was updated</tr>
-<tr>Guild Member Add	New user joined a guild</tr>
-<tr>Guild Member Remove	User was removed from a guild</tr>
-<tr>Guild Member Update	Guild member was updated</tr>
-<tr>Guild Members Chunk	Response to Request Guild Members</tr>
-<tr>Guild Role Create	Guild role was created</tr>
-<tr>Guild Role Update	Guild role was updated</tr>
-<tr>Guild Role Delete	Guild role was deleted</tr>
-<tr>Guild Scheduled Event Create	Guild scheduled event was created</tr>
-<tr>Guild Scheduled Event Update	Guild scheduled event was updated</tr>
-<tr>Guild Scheduled Event Delete	Guild scheduled event was deleted</tr>
-<tr>Guild Scheduled Event User Add	User subscribed to a guild scheduled event</tr>
-<tr>Guild Scheduled Event User Remove	User unsubscribed from a guild scheduled event</tr>
-<tr>Integration Create	Guild integration was created</tr>
-<tr>Integration Update	Guild integration was updated</tr>
-<tr>Integration Delete	Guild integration was deleted</tr>
-<tr>Interaction Create	User used an interaction, such as an Application Command</tr>
-<tr>Invite Create	Invite to a channel was created</tr>
-<tr>Invite Delete	Invite to a channel was deleted</tr>
-<tr>Message Create	Message was created</tr>
-<tr>Message Update	Message was edited</tr>
-<tr>Message Delete	Message was deleted</tr>
-<tr>Message Delete Bulk	Multiple messages were deleted at once</tr>
-<tr>Message Reaction Add	User reacted to a message</tr>
-<tr>Message Reaction Remove	User removed a reaction from a message</tr>
-<tr>Message Reaction Remove All	All reactions were explicitly removed from a message</tr>
-<tr>Message Reaction Remove Emoji	All reactions for a given emoji were explicitly removed from a message</tr>
-<tr>Presence Update	User was updated</tr>
-<tr>Stage Instance Create	Stage instance was created</tr>
-<tr>Stage Instance Update	Stage instance was updated</tr>
-<tr>Stage Instance Delete	Stage instance was deleted or closed</tr>
-<tr>Subscription Create	Premium App Subscription was created</tr>
-<tr>Subscription Update	Premium App Subscription was updated</tr>
-<tr>Subscription Delete	Premium App Subscription was deleted</tr>
+<tr><td>Guild Ban</td> <td>Add</td>	<td>User was banned from a guild</td></tr>
+<tr><td>Guild Ban</td> <td>Remove</td>	<td>User was unbanned from a guild</td></tr>
+<tr><td>Guild Emojis</td> <td>Update</td>	<td>Guild emojis were updated</td></tr>
+<tr><td>Guild Stickers</td> <td>Update</td>	<td>Guild stickers were updated</td></tr>
+<tr><td>Guild Integrations</td> <td>Update</td>	<td>Guild integration was updated</td></tr>
+<tr><td>Guild Member</td> <td>Add</td>	<td>New user joined a guild</td></tr>
+<tr><td>Guild Member</td> <td>Remove</td>	<td>User was removed from a guild</td></tr>
+<tr><td>Guild Member</td> <td>Update</td>	<td>Guild member was updated</td></tr>
+<tr><td>Guild Members</td> <td>Chunk</td>	<td>Response to Request Guild Members</td></tr>
+<tr></td>Guild Role</td> <td>Create</td>	<td>Guild role was created</td></tr>
+<tr><td>Guild Role</td> <td>Update</td>	<td>Guild role was updated</td></tr>
+<tr><td>Guild Role</td> <td>Delete</td>	<td>Guild role was deleted</td></tr>
+<tr><td>Guild Scheduled Event</td> <td>Create</td>	<td>Guild scheduled event was created</td></tr>
+<tr><td>Guild Scheduled Event</td> <td>Update</td>	<td>Guild scheduled event was updated</td></tr>
+<tr><td>Guild Scheduled Event</td> <td>Delete</td>	<td>Guild scheduled event was deleted</td></tr>
+<tr><td>Guild Scheduled Event User</td> <td>Add</td>	<td>User subscribed to a guild scheduled event</td></tr>
+<tr><td>Guild Scheduled Event User</td> <td>Remove</td>	<td>User unsubscribed from a guild scheduled event</td></tr>
+<tr><td>Integration</td> <td>Create</td>	<td>Guild integration was created</td></tr>
+<tr><td>Integration</td> <td>Update</td>	<td>Guild integration was updated</td></tr>
+<tr><td>Integration</td> <td>Delete</td>	<td>Guild integration was deleted</td></tr>
+<tr><td>Interaction</td> <td>Create</td>	<td>User used an interaction, such as an Application Command</td></tr>
+<tr><td>Invite</td> <td>Create</td>	<td>Invite to a channel was created</td></tr>
+<tr><td>Invite</td> <td>Delete</td>	<td>Invite to a channel was deleted</td></tr>
+<tr><td>Message</td> <td>Create</td>	<td>Message was created</td></tr>
+<tr><td>Message</td> <td>Update</td>	<td>Message was edited</td></tr>
+<tr><td>Message</td> <td>Delete</td>	<td>Message was deleted</td></tr>
+<tr><td>Message</td> <td>Delete Bulk</td>	<td>Multiple messages were deleted at once</td></tr>
+<tr><td>Message Reaction</td> <td>Add</td>	<td>User reacted to a message</td></tr>
+<tr><td>Message Reaction</td> <td>Remove</td>	<td>User removed a reaction from a message</td></tr>
+<tr><td>Message Reaction</td> <td>Remove All</td>	<td>All reactions were explicitly removed from a message<td></tr>
+<tr><td>Message Reaction</td> <td>Remove Emoji</td>	<td>All reactions for a given emoji were explicitly removed from a message</td></tr>
+<tr><td>Presence</td> <td>Update</td>	<td>User was updated</td></tr>
+<tr><td>Stage Instance</td> <td>Create</td>	<td>Stage instance was created</td></tr>
+<tr><td>Stage Instance</td> <td>Update</td>	Stage instance was updated</td></tr>
+<tr><td>Stage Instance</td> <td>Delete</td>	<td>Stage instance was deleted or closed</td></tr>
+<tr><td>Subscription</td> <td>Create</td>	<td>Premium App Subscription was created</td></tr>
+<tr><td>Subscription</td> <td>Update</td>	<td>Premium App Subscription was updated</td></tr>
+<tr><td>Subscription</td> <td>Delete</td>	<td>Premium App Subscription was deleted</td></tr>
 <tr><td>Typing</td> <td>Start</td>	<td>User started typing in a channel</td></tr>
 <tr><td>User</td> <td>Update</td>	<td>Properties about the user changed</td></tr>
 <tr><td>Voice Channel Effect</td> <td>Send</td>	<td>Someone sent an effect in a voice channel the current user is connected to</td></tr>
