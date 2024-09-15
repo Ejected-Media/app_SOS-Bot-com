@@ -500,56 +500,67 @@ flags?	integer	attachment flags combined as a bitfield
 </div>
 
 <div>
-Get Channel Messages
+<p><b>Get Channel Messages</b></p>
 GET/channels/{channel.id}/messages
-Retrieves the messages in a channel. Returns an array of message objects on success.
+<p>
+Retrieves the messages in a channel. Returns an array of message objects on success.</p>
 </div>
 
-<div>
-If operating on a guild channel, this endpoint requires the current user to have the VIEW_CHANNEL permission. If the channel is a voice channel, they must also have the CONNECT permission.
+<div><p>
+If operating on a guild channel, this endpoint requires the current user to have the VIEW_CHANNEL permission. If the channel is a voice channel, they must also have the CONNECT permission.</p>
 
 </div>
 <div>
+	<p>
 If the current user is missing the READ_MESSAGE_HISTORY permission in the channel, then no messages will be returned.
-
+</p>
 </div>
 <div>
+	<p>
 The before, after, and around parameters are mutually exclusive, only one may be passed at a time.
-Query String Params
-Field	Type	Description	Default
-around?	snowflake	Get messages around this message ID	absent
-before?	snowflake	Get messages before this message ID	absent
-after?	snowflake	Get messages after this message ID	absent
-limit?	integer	Max number of messages to return (1-100)	50
+</p>
+<p><b>Query String Params</b></p>
+<table>
+<tr><th>Field</th>	<th>Type</th>	<th>Description<th>	<th>Default</th></tr>
+<tr><td>around?</td>	<td>snowflake</td>	<td>Get messages around this message ID</td>	<td>absent</td></tr>
+<tr><td>before?</td>	<td>snowflake</td>	<td>Get messages before this message ID</td>	<td>absent</td></tr>
+<tr><td>after?</td>	<td>snowflake</td>	<td>Get messages after this message ID</td>	<td>absent</td</tr>
+<tr><td>limit?</td>	<td>integer</td>	<td>Max number of messages to return (1-100)</td>	<td>50</td></tr>
+</table>
 </div>
 <div>
 Get Channel Message
 GET/channels/{channel.id}/messages/{message.id}
-Retrieves a specific message in the channel. Returns a message object on success.
+<p>
+Retrieves a specific message in the channel. Returns a message object on success.</p>
 </div>
-<div>
+<div><p>
 If operating on a guild channel, this endpoint requires the current user to have the VIEW_CHANNEL and READ_MESSAGE_HISTORY permissions. If the channel is a voice channel, they must also have the CONNECT permission.
-</div>
+</p></div>
 
 <div>
 Create Message
 POST/channels/{channel.id}/messages
+<p>
 Discord may strip certain characters from message content, like invalid unicode characters or characters which cause unexpected message formatting. If you are passing user-generated strings into message content, consider sanitizing the data to prevent unexpected behavior and using allowed_mentions to prevent unexpected mentions.
-Post a message to a guild text or DM channel. Returns a message object. Fires a Message Create Gateway event. See message formatting for more information on how to properly format messages.
+Post a message to a guild text or DM channel. Returns a message object. Fires a Message Create Gateway event. See message formatting for more information on how to properly format messages.</p>
 </div>
 <div>
+	<p>
 To create a message as a reply or forward of another message, apps can include a message_reference. Refer to the documentation for required fields.
+</p>
 </div>
-<div>
+<div><p>
 Files must be attached using a multipart/form-data body as described in Uploading Files.
-
+</p>
 </div>
 
 <div>
 Get Reactions
 GET/channels/{channel.id}/messages/{message.id}/reactions/{emoji}
+<p>
 Get a list of users that reacted with this emoji. Returns an array of user objects on success. The emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id.
-
+</p>
 </div>
 <div><p><table>
 <tr><th>Query</th> <th>String</th> <th>Params</th></tr>
@@ -1090,44 +1101,51 @@ The poll object has a lot of levels and nested structures. It was also designed 
 </div>
 
 <div>
-Poll Object Structure
-Field	Type	Description
-question	Poll Media Object	The question of the poll. Only text is supported.
-answers	List of Poll Answer Objects	Each of the answers available in the poll.
-expiry	?IS08601 timestamp	The time when the poll ends.
-allow_multiselect	boolean	Whether a user can select multiple answers
-layout_type	integer	The layout type of the poll
-results?	Poll Results Object	The results of the poll
-expiry is marked as nullable to support non-expiring polls in the future, but all polls have an expiry currently.
+<p><b>Poll Object Structure</b></p>
+<table>
+<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
+<tr><td>question</td>	<td>Poll Media Object</td>	<td>The question of the poll. Only text is supported.</td></tr>
+<tr><td>answers</td>	<td>List of Poll Answer Objects</td>	<td>Each of the answers available in the poll.</td></tr>
+<tr><td>expiry</td>	<td>?IS08601 timestamp</td>	<td>The time when the poll ends.</td></tr>
+<tr><td>allow_multiselect</td>	<td>boolean</td>	<td>Whether a user can select multiple answers</td></tr>
+<tr><td>layout_type</td>	<td>integer</td> <td>The layout type of the poll</td></tr>
+<tr><td>results?</td>	<td>Poll Results Object</td>	<td>The results of the poll</td></tr>
+</table>
+<p>expiry is marked as nullable to support non-expiring polls in the future, but all polls have an expiry currently.</p>
 </div>
 
 <div>
-Poll Create Request Object Structure
-Field	Type	Description
-question	Poll Media Object	The question of the poll. Only text is supported.
-answers	List of Poll Answer Objects	Each of the answers available in the poll, up to 10
-duration?	integer	Number of hours the poll should be open for, up to 32 days. Defaults to 24
-allow_multiselect?	boolean	Whether a user can select multiple answers. Defaults to false
-layout_type?	integer	The layout type of the poll. Defaults to... DEFAULT!
+<p><b>Poll Create Request Object Structure</b></p>
+<table>
+<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
+<tr><td>question</td>	<td>Poll Media Object</td>	<td>The question of the poll. Only text is supported.</td></tr>
+<tr><td>answers</td>	<td>List of Poll Answer Objects</td>	<td>Each of the answers available in the poll, up to 10</td></tr>
+<tr><td>duration?</td>	<td>integer</td>	<td>Number of hours the poll should be open for, up to 32 days. Defaults to 24</td></tr>
+<tr><td>allow_multiselect?</td>	<td>boolean</td>	<td>Whether a user can select multiple answers. Defaults to false</td></tr>
+<tr><td>layout_type?</td>	<td>integer</td>	<td>The layout type of the poll. Defaults to... DEFAULT!</td></tr>
+</table>
 </div>
 
 <div>
-Poll Media Object
-The poll media object is a common object that backs both the question and answers. The intention is that it allows us to extensibly add new ways to display things in the future. For now, question only supports text, while answers can have an optional emoji.
+<p><b>Poll Media Object</b></p>
+<p>
+The poll media object is a common object that backs both the question and answers. The intention is that it allows us to extensibly add new ways to display things in the future. For now, question only supports text, while answers can have an optional emoji.</p>
 </div>
 
 <div>
-Poll Media Object Structure
-Field	Type	Description
-text?	string	The text of the field
-emoji?	partial emoji	The emoji of the field
-text should always be non-null for both questions and answers, but please do not depend on that in the future. The maximum length of text is 300 for the question, and 55 for any answer.
+<p><b>Poll Media Object Structure</b></p>
+<table>
+<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
+<tr><td>text?</td>	<td>string</td>	<td>The text of the field</td></tr>
+<tr><td>emoji?</td>	<td>partial emoji</td>	<td>The emoji of the field text should always be non-null for both questions and answers, but please do not depend on that in the future. The maximum length of text is 300 for the question, and 55 for any answer.</td></tr>
+</table>
 </div>
 <p>
 When creating a poll answer with an emoji, one only needs to send either the id (custom emoji) or name (default emoji) as the only field.
 </p>
 <p>
-Poll Answer Object
+<b>Poll Answer Object</b></p>
+<p>
 The answer_id is a number that labels each answer. As an implementation detail, it currently starts at 1 for the first answer and goes up sequentially. We recommend against depending on this sequence.</p>
 
 <p>Currently, there is a maximum of 10 answers per poll.
