@@ -166,7 +166,9 @@ All of the following limits are measured inclusively. Leading and trailing white
 <table>
 <tr><td>Additionally, the combined sum of characters in all title, description, field.name, field.value, footer.text, and author.name fields across all embeds attached to a message</td><td> must not exceed 6000 characters.</td></tr>
 </table></p>
+</div>
 
+<div>
 Field	Type	Description
 id	snowflake	id of the message
 channel_id	snowflake	id of the channel the message was sent in
@@ -204,22 +206,24 @@ role_subscription_data?	role subscription data object	data of the role subscript
 resolved?	resolved data	data for users, members, channels, and roles in the message's auto-populated select menus
 poll? [2]	poll object	A poll!
 call?	message call object	the call associated with the message
+</div>
 
-Message Types
+<div>
+<p><b>Message Types</b></p>
 
-
-Type	Value	Deletable
-DEFAULT	0	true
-RECIPIENT_ADD	1	false
-RECIPIENT_REMOVE	2	false
-CALL	3	false
-CHANNEL_NAME_CHANGE	4	false
-CHANNEL_ICON_CHANGE	5	false
-CHANNEL_PINNED_MESSAGE	6	true
-USER_JOIN	7	true
-GUILD_BOOST	8	true
-GUILD_BOOST_TIER_1	9	true
-GUILD_BOOST_TIER_2	10	true
+<table>
+<tr><th>Type</th>	<th>Value</th>	<th>Deletable</th></tr>
+<tr><td>DEFAULT</td>	<td>0</td>	<td>true</td></tr>
+<tr><td>RECIPIENT_ADD</td>	<td>1</td>	<td>false</td></tr>
+<tr><td>RECIPIENT_REMOVE</td>	<td>2</td>	<td>false</td></tr>
+<tr><td>CALL</td>	<td>3</td>	<td>false</td></tr>
+<tr><td>CHANNEL_NAME_CHANGE</td>	<td>4</td>	<td>false</td></tr>
+<tr><td>CHANNEL_ICON_CHANGE</td>	<td>5</td>	<td>false</td></tr>
+<tr><td>CHANNEL_PINNED_MESSAGE</td>	<td>6</td>	<td>true</td></tr>
+<tr><td>USER_JOIN</td>	<td>7</td>	<td>true</td></tr>
+<tr><td>GUILD_BOOST</td>	<td>8</td>	<td>true</td></tr>
+<tr><td>GUILD_BOOST_TIER_1</td>	<td>9</td>	<td>true</td></tr>
+<tr><td>GUILD_BOOST_TIER_2</td>	<td>10</td>	<td>true</td></tr>
 GUILD_BOOST_TIER_3	11	true
 CHANNEL_FOLLOW_ADD	12	true
 GUILD_DISCOVERY_DISQUALIFIED	14	true
@@ -246,7 +250,10 @@ GUILD_INCIDENT_REPORT_RAID	38	true
 GUILD_INCIDENT_REPORT_FALSE_ALARM	39	true
 PURCHASE_NOTIFICATION	44	true
 POLL_RESULT	46	true
+</table>
+</div>
 
+<div>
 Message Activity Structure
 Field	Type	Description
 type	integer	type of message activity
@@ -257,7 +264,9 @@ JOIN	1
 SPECTATE	2
 LISTEN	3
 JOIN_REQUEST	5
+</div>
 
+<div>
 Example Message
 Copy
 {
@@ -297,10 +306,13 @@ Copy
   "mentions": [],
   "type": 0
 }
+</div>
 
+<div>
 Message Interaction Metadata Object
 Metadata about the interaction, including the source of the interaction and relevant server and user IDs.
-
+</div>
+<div>
 Message Interaction Metadata Structure
 Field	Type	Description
 id	snowflake	ID of the interaction
@@ -310,7 +322,9 @@ authorizing_integration_owners	dictionary with keys of application integration t
 original_response_message_id?	snowflake	ID of the original response message, present only on follow-up messages
 interacted_message_id?	snowflake	ID of the message that contained interactive component, present only on messages created from component interactions
 triggering_interaction_metadata?	Message Interaction Metadata Structure	Metadata for the interaction that was used to open the modal, present only on modal submit interactions
+</div>
 
+<div>
 Message Reference Object
 Message Reference Structure
 Field	Type	Description
@@ -319,10 +333,14 @@ message_id?	snowflake	id of the originating message
 channel_id? **	snowflake	id of the originating message's channel
 guild_id?	snowflake	id of the originating message's guild
 fail_if_not_exists?	boolean	when sending, whether to error if the referenced message doesn't exist instead of sending as a normal (non-reply) message, default true
+</div>
 
+<div>
 Reaction Count Details Object
 The reaction count details object contains a breakdown of normal and super reaction counts for the associated emoji.
+</div>
 
+<div>
 Reaction Count Details Structure
 Field	Type	Description
 burst	integer	Count of super reactions
@@ -392,9 +410,12 @@ value	string	value of the field
 inline?	boolean	whether or not this field should display inline
 Embed Limits
 To facilitate showing rich content, rich embeds do not follow the traditional limits of message content. However, some limits are still in place to prevent excessively large embeds. The following table describes the limits:
+</div>
 
+<div>
 All of the following limits are measured inclusively. Leading and trailing whitespace characters are not included (they are trimmed automatically).
-
+</div>
+<div>
 Field	Limit
 title	256 characters
 description	4096 characters
@@ -404,12 +425,18 @@ field.value	1024 characters
 footer.text	2048 characters
 author.name	256 characters
 Additionally, the combined sum of characters in all title, description, field.name, field.value, footer.text, and author.name fields across all embeds attached to a message must not exceed 6000 characters. Violating any of these constraints will result in a Bad Request response.
+</div>
 
+<div>
 Embeds are deduplicated by URL. If a message contains multiple embeds with the same URL, only the first is shown.
+</div>
 
+<div>
 Embed Fields by Embed Type
 Certain embed types are used to power special UIs. These embeds use fields to include additional data in key-value pairs. Below is a reference of possible embed fields for each of the following embed types.
+</div>
 
+<div>
 Poll Result Embed Fields
 Field	Description
 poll_question_text	question text from the original poll
@@ -420,7 +447,9 @@ victor_answer_text?	text for the winning answer
 victor_answer_emoji_id?	id for an emoji associated with the winning answer
 victor_answer_emoji_name?	name of an emoji associated with the winning answer
 victor_answer_emoji_animated?	if an emoji associated with the winning answer is animated
+</div>
 
+<div>
 Attachment Object
 Attachment Structure
 For the attachments array in Message Create/Edit requests, only the id is required.
@@ -440,7 +469,9 @@ duration_secs?	float	the duration of the audio file (currently for voice message
 waveform?	string	base64 encoded bytearray representing a sampled waveform (currently for voice messages)
 flags?	integer	attachment flags combined as a bitfield
 * Ephemeral attachments will automatically be removed after a set period of time. Ephemeral attachments on messages are guaranteed to be available as long as the message itself exists.
+</div>
 
+<div>
 Attachment Flags
 Flag	Value	Description
 IS_REMIX	1 << 2	this attachment has been edited using the remix feature on mobile
@@ -451,15 +482,23 @@ id	snowflake	id of the channel
 guild_id	snowflake	id of the guild containing the channel
 type	integer	the type of channel
 name	string	the name of the channel
+</div>
 
+<div>
 Get Channel Messages
 GET/channels/{channel.id}/messages
 Retrieves the messages in a channel. Returns an array of message objects on success.
+</div>
 
+<div>
 If operating on a guild channel, this endpoint requires the current user to have the VIEW_CHANNEL permission. If the channel is a voice channel, they must also have the CONNECT permission.
 
+</div>
+<div>
 If the current user is missing the READ_MESSAGE_HISTORY permission in the channel, then no messages will be returned.
 
+</div>
+<div>
 The before, after, and around parameters are mutually exclusive, only one may be passed at a time.
 Query String Params
 Field	Type	Description	Default
@@ -467,26 +506,36 @@ around?	snowflake	Get messages around this message ID	absent
 before?	snowflake	Get messages before this message ID	absent
 after?	snowflake	Get messages after this message ID	absent
 limit?	integer	Max number of messages to return (1-100)	50
+</div>
+<div>
 Get Channel Message
 GET/channels/{channel.id}/messages/{message.id}
 Retrieves a specific message in the channel. Returns a message object on success.
-
+</div>
+<div>
 If operating on a guild channel, this endpoint requires the current user to have the VIEW_CHANNEL and READ_MESSAGE_HISTORY permissions. If the channel is a voice channel, they must also have the CONNECT permission.
+</div>
 
+<div>
 Create Message
 POST/channels/{channel.id}/messages
 Discord may strip certain characters from message content, like invalid unicode characters or characters which cause unexpected message formatting. If you are passing user-generated strings into message content, consider sanitizing the data to prevent unexpected behavior and using allowed_mentions to prevent unexpected mentions.
 Post a message to a guild text or DM channel. Returns a message object. Fires a Message Create Gateway event. See message formatting for more information on how to properly format messages.
-
+</div>
+<div>
 To create a message as a reply or forward of another message, apps can include a message_reference. Refer to the documentation for required fields.
-
+</div>
+<div>
 Files must be attached using a multipart/form-data body as described in Uploading Files.
 
+</div>
+
+<div>
 Get Reactions
 GET/channels/{channel.id}/messages/{message.id}/reactions/{emoji}
 Get a list of users that reacted with this emoji. Returns an array of user objects on success. The emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id.
 
-
+</div>
 <div><p><table>
 <tr><th>Query</th> <th>String</th> <th>Params</th></tr>
 <tr><td>Field</td>	<td>Type</td>	<td>Description</td>	<td>Default</td></tr>
@@ -524,17 +573,26 @@ GET/channels/{channel.id}/messages/{message.id}
 Retrieves a specific message in the channel. Returns a message object on success.
 </code></p></div>
 
-Users in Discord are generally considered the base entity. Users can spawn across the entire platform, be members of guilds, participate in text and voice chat, and much more. Users are separated by a distinction of "bot" vs "normal." Although they are similar, bot users are automated users that are "owned" by another user. Unlike normal users, bot users do not have a limitation on the number of Guilds they can be a part of.
 
+<div>
+Users in Discord are generally considered the base entity. Users can spawn across the entire platform, be members of guilds, participate in text and voice chat, and much more. Users are separated by a distinction of "bot" vs "normal." Although they are similar, bot users are automated users that are "owned" by another user. Unlike normal users, bot users do not have a limitation on the number of Guilds they can be a part of.
+</div>
+<div>
 Names can contain most valid unicode characters. We limit some zero-width and non-rendering characters.
 Usernames must be between 2 and 32 characters long.
 Nicknames must be between 1 and 32 characters long.
 Names are sanitized and trimmed of leading, trailing, and excessive internal whitespace.
+
+</div>
+
+<div>
 The following restrictions are additionally enforced for usernames:
 
 Usernames cannot contain the following substrings: @, #, :, ```, discord
 Usernames cannot be: everyone, here
+</div>
 
+<div>
 User Object
 User Structure
 <table>
@@ -947,21 +1005,28 @@ After checkout, you will have a live subscription that includes a starts_at and 
 </p>
 </div>
 
+
+<div>
 SKU Types
 For subscriptions, SKUs will have a type of either SUBSCRIPTION represented by type: 5 or SUBSCRIPTION_GROUP represented by type:6. For any current implementations, you will want to use the SKU defined by type: 5. A SUBSCRIPTION_GROUP is automatically created for each SUBSCRIPTION SKU and are not used at this time.
-
+</div>
+<div>
 Type	Value	Description
 DURABLE	2	Durable one-time purchase
 CONSUMABLE	3	Consumable one-time purchase
 SUBSCRIPTION	5	Represents a recurring subscription
 SUBSCRIPTION_GROUP	6	System-generated group for each SUBSCRIPTION SKU created
-
+</div>
+<div>
 List SKUs
 GET/applications/{application.id}/skus
 Returns all SKUs for a given application.
-
+</div>
+<div>
 Because of how our SKU and subscription systems work, you will see two SKUs for your subscription offering. For integration and testing entitlements for Subscriptions, you should use the SKU with type: 5.
 Copy
+</div>
+<div>
 [
   {
     "id": "1088510053843210999",
@@ -994,11 +1059,14 @@ Copy
     "show_age_gate": false
   }
 ]
+</div>
 
-
+<div>
 Poll Object
 The poll object has a lot of levels and nested structures. It was also designed to support future extensibility, so some fields may appear to be more complex than necessary.
+</div>
 
+<div>
 Poll Object Structure
 Field	Type	Description
 question	Poll Media Object	The question of the poll. Only text is supported.
@@ -1008,7 +1076,9 @@ allow_multiselect	boolean	Whether a user can select multiple answers
 layout_type	integer	The layout type of the poll
 results?	Poll Results Object	The results of the poll
 expiry is marked as nullable to support non-expiring polls in the future, but all polls have an expiry currently.
+</div>
 
+<div>
 Poll Create Request Object Structure
 Field	Type	Description
 question	Poll Media Object	The question of the poll. Only text is supported.
@@ -1016,28 +1086,36 @@ answers	List of Poll Answer Objects	Each of the answers available in the poll, u
 duration?	integer	Number of hours the poll should be open for, up to 32 days. Defaults to 24
 allow_multiselect?	boolean	Whether a user can select multiple answers. Defaults to false
 layout_type?	integer	The layout type of the poll. Defaults to... DEFAULT!
+</div>
 
+<div>
 Poll Media Object
 The poll media object is a common object that backs both the question and answers. The intention is that it allows us to extensibly add new ways to display things in the future. For now, question only supports text, while answers can have an optional emoji.
+</div>
 
+<div>
 Poll Media Object Structure
 Field	Type	Description
 text?	string	The text of the field
 emoji?	partial emoji	The emoji of the field
 text should always be non-null for both questions and answers, but please do not depend on that in the future. The maximum length of text is 300 for the question, and 55 for any answer.
-
+</div>
+<p>
 When creating a poll answer with an emoji, one only needs to send either the id (custom emoji) or name (default emoji) as the only field.
-
+</p>
+<p>
 Poll Answer Object
-The answer_id is a number that labels each answer. As an implementation detail, it currently starts at 1 for the first answer and goes up sequentially. We recommend against depending on this sequence.
+The answer_id is a number that labels each answer. As an implementation detail, it currently starts at 1 for the first answer and goes up sequentially. We recommend against depending on this sequence.</p>
 
-Currently, there is a maximum of 10 answers per poll.
-
+<p>Currently, there is a maximum of 10 answers per poll.
+</p>
+</div>
+<div>
 Poll Answer Object Structure
 Field	Type	Description
 answer_id*	integer	The ID of the answer
 poll_media	Poll Media Object	The data of the answer
-
+</div>
 <div>
 {
   "id": "1278078770116427839", 
