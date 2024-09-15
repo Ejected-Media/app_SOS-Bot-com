@@ -189,19 +189,20 @@ Retrieves a specific message in the channel. Returns a message object on success
 </code></p></div>
 
 <div><p><code>
-Connection Structure
-Field	Type	Description
-id	string	id of the connection account
-name	string	the username of the connection account
-type	string	the service of this connection
-revoked?	boolean	whether the connection is revoked
-integrations?	array	an array of partial server integrations
-verified	boolean	whether the connection is verified
-friend_sync	boolean	whether friend sync is enabled for this connection
-show_activity	boolean	whether activities related to this connection will be shown in presence updates
-two_way_link	boolean	whether this connection has a corresponding third party OAuth2 token
-visibility	integer	visibility of this connection
-
+<p><b>Connection Structure</b></p>
+<table>
+<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
+<tr><td>id</td>	<td>string</td>	<td>id of the connection account</td></tr>
+<tr><td>name</td>	<td>string</td>	<td>the username of the connection account</td></tr>
+<tr><td>type</td>	<td>string</td>	<td>the service of this connection</td></tr>
+<tr><td>revoked?</td>	<td>boolean</td>	<td>whether the connection is revoked</td></tr>
+<tr><td>integrations?</td>	<td>array</td>	<td>an array of partial server integrations</td></tr>
+<tr><td>verified</td>	<td>boolean</td>	<td>whether the connection is verified</td></tr>
+<tr><td>friend_sync</td>	<td>boolean</td>	<td>whether friend sync is enabled for this connection<td></tr>
+<tr><td>show_activity</td>	<td>boolean</td>	<td>whether activities related to this connection will be shown in presence updates</td></tr>
+<tr><td>two_way_link</td>	<td>boolean</td>	<td>whether this connection has a corresponding third party OAuth2 token
+visibility	integer	visibility of this connection</td></tr>
+</table>
 </code></p></div>
 
 <div><p>
@@ -356,24 +357,26 @@ Subscription status should not be used to grant perks. Use entitlements as an in
 </div>
 <div>
 <p>
-guild_id	snowflake	ID of the guild
-role	a role object	Role that was created
+	<table>
+<tr><td>guild_id</td>	<td>snowflake</td>	<td>ID of the guild</td></tr>
+<tr><td>role</td>	<td>a role object</td>	<td>Role that was created</td></tr>
+</table>
+<table>
+<tr><td>guild_id</td>	<td>snowflake</td>	<td>ID of the guild</td></tr>
+<tr><td>roles</td>	<td>array of snowflakes</td>	<td>User role ids</td></tr>
+<tr><td>user</td>	<td>a user object</td>	<td>User</td></tr>
+<tr><td>nick?</td>	<td>?string</td>	<td>Nickname of the user in the guild</td></tr>
+<tr><td>avatar</td>	<td>?string</td>	<td>Member's guild avatar hash</td></tr>
+<tr><td>joined_at</td>	<td>?ISO8601 timestamp</td>	<td>When the user joined the guild</td></tr>
+<tr><td>premium_since?</td>	<td>?ISO8601 timestamp</td>	<td>When the user starting boosting the guild</td></tr>
+<tr><td>deaf?</td>	<td>boolean</td>	<td>Whether the user is deafened in voice channels</td></tr>
+<tr><td>mute?</td>	<td>boolean</td>	<td>Whether the user is muted in voice channels</td></tr>
+<tr><td>pending?</td>	<td>boolean</td>	<td>Whether the user has not yet passed the guild's Membership Screening requirements</td></tr>
+<tr><td>communication_disabled_until?</td>	<td>?ISO8601 timestamp</td>	<td>When the user's timeout will expire and the user will be able to communicate in the guild again, null or a time in the past if the user is not timed out</td></tr>
+<tr><td>flags?</td>	<td>integer</td>	<td>Guild member flags represented as a bit set, defaults to 0</td></tr>
+<tr><td>avatar_decoration_data?</td>	<td>?avatar decoration data</td>	<td>Data for the member's guild avatar decoration</td></tr>
 
-guild_id	snowflake	ID of the guild
-roles	array of snowflakes	User role ids
-user	a user object	User
-nick?	?string	Nickname of the user in the guild
-avatar	?string	Member's guild avatar hash
-joined_at	?ISO8601 timestamp	When the user joined the guild
-premium_since?	?ISO8601 timestamp	When the user starting boosting the guild
-deaf?	boolean	Whether the user is deafened in voice channels
-mute?	boolean	Whether the user is muted in voice channels
-pending?	boolean	Whether the user has not yet passed the guild's Membership Screening requirements
-communication_disabled_until?	?ISO8601 timestamp	When the user's timeout will expire and the user will be able to communicate in the guild again, null or a time in the past if the user is not timed out
-flags?	integer	Guild member flags represented as a bit set, defaults to 0
-avatar_decoration_data?	?avatar decoration data	Data for the member's guild avatar decoration
-
-Hello	Defines the heartbeat interval
+<tr><td>Hello</td><td>.</td>	<td>Defines the heartbeat interval</td></tr>
 Ready	Contains the initial state information
 Resumed	Response to Resume
 Reconnect	Server is going away, client should reconnect to gateway and resume
@@ -438,14 +441,16 @@ Stage Instance Delete	Stage instance was deleted or closed
 Subscription Create	Premium App Subscription was created
 Subscription Update	Premium App Subscription was updated
 Subscription Delete	Premium App Subscription was deleted
-Typing Start	User started typing in a channel
-User Update	Properties about the user changed
-Voice Channel Effect Send	Someone sent an effect in a voice channel the current user is connected to
-Voice State Update	Someone joined, left, or moved a voice channel
-Voice Server Update	Guild's voice server was updated
-Webhooks Update	Guild channel webhook was created, update, or deleted
-Message Poll Vote Add	User voted on a poll
-Message Poll Vote Remove	User removed a vote on a poll
+<tr><td>Typing</td> <td>Start</td>	<td>User started typing in a channel</td></tr>
+<tr><td>User</td> <td>Update</td>	<td>Properties about the user changed</td></tr>
+<tr><td>Voice Channel Effect</td> <td>Send</td>	<td>Someone sent an effect in a voice channel the current user is connected to</td></tr>
+<tr><td>Voice State</td> <td>Update</td>	<td>Someone joined, left, or moved a voice channel</td></tr>
+<tr><td>Voice Server</td> <td>Update</td>	<td>Guild's voice server was updated</td></tr>
+<tr><td>Webhooks</td> <td>Update</td>	<td>Guild channel webhook was created, update, or deleted</td></tr>
+<tr><td>Message Poll Vote</td><td> Add</td>	<td>User voted on a poll</td></tr>
+<tr><td>Message Poll Vote</td> <td>Remove</td>	<td>User removed a vote on a poll</td></tr>
+
+</table>
 </p>
 <p>
 The HTTP API is a REST API that lets you interact and modify core Discord resources like channels, servers, users, and messages. The collection includes all of the public endpoints, organized by resource.
