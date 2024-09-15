@@ -353,11 +353,17 @@ The reaction count details object contains a breakdown of normal and super react
 
 <div>
 Reaction Count Details Structure
+
+<table>
 Field	Type	Description
 burst	integer	Count of super reactions
 normal	integer	Count of normal reactions
+
+</table>
 Embed Object
 Embed Structure
+
+<table>
 Field	Type	Description
 title?	string	title of embed
 type?	string	type of embed (always "rich" for webhook embeds)
@@ -372,7 +378,10 @@ video?	embed video object	video information
 provider?	embed provider object	provider information
 author?	embed author object	author information
 fields?	array of embed field objects	fields information, max of 25
+
+</table>
 Embed Types
+<table>
 Type	Description
 rich	generic embed rendered from embed attributes
 image	image embed
@@ -419,6 +428,8 @@ Field	Type	Description
 name	string	name of the field
 value	string	value of the field
 inline?	boolean	whether or not this field should display inline
+
+</table>
 Embed Limits
 To facilitate showing rich content, rich embeds do not follow the traditional limits of message content. However, some limits are still in place to prevent excessively large embeds. The following table describes the limits:
 </div>
@@ -427,6 +438,7 @@ To facilitate showing rich content, rich embeds do not follow the traditional li
 All of the following limits are measured inclusively. Leading and trailing whitespace characters are not included (they are trimmed automatically).
 </div>
 <div>
+	<table>
 Field	Limit
 title	256 characters
 description	4096 characters
@@ -435,51 +447,60 @@ field.name	256 characters
 field.value	1024 characters
 footer.text	2048 characters
 author.name	256 characters
-Additionally, the combined sum of characters in all title, description, field.name, field.value, footer.text, and author.name fields across all embeds attached to a message must not exceed 6000 characters. Violating any of these constraints will result in a Bad Request response.
+</table>
+<p>
+Additionally, the combined sum of characters in all title, description, field.name, field.value, footer.text, and author.name fields across all embeds attached to a message must not exceed 6000 characters. Violating any of these constraints will result in a Bad Request response.</p>
+</div>
+
+<div><p>
+Embeds are deduplicated by URL. If a message contains multiple embeds with the same URL, only the first is shown.</p>
+</div>
+
+<div><p>
+<b>Embed Fields by Embed Type</b></p>
+<p>Certain embed types are used to power special UIs. These embeds use fields to include additional data in key-value pairs. Below is a reference of possible embed fields for each of the following embed types.</p>
 </div>
 
 <div>
-Embeds are deduplicated by URL. If a message contains multiple embeds with the same URL, only the first is shown.
+<p><b>Poll Result Embed Fields</b></p>
+
+<table>
+<tr>Field	Description</tr>
+<tr>poll_question_text	question text from the original poll</tr>
+<tr>victor_answer_votes	number of votes for the answer(s) with the most votes</tr>
+<tr>total_votes	total number of votes in the poll</tr>
+<tr>victor_answer_id?	id for the winning answer</tr>
+<tr>victor_answer_text?	text for the winning answer</tr>
+<tr>victor_answer_emoji_id?	id for an emoji associated with the winning answer</tr>
+<tr>victor_answer_emoji_name?	name of an emoji associated with the winning answer</tr>
+<tr>victor_answer_emoji_animated?	if an emoji associated with the winning answer is animated</tr>
+</table>
 </div>
 
-<div>
-Embed Fields by Embed Type
-Certain embed types are used to power special UIs. These embeds use fields to include additional data in key-value pairs. Below is a reference of possible embed fields for each of the following embed types.
-</div>
-
-<div>
-Poll Result Embed Fields
-Field	Description
-poll_question_text	question text from the original poll
-victor_answer_votes	number of votes for the answer(s) with the most votes
-total_votes	total number of votes in the poll
-victor_answer_id?	id for the winning answer
-victor_answer_text?	text for the winning answer
-victor_answer_emoji_id?	id for an emoji associated with the winning answer
-victor_answer_emoji_name?	name of an emoji associated with the winning answer
-victor_answer_emoji_animated?	if an emoji associated with the winning answer is animated
-</div>
-
-<div>
-Attachment Object
-Attachment Structure
-For the attachments array in Message Create/Edit requests, only the id is required.
-Field	Type	Description
-id	snowflake	attachment id
-filename	string	name of file attached
-title?	string	the title of the file
-description?	string	description for the file (max 1024 characters)
-content_type?	string	the attachment's media type
-size	integer	size of file in bytes
-url	string	source url of file
-proxy_url	string	a proxied url of file
-height?	?integer	height of file (if image)
-width?	?integer	width of file (if image)
-ephemeral? *	boolean	whether this attachment is ephemeral
-duration_secs?	float	the duration of the audio file (currently for voice messages)
-waveform?	string	base64 encoded bytearray representing a sampled waveform (currently for voice messages)
-flags?	integer	attachment flags combined as a bitfield
+<div><p>
+<b>Attachment Object</b></p>
+<p>Attachment Structure</p>
+<p>For the attachments array in Message Create/Edit requests, only the id is required.</p>
+<table>
+<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
+<tr><td>id</td>	<td>snowflake</td>	<td>attachment id</td></tr>
+<tr><td>filename</td>	<td>string</td>	<td>name of file attached</td></tr>
+<tr><td>title?</td>	<td>string</td>	<td>the title of the file</td></tr>
+<tr><td>description?</td>	<td>string</td>	<td>description for the file (max 1024 characters)</td></tr>
+<tr><td>content_type?</td>	<td>string</td> <td>the attachment's media type</td></tr>
+<tr><td>size</td>	<td>integer</td>	<td>size of file in bytes</td></tr>
+<tr><td>url</td>	<td>string</td>	<td>source url of file</td></tr>
+<tr><td>proxy_url</td>	<td>string</td>	<td>a proxied url of file</td></tr>
+<tr><td>height?</td>	<td>?integer</td>	<td>height of file (if image)</td></tr>
+<tr><td>width?</td>	<td>?integer</td>	<td>width of file (if image)</td></tr>
+<tr><td>ephemeral? *</td>	<td>boolean</td>	<td>whether this attachment is ephemeral</td></tr>
+<tr><td>duration_secs?</td>	<td>float</td>	<td>the duration of the audio file (currently for voice messages)</td></tr>
+<tr><td>waveform?</td>	<td>string</td>	<td>base64 encoded bytearray representing a sampled waveform (currently for voice messages)</td></tr>
+<tr><td>flags?</td>	<td>integer</td>	<td>attachment flags combined as a bitfield</td></tr>
+</table>
+<p>
 * Ephemeral attachments will automatically be removed after a set period of time. Ephemeral attachments on messages are guaranteed to be available as long as the message itself exists.
+</p>
 </div>
 
 <div>
@@ -880,70 +901,70 @@ Subscription status should not be used to grant perks. Use entitlements as an in
 <tr><td>avatar_decoration_data?</td>	<td>?avatar decoration data</td>	<td>Data for the member's guild avatar decoration</td></tr>
 
 <tr><td>Hello</td><td>.</td>	<td>Defines the heartbeat interval</td></tr>
-Ready	Contains the initial state information
-Resumed	Response to Resume
-Reconnect	Server is going away, client should reconnect to gateway and resume
-Invalid Session	Failure response to Identify or Resume or invalid active session
-Application Command Permissions Update	Application command permission was updated
-Auto Moderation Rule Create	Auto Moderation rule was created
-Auto Moderation Rule Update	Auto Moderation rule was updated
-Auto Moderation Rule Delete	Auto Moderation rule was deleted
-Auto Moderation Action Execution	Auto Moderation rule was triggered and an action was executed (e.g. a message was blocked)
-Channel Create	New guild channel created
-Channel Update	Channel was updated
-Channel Delete	Channel was deleted
-Channel Pins Update	Message was pinned or unpinned
-Thread Create	Thread created, also sent when being added to a private thread
-Thread Update	Thread was updated
-Thread Delete	Thread was deleted
-Thread List Sync	Sent when gaining access to a channel, contains all active threads in that channel
-Thread Member Update	Thread member for the current user was updated
-Thread Members Update	Some user(s) were added to or removed from a thread
-Entitlement Create	Entitlement was created
-Entitlement Update	Entitlement was updated or renewed
-Entitlement Delete	Entitlement was deleted
-Guild Create	Lazy-load for unavailable guild, guild became available, or user joined a new guild
-Guild Update	Guild was updated
-Guild Delete	Guild became unavailable, or user left/was removed from a guild
-Guild Audit Log Entry Create	A guild audit log entry was created
-Guild Ban Add	User was banned from a guild
-Guild Ban Remove	User was unbanned from a guild
-Guild Emojis Update	Guild emojis were updated
-Guild Stickers Update	Guild stickers were updated
-Guild Integrations Update	Guild integration was updated
-Guild Member Add	New user joined a guild
-Guild Member Remove	User was removed from a guild
-Guild Member Update	Guild member was updated
-Guild Members Chunk	Response to Request Guild Members
-Guild Role Create	Guild role was created
-Guild Role Update	Guild role was updated
-Guild Role Delete	Guild role was deleted
-Guild Scheduled Event Create	Guild scheduled event was created
-Guild Scheduled Event Update	Guild scheduled event was updated
-Guild Scheduled Event Delete	Guild scheduled event was deleted
-Guild Scheduled Event User Add	User subscribed to a guild scheduled event
-Guild Scheduled Event User Remove	User unsubscribed from a guild scheduled event
-Integration Create	Guild integration was created
-Integration Update	Guild integration was updated
-Integration Delete	Guild integration was deleted
-Interaction Create	User used an interaction, such as an Application Command
-Invite Create	Invite to a channel was created
-Invite Delete	Invite to a channel was deleted
-Message Create	Message was created
-Message Update	Message was edited
-Message Delete	Message was deleted
-Message Delete Bulk	Multiple messages were deleted at once
-Message Reaction Add	User reacted to a message
-Message Reaction Remove	User removed a reaction from a message
-Message Reaction Remove All	All reactions were explicitly removed from a message
-Message Reaction Remove Emoji	All reactions for a given emoji were explicitly removed from a message
-Presence Update	User was updated
-Stage Instance Create	Stage instance was created
-Stage Instance Update	Stage instance was updated
-Stage Instance Delete	Stage instance was deleted or closed
-Subscription Create	Premium App Subscription was created
-Subscription Update	Premium App Subscription was updated
-Subscription Delete	Premium App Subscription was deleted
+<tr>Ready	Contains the initial state information</tr>
+<tr>Resumed	Response to Resume</tr>
+<tr>Reconnect	Server is going away, client should reconnect to gateway and resume</tr>
+<tr>Invalid Session	Failure response to Identify or Resume or invalid active session</tr>
+<tr>Application Command Permissions Update	Application command permission was updated</tr>
+<tr>Auto Moderation Rule Create	Auto Moderation rule was created</tr>
+<tr>Auto Moderation Rule Update	Auto Moderation rule was updated</tr>
+<tr>Auto Moderation Rule Delete	Auto Moderation rule was deleted</tr>
+<tr>Auto Moderation Action Execution	Auto Moderation rule was triggered and an action was executed (e.g. a message was blocked)</tr>
+<tr>Channel Create	New guild channel created</tr>
+<tr>Channel Update	Channel was updated</tr>
+<tr>Channel Delete	Channel was deleted</tr>
+<tr>Channel Pins Update	Message was pinned or unpinned</tr>
+<tr>Thread Create	Thread created, also sent when being added to a private thread</tr>
+<tr>Thread Update	Thread was updated</tr>
+<tr>Thread Delete	Thread was deleted</tr>
+<tr>Thread List Sync	Sent when gaining access to a channel, contains all active threads in that channel</tr>
+<tr>Thread Member Update	Thread member for the current user was updated</tr>
+<tr>Thread Members Update	Some user(s) were added to or removed from a thread</tr>
+<tr>Entitlement Create	Entitlement was created</tr>
+<tr>Entitlement Update	Entitlement was updated or renewed</tr>
+<tr>Entitlement Delete	Entitlement was deleted</tr>
+<tr>Guild Create	Lazy-load for unavailable guild, guild became available, or user joined a new guild</tr>
+<tr>Guild Update	Guild was updated</tr>
+<tr>Guild Delete	Guild became unavailable, or user left/was removed from a guild</tr>
+<tr>Guild Audit Log Entry Create	A guild audit log entry was created</tr>
+<tr>Guild Ban Add	User was banned from a guild</tr>
+<tr>rGuild Ban Remove	User was unbanned from a guild</tr>
+<tr>Guild Emojis Update	Guild emojis were updated</tr>
+<tr>Guild Stickers Update	Guild stickers were updated</tr>
+<tr>Guild Integrations Update	Guild integration was updated</tr>
+<tr>Guild Member Add	New user joined a guild</tr>
+<tr>Guild Member Remove	User was removed from a guild</tr>
+<tr>Guild Member Update	Guild member was updated</tr>
+<tr>Guild Members Chunk	Response to Request Guild Members</tr>
+<tr>Guild Role Create	Guild role was created</tr>
+<tr>Guild Role Update	Guild role was updated</tr>
+<tr>Guild Role Delete	Guild role was deleted</tr>
+<tr>Guild Scheduled Event Create	Guild scheduled event was created</tr>
+<tr>Guild Scheduled Event Update	Guild scheduled event was updated</tr>
+<tr>Guild Scheduled Event Delete	Guild scheduled event was deleted</tr>
+<tr>Guild Scheduled Event User Add	User subscribed to a guild scheduled event</tr>
+<tr>Guild Scheduled Event User Remove	User unsubscribed from a guild scheduled event</tr>
+<tr>Integration Create	Guild integration was created</tr>
+<tr>Integration Update	Guild integration was updated</tr>
+<tr>Integration Delete	Guild integration was deleted</tr>
+<tr>Interaction Create	User used an interaction, such as an Application Command</tr>
+<tr>Invite Create	Invite to a channel was created</tr>
+<tr>Invite Delete	Invite to a channel was deleted</tr>
+<tr>Message Create	Message was created</tr>
+<tr>Message Update	Message was edited</tr>
+<tr>Message Delete	Message was deleted</tr>
+<tr>Message Delete Bulk	Multiple messages were deleted at once</tr>
+<tr>Message Reaction Add	User reacted to a message</tr>
+<tr>Message Reaction Remove	User removed a reaction from a message</tr>
+<tr>Message Reaction Remove All	All reactions were explicitly removed from a message</tr>
+<tr>Message Reaction Remove Emoji	All reactions for a given emoji were explicitly removed from a message</tr>
+<tr>Presence Update	User was updated</tr>
+<tr>Stage Instance Create	Stage instance was created</tr>
+<tr>Stage Instance Update	Stage instance was updated</tr>
+<tr>Stage Instance Delete	Stage instance was deleted or closed</tr>
+<tr>Subscription Create	Premium App Subscription was created</tr>
+<tr>Subscription Update	Premium App Subscription was updated</tr>
+<tr>Subscription Delete	Premium App Subscription was deleted</tr>
 <tr><td>Typing</td> <td>Start</td>	<td>User started typing in a channel</td></tr>
 <tr><td>User</td> <td>Update</td>	<td>Properties about the user changed</td></tr>
 <tr><td>Voice Channel Effect</td> <td>Send</td>	<td>Someone sent an effect in a voice channel the current user is connected to</td></tr>
@@ -1041,8 +1062,8 @@ After checkout, you will have a live subscription that includes a starts_at and 
 
 
 <div><p>
-SKU Types
-For subscriptions, SKUs will have a type of either SUBSCRIPTION represented by type: 5 or SUBSCRIPTION_GROUP represented by type:6. For any current implementations, you will want to use the SKU defined by type: 5. A SUBSCRIPTION_GROUP is automatically created for each SUBSCRIPTION SKU and are not used at this time.</p>
+<b>SKU Types</b></p>
+<p>For subscriptions, SKUs will have a type of either SUBSCRIPTION represented by type: 5 or SUBSCRIPTION_GROUP represented by type:6. For any current implementations, you will want to use the SKU defined by type: 5. A SUBSCRIPTION_GROUP is automatically created for each SUBSCRIPTION SKU and are not used at this time.</p>
 </div>
 <div><p><table>
 <tr><th>Type</th>	<th>Value</th>	<th>Description</th></tr>
@@ -1099,8 +1120,8 @@ Copy
 </div>
 
 <div>
-Poll Object
-The poll object has a lot of levels and nested structures. It was also designed to support future extensibility, so some fields may appear to be more complex than necessary.
+<p><b>Poll Object</b></p><p>
+The poll object has a lot of levels and nested structures. It was also designed to support future extensibility, so some fields may appear to be more complex than necessary.</p>
 </div>
 
 <div>
