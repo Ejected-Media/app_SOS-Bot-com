@@ -75,6 +75,10 @@ discordRoom_list := discordRoom_area{
 }
 </code></p></div>
 
+<br />
+<hr />
+<br />
+
 <p>
 Get Current User
 GET/users/@me
@@ -209,6 +213,10 @@ All of the following limits are measured inclusively. Leading and trailing white
 <tr><td>call?</td>	<td>message call object</td>	<td>the call associated with the message</td></tr>
 </table>
 </div>
+
+<br />
+<hr />
+<br />
 
 <div>
 <p><b>Message Types</b></p>
@@ -354,7 +362,7 @@ Owners Object</b></p>
 </div>
 
 <div>
-Message Reference Object
+<p><b>Message Reference Object</b></p>
 Message Reference Structure
 
 <table>
@@ -372,6 +380,10 @@ Message Reference Structure
 <p>The reaction count details object contains a breakdown of normal and super reaction counts for the associated emoji.</p>
 </div>
 
+<br />
+<hr />
+<br />
+
 <div><p><b>
 Reaction Count Details Structure</b></p>
 
@@ -379,6 +391,10 @@ Reaction Count Details Structure</b></p>
 <tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
 <tr><td>burst</td>	<td>integer</td>	<td>Count of super reactions</td></tr>
 <tr><td>normal</td>	<td>integer</td>	<td>Count of normal reactions</td></tr>
+
+<br />
+<hr />
+<br />
 
 </table>
 Embed Object
@@ -520,6 +536,10 @@ Embeds are deduplicated by URL. If a message contains multiple embeds with the s
 </table>
 </div>
 
+<br />
+<hr />
+<br />
+
 <div><p>
 <b>Attachment Object</b></p>
 <p>Attachment Structure</p>
@@ -563,6 +583,10 @@ Embeds are deduplicated by URL. If a message contains multiple embeds with the s
 <tr><td>name</td>	<td>string</td>	<td>the name of the channel</td></tr>
 </table>
 </div>
+
+<br />
+<hr />
+<br />
 
 <div>
 <p><b>Get Channel Messages</b></p>
@@ -620,6 +644,10 @@ Files must be attached using a multipart/form-data body as described in Uploadin
 </p>
 </div>
 
+<br />
+<hr />
+<br />
+
 <div>
 <p><b>Get Reactions</b></p>
 GET/channels/{channel.id}/messages/{message.id}/reactions/{emoji}
@@ -666,6 +694,11 @@ GET/channels/{channel.id}/messages/{message.id}
 Retrieves a specific message in the channel. Returns a message object on success.</p>
 </code></p></div>
 
+<br />
+<hr />
+<br />
+
+<div><p><b>Users</b></p></div>
 
 <div><p>
 Users in Discord are generally considered the base entity. Users can spawn across the entire platform, be members of guilds, participate in text and voice chat, and much more. Users are separated by a distinction of "bot" vs "normal." Although they are similar, bot users are automated users that are "owned" by another user. Unlike normal users, bot users do not have a limitation on the number of Guilds they can be a part of.</p>
@@ -721,6 +754,10 @@ The following restrictions are additionally enforced for usernames:<ul>
 </table>
 </div>
 
+<br />
+<hr />
+<br />
+
 <div><p>
 <b>SKU Object</b></p>
 <p>SKU Structure</p>
@@ -771,6 +808,11 @@ Copy
 <tr><td>visibility</td>	<td>integer</td>	<td>visibility of this connection</td></tr>
 </table>
 </code></p></div>
+
+<br />
+<hr />
+<br />
+
 
 <div><p>
 
@@ -1103,6 +1145,9 @@ After checkout, you will have a live subscription that includes a starts_at and 
 </p>
 </div>
 
+<br />
+<hr />
+<br />
 
 <div><p>
 <b>SKU Types</b></p>
@@ -1161,6 +1206,10 @@ Copy
 ]
 </code></p>
 </div>
+
+<br />
+<hr />
+<br />
 
 <div>
 <p><b>Poll Object</b></p><p>
