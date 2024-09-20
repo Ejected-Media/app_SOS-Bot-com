@@ -82,41 +82,36 @@ discordRoom_list := discordRoom_area{
 <section>
 
 <div>
-<p>
-<b>Get Current User</b><br />
-GET/users/@me
-</p>
-</div>
+  <p><b>Get Current User</b><br />
+  <span>GET/users/@me</span>
+</p></div>
 
 <div>
-<p>
-<b>Get User</b><br />
-GET/users/{user.id}
-</p>
-</div>
+  <p><b>Get User</b><br />
+  <span>GET/users/{user.id}</span>
+</p></div>
 
 <div>
-<p>
-<b>Get Current User Guilds</b><br />
-GET/users/@me/guilds
+  <p><b>Get Current User Guilds</b><br />
+  <span>GET/users/@me/guilds</span>
 </p></div>
 
 <div><p>
-<b>Get Current User Guild Member</b><br />
-GET/users/@me/guilds/{guild.id}/member
-Returns a guild member object for the current user. Requires the guilds.members.read OAuth2 scope.
+  <b>Get Current User Guild Member</b><br />
+  <span>GET/users/@me/guilds/{guild.id}/member</span>
+<p>Returns a guild member object for the current user. Requires the guilds.members.read OAuth2 scope.</p>
 </p></div>
 
 <div><p>
-<b>Create DM</b><br />
-POST/users/@me/channels
-Create a new DM channel with a user. Returns a DM channel object (if one already exists, it will be returned instead).
+  <b>Create DM</b><br />
+  <span>POST/users/@me/channels</span>
+<p>Create a new DM channel with a user. Returns a DM channel object (if one already exists, it will be returned instead).</p>
 </p></div>
 
 <div><p>
-<b>Create Group DM</b><br />
-POST/users/@me/channels
-Create a new group DM channel with multiple users. Returns a DM channel object. This endpoint was intended to be used with the now-deprecated GameBridge SDK. Fires a Channel Create Gateway event.
+  <b>Create Group DM</b><br />
+  <span>POST/users/@me/channels</span>
+<p>Create a new group DM channel with multiple users. Returns a DM channel object. This endpoint was intended to be used with the now-deprecated GameBridge SDK. Fires a Channel Create Gateway event.</span>
 </p></div>
 
 </section>
@@ -165,6 +160,10 @@ Example Message
   "type": 0
 }
 </code></p></div>
+
+<br />
+<hr />
+<br />
 
 <div>
 <p>
@@ -281,6 +280,10 @@ REPORT_FALSE_ALARM</td>	<td>39</td>	<td>true</td></tr>
 <tr><td>POLL_RESULT</td>	<td>46</td>	<td>true</td></tr>
 </table>
 </div>
+
+<br />
+<hr />
+<br />
 
 <div>
 <p><b>Message Activity Structure</b></p>
@@ -800,16 +803,44 @@ The following restrictions are additionally enforced for usernames:<ul>
 <br />
 
 <div><p>
-<b>SKU Object</b></p>
-<p>SKU Structure</p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>id</td>	<td>snowflake</td>	<td>ID of SKU</td></tr>
-<tr><td>type</td>	<td>integer</td>	<td>Type of SKU</td></tr>
-<tr><td>application_id</td>	<td>snowflake</td>	<td>ID of the parent application</td></tr>
-<tr><td>name</td>	<td>string</td>	<td>Customer-facing name of your premium offering</td></tr>
-<tr><td>slug</td>	<td>string</td>	<td>System-generated URL slug based on the SKU's name</td></tr>
-<tr><td>flags</td>	<td>integer</td>	<td>SKU flags combined as a bitfield</td></tr>
+  <b>SKU Object</b></p>
+  <p>SKU Structure</p>
+  <table>
+    <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>id</td>
+   <td>snowflake</td>
+  <td>ID of SKU</td>
+  </tr>
+  <tr>
+    <td>type</td>
+  <td>integer</td>
+  <td>Type of SKU</td>
+  </tr>
+  <tr>
+  <td>application_id</td>
+  <td>snowflake</td>
+  <td>ID of the parent application</td>
+  </tr>
+  <tr>
+    <td>name</td>
+   <td>string</td>
+    <td>Customer-facing name of your premium offering</td>
+  </tr>
+  <tr>
+  <td>slug</td>
+  <td>string</td>
+  <td>System-generated URL slug based on the SKU's name</td>
+  </tr>
+  <tr>
+  <td>flags</td>
+  <td>integer</td>
+  <td>SKU flags combined as a bitfield</td>
+</tr>
 </table>
 </div>
 
@@ -1025,6 +1056,11 @@ Subscription status should not be used to grant perks. Use entitlements as an in
 </code>
 </p>
 </div>
+
+<br />
+<hr />
+<br />
+
 <div>
 <p>
 	<table>
@@ -1119,9 +1155,14 @@ Subscription status should not be used to grant perks. Use entitlements as an in
 <tr><td>Webhooks</td> <td>Update</td>	<td>Guild channel webhook was created, update, or deleted</td></tr>
 <tr><td>Message Poll Vote</td><td> Add</td>	<td>User voted on a poll</td></tr>
 <tr><td>Message Poll Vote</td> <td>Remove</td>	<td>User removed a vote on a poll</td></tr>
-
 </table>
 </p>
+
+<br />
+<hr />
+<br />
+
+
 <p>
 The HTTP API is a REST API that lets you interact and modify core Discord resources like channels, servers, users, and messages. The collection includes all of the public endpoints, organized by resource.
 </p>
@@ -1135,6 +1176,11 @@ The Gateway API is a WebSocket API that lets you send and receive realtime event
 import "github.com/bwmarrin/discordgo"
 
 </div>
+
+<br />
+<hr />
+<br />
+
 <div>
 <p>
 The easiest way for an application to share media to a channel or DM is to use the openShareMomentDialog command. This command accepts a Discord CDN mediaUrl (eg https://cdn.discordapp.com/attachments/...) and opens a dialog on the discord client that allows the user to select channels, DMs, and GDMs to share to.
