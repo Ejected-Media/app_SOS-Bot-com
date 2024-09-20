@@ -1,5 +1,25 @@
 
 
+<div>
+	<p><b>Discord Chat Bot, Dev Notes</b></p>
+	<p><ul>
+		<li>_ get User</li>
+		<li>_ Create DM</li>
+		<li>_ Messages</li>
+		<li>_ Embeds</li>
+		<li>_ Attachments</li>
+		<li>_ Channels</li>
+		<li>_ Reactions</li>
+		<li>_ Users</li>
+		<li>_ SKU Objects</li>
+		<li>_ Services</li>
+		<li>_ Share Media</li>
+		<li>_ Polls</li>
+	</ul></p>
+	
+	
+	</div>
+
 <div><p><code>
 package main
  
@@ -589,14 +609,36 @@ Embeds are deduplicated by URL. If a message contains multiple embeds with the s
 <tr><td>IS_REMIX</td>	<td>1 << 2</td>	<td>this attachment has been edited using the remix feature on mobile</td></tr>
 </table>
 </div>
+
+
 <p><b>Channel Mention Object</b></p>
-<p>Channel Mention Structure</p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>id</td>	<td>snowflake</td>	<td>id of the channel</td></tr>
-<tr><td>guild_id</td>	<td>snowflake</td>	<td>id of the guild containing the channel</td></tr>
-<tr><td>type</td>	<td>integer</td>	<td>the type of channel</td></tr>
-<tr><td>name</td>	<td>string</td>	<td>the name of the channel</td></tr>
+  <p>Channel Mention Structure</p>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+  </tr>
+  <tr>
+      <td>id</td>
+      <td>snowflake</td>
+      <td>id of the channel</td>
+  </tr>
+  <tr>
+    <td>guild_id</td>
+    <td>snowflake</td>
+    <td>id of the guild containing the channel</td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>integer</td>
+    <td>the type of channel</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>string</td>
+    <td>the name of the channel</td>
+</tr>
 </table>
 </div>
 
@@ -605,39 +647,63 @@ Embeds are deduplicated by URL. If a message contains multiple embeds with the s
 <br />
 
 <div>
-<p><b>Get Channel Messages</b></p>
-GET/channels/{channel.id}/messages
-<p>
-Retrieves the messages in a channel. Returns an array of message objects on success.</p>
+  <p><b>Get Channel Messages</b></p>
+  <span>GET/channels/{channel.id}/messages</span>
+  <p>Retrieves the messages in a channel. Returns an array of message objects on success.</p>
 </div>
 
 <div><p>
 If operating on a guild channel, this endpoint requires the current user to have the VIEW_CHANNEL permission. If the channel is a voice channel, they must also have the CONNECT permission.</p>
+</div>
 
-</div>
 <div>
-	<p>
-If the current user is missing the READ_MESSAGE_HISTORY permission in the channel, then no messages will be returned.
-</p>
+	<p>If the current user is missing the READ_MESSAGE_HISTORY permission in the channel, then no messages will be returned.</p>
 </div>
+
 <div>
-	<p>
-The before, after, and around parameters are mutually exclusive, only one may be passed at a time.
-</p>
-<p><b>Query String Params</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description<th>	<th>Default</th></tr>
-<tr><td>around?</td>	<td>snowflake</td>	<td>Get messages around this message ID</td>	<td>absent</td></tr>
-<tr><td>before?</td>	<td>snowflake</td>	<td>Get messages before this message ID</td>	<td>absent</td></tr>
-<tr><td>after?</td>	<td>snowflake</td>	<td>Get messages after this message ID</td>	<td>absent</td</tr>
-<tr><td>limit?</td>	<td>integer</td>	<td>Max number of messages to return (1-100)</td>	<td>50</td></tr>
-</table>
-</div>
+	<p>The before, after, and around parameters are mutually exclusive, only one may be passed at a time.</p>
+  <p><b>Query String Params</b></p>
+  <table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description<th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td>around?</td>
+    <td>snowflake</td>
+    <td>Get messages around this message ID</td>
+    <td>absent</td>
+  </tr>
+  <tr>
+    <td>before?</td>
+    <td>snowflake</td>
+    <td>Get messages before this message ID</td>
+    <td>absent</td>
+  </tr>
+  <tr>
+    <td>after?</td>
+    <td>snowflake</td>
+    <td>Get messages after this message ID</td>
+    <td>absent</td>
+  </tr>
+  <tr>
+    <td>limit?</td>
+    <td>integer</td>
+    <td>Max number of messages to return (1-100)</td>
+    <td>50</td>
+  </tr>
+</table></div>
+
+<br />
+<hr />
+<br />
+
 <div>
-<p><b>Get Channel Message</b></p>
-GET/channels/{channel.id}/messages/{message.id}
-<p>
-Retrieves a specific message in the channel. Returns a message object on success.</p>
+  <p><b>Get Channel Message</b></p>
+  <span>GET/channels/{channel.id}/messages/{message.id}</span>
+  <p>Retrieves a specific message in the channel. Returns a message object on success.</p>
 </div>
 <div><p>
 If operating on a guild channel, this endpoint requires the current user to have the VIEW_CHANNEL and READ_MESSAGE_HISTORY permissions. If the channel is a voice channel, they must also have the CONNECT permission.
@@ -651,9 +717,7 @@ Discord may strip certain characters from message content, like invalid unicode 
 Post a message to a guild text or DM channel. Returns a message object. Fires a Message Create Gateway event. See message formatting for more information on how to properly format messages.</p>
 </div>
 <div>
-	<p>
-To create a message as a reply or forward of another message, apps can include a message_reference. Refer to the documentation for required fields.
-</p>
+	<p>To create a message as a reply or forward of another message, apps can include a message_reference. Refer to the documentation for required fields.</p>
 </div>
 <div><p>
 Files must be attached using a multipart/form-data body as described in Uploading Files.
@@ -716,10 +780,9 @@ Get a list of users that reacted with this emoji. Returns an array of user objec
 
 
 <p>
-<p><b>Get Channel Messages</b></p>
-GET/channels/{channel.id}/messages
-<p>
-Retrieves the messages in a channel. Returns an array of message objects on success.</p>
+  <p><b>Get Channel Messages</b></p>
+  <span>GET/channels/{channel.id}/messages</span>
+  <p>Retrieves the messages in a channel. Returns an array of message objects on success.</p>
 </p>
 
 <p>
@@ -732,10 +795,9 @@ If the current user is missing the READ_MESSAGE_HISTORY permission in the channe
 </div>
 
 <div><p><code>
-<p><b>Get Channel Message</b></p>
-GET/channels/{channel.id}/messages/{message.id}
-<p>
-Retrieves a specific message in the channel. Returns a message object on success.</p>
+  <p><b>Get Channel Message</b></p>
+  <span>GET/channels/{channel.id}/messages/{message.id}</span>
+  <p>Retrieves a specific message in the channel. Returns a message object on success.</p>
 </code></p></div>
 
 <br />
@@ -1038,6 +1100,9 @@ var lksjdflkj = `
   </tr>
 </table></code></p></div>
 
+<br />
+<hr />
+<br />
 
 <div><p>
 Subscription status should not be used to grant perks. Use entitlements as an indication of whether a user should have access to a specific SKU. See our guide on Implementing App Subscriptions for more information.
