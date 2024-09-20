@@ -79,38 +79,51 @@ discordRoom_list := discordRoom_area{
 <hr />
 <br />
 
+<section>
+
+<div>
 <p>
-Get Current User
+<b>Get Current User</b><br />
 GET/users/@me
 </p>
+</div>
 
+<div>
 <p>
-Get User
+<b>Get User</b><br />
 GET/users/{user.id}
 </p>
+</div>
 
+<div>
 <p>
-Get Current User Guilds
+<b>Get Current User Guilds</b><br />
 GET/users/@me/guilds
 </p></div>
 
 <div><p>
-Get Current User Guild Member
+<b>Get Current User Guild Member</b><br />
 GET/users/@me/guilds/{guild.id}/member
 Returns a guild member object for the current user. Requires the guilds.members.read OAuth2 scope.
 </p></div>
 
 <div><p>
-Create DM
+<b>Create DM</b><br />
 POST/users/@me/channels
 Create a new DM channel with a user. Returns a DM channel object (if one already exists, it will be returned instead).
 </p></div>
 
 <div><p>
-Create Group DM
+<b>Create Group DM</b><br />
 POST/users/@me/channels
 Create a new group DM channel with multiple users. Returns a DM channel object. This endpoint was intended to be used with the now-deprecated GameBridge SDK. Fires a Channel Create Gateway event.
 </p></div>
+
+</section>
+
+<br />
+<hr />
+<br />
 
 <div><p><code>
 Example Message
@@ -655,22 +668,50 @@ GET/channels/{channel.id}/messages/{message.id}/reactions/{emoji}
 Get a list of users that reacted with this emoji. Returns an array of user objects on success. The emoji must be URL Encoded or the request will fail with 10014: Unknown Emoji. To use custom emoji, you must encode it in the format name:id with the emoji name and emoji id.
 </p>
 </div>
+
+
 <div><p><table>
-<tr><th>Query</th> <th>String</th> <th>Params</th></tr>
-<tr><td>Field</td>	<td>Type</td>	<td>Description</td>	<td>Default</td></tr>
-<tr><td>type?</td>	<td>integer</td>	<td>The type of reaction</td>	<td>0</td></tr>
-<tr><td>after?</td>	<td>snowflake</td>	<td>Get users after this user ID</td>	<td>absent</td></tr>
-<tr><td>limit?</td>	<td>integer</td>	<td>Max number of users to return (1-100)</td>	<td>25</td></tr>
+  <tr>
+    <th>Query</th>
+    <th>String</th>
+    <th>Params</th>
+  </tr>
+   <tr>
+    <td>Field</td>
+    <td>Type</td>
+    <td>Description</td>
+    <td>Default</td>
+  </tr>
+    <tr>
+      <td>type?</td>
+      <td>integer</td>
+      <td>The type of reaction</td>
+      <td>0</td>
+  </tr>
+  <tr>
+    <td>after?</td>
+    <td>snowflake</td>
+    <td>Get users after this user ID</td>
+    <td>absent</td>
+</tr>
+  <tr>
+    <td>limit?</td>
+    <td>integer</td>
+    <td>Max number of users to return (1-100)</td>
+    <td>25</td>
+</tr>
 </table></p></div>
 
 
 <div><p>
-<b>Reaction Types</b>
-<table>
-<tr><th>Type</th>	<th>Value</th></tr>
-<tr><td>NORMAL</td>	<td>0</td></tr>
-<tr><td>BURST</td>	<td>1</td></tr>
+  <b>Reaction Types</b>
+  <table>
+    <tr><th>Type</th>	<th>Value</th></tr>
+    <tr><td>NORMAL</td>	<td>0</td></tr>
+    <tr><td>BURST</td>	<td>1</td></tr>
 </table></p></div>
+
+
 <p>
 <p><b>Get Channel Messages</b></p>
 GET/channels/{channel.id}/messages
@@ -746,12 +787,12 @@ The following restrictions are additionally enforced for usernames:<ul>
 </table>
 
 <div>
-<p><b>Visibility Types</b></p>
-<table>
-<tr><th>Value</th>	<th>Name</th>	<th>Description</th>
-<tr><td>0</td>	<td>None</td>	<td>invisible to everyone except the user themselves</td></tr>
-<tr><td>1</td>	<td>Everyone</td></tr>
-</table>
+  <p><b>Visibility Types</b></p>
+  <table>
+    <tr><th>Value</th>	<th>Name</th>	<th>Description</th>
+    <tr><td>0</td>	<td>None</td>	<td>invisible to everyone except the user themselves</td></tr>
+    <tr><td>1</td>	<td>Everyone</td></tr>
+  </table>
 </div>
 
 <br />
@@ -939,11 +980,31 @@ var lksjdflkj = `
 </code></p></div>
 
 <div><p><code><table>
-<tr><td>user_id</td>	<td>snowflake</td>	<td>ID of the user</td></tr>
-<tr><td>channel_id</td>	<td>snowflake</td>	<td>ID of the channel</td></tr>
-<tr><td>message_id</td>	<td>snowflake</td>	<td>ID of the message</td></tr>
-<tr><td>guild_id?</td>	<td>snowflake</td>	<td>ID of the guild</td></tr>
-<tr><td>answer_id</td>	<td>integer</td>	<td>ID of the answer</td></tr>
+  <tr>
+    <td>user_id</td>
+    <td>snowflake</td>
+    <td>ID of the user</td>
+  </tr>
+  <tr>
+    <td>channel_id</td>
+    <td>snowflake</td>
+    <td>ID of the channel</td>
+  </tr>
+  <tr>
+    <td>message_id</td>
+    <td>snowflake</td>
+    <td>ID of the message</td>
+  </tr>
+  <tr>
+    <td>guild_id?</td>
+    <td>snowflake</td>
+    <td>ID of the guild</td>
+  </tr>
+  <tr>
+    <td>answer_id</td>
+    <td>integer</td>
+    <td>ID of the answer</td>
+  </tr>
 </table></code></p></div>
 
 
@@ -1149,24 +1210,47 @@ After checkout, you will have a live subscription that includes a starts_at and 
 <hr />
 <br />
 
-<div><p>
-<b>SKU Types</b></p>
-<p>For subscriptions, SKUs will have a type of either SUBSCRIPTION represented by type: 5 or SUBSCRIPTION_GROUP represented by type:6. For any current implementations, you will want to use the SKU defined by type: 5. A SUBSCRIPTION_GROUP is automatically created for each SUBSCRIPTION SKU and are not used at this time.</p>
+<div>
+  <p><b>SKU Types</b></p>
+  <p>For subscriptions, SKUs will have a type of either SUBSCRIPTION represented by type: 5 or SUBSCRIPTION_GROUP represented by type:6. For any current implementations, you will want to use the SKU defined by type: 5. A SUBSCRIPTION_GROUP is automatically created for each SUBSCRIPTION SKU and are not used at this time.</p>
 </div>
+
 <div><p><table>
-<tr><th>Type</th>	<th>Value</th>	<th>Description</th></tr>
-<tr><td>DURABLE</td>	<td>2</td>	<td>Durable one-time purchase</td></tr>
-<tr><td>CONSUMABLE</td>	<td>3</td>	<td>Consumable one-time purchase</td></tr>
-<tr><td>SUBSCRIPTION</td>	<td>5</td>	<td>Represents a recurring subscription</td></tr>
-<tr><td>SUBSCRIPTION_GROUP</td>	<td>6</td>	<td><System-generated group for each SUBSCRIPTION SKU created</td></tr>
-</table></p>
-</div>
+  <tr>
+    <th>Type</th>
+    <th>Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>DURABLE</td>
+    <td>2</td>
+    <td>Durable one-time purchase</td>
+  </tr>
+  <tr>
+    <td>CONSUMABLE</td>
+    <td>3</td>
+    <td>Consumable one-time purchase</td>
+  </tr>
+  <tr>
+    <td>SUBSCRIPTION</td>
+    <td>5</td>
+    <td>Represents a recurring subscription</td>
+  </tr>
+  <tr>
+    <td>SUBSCRIPTION_GROUP</td>
+    <td>6</td>
+    <td><System-generated group for each SUBSCRIPTION SKU created</td>
+  </tr>
+</table></p></div>
+
+
 <div><p>
-List SKUs
-GET/applications/{application.id}/skus
+  <b>List SKUs</b><br />
+GET/applications/{application.id}/skus<br />
 Returns all SKUs for a given application.
 </p>
 </div>
+
 <div><p>
 Because of how our SKU and subscription systems work, you will see two SKUs for your subscription offering. For integration and testing entitlements for Subscriptions, you should use the SKU with type: 5.</p>
 Copy
@@ -1231,14 +1315,38 @@ The poll object has a lot of levels and nested structures. It was also designed 
 </div>
 
 <div>
-<p><b>Poll Create Request Object Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>question</td>	<td>Poll Media Object</td>	<td>The question of the poll. Only text is supported.</td></tr>
-<tr><td>answers</td>	<td>List of Poll Answer Objects</td>	<td>Each of the answers available in the poll, up to 10</td></tr>
-<tr><td>duration?</td>	<td>integer</td>	<td>Number of hours the poll should be open for, up to 32 days. Defaults to 24</td></tr>
-<tr><td>allow_multiselect?</td>	<td>boolean</td>	<td>Whether a user can select multiple answers. Defaults to false</td></tr>
-<tr><td>layout_type?</td>	<td>integer</td>	<td>The layout type of the poll. Defaults to... DEFAULT!</td></tr>
+  <p><b>Poll Create Request Object Structure</b></p>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>question</td>
+      <td>Poll Media Object</td>
+      <td>The question of the poll. Only text is supported.</td>
+    </tr>
+    <tr>
+      <td>answers</td>
+      <td>List of Poll Answer Objects</td>
+      <td>Each of the answers available in the poll, up to 10</td>
+  </tr>
+  <tr>
+    <td>duration?</td>
+    <td>integer</td>
+    <td>Number of hours the poll should be open for, up to 32 days. Defaults to 24</td>
+  </tr>
+  <tr>
+    <td>allow_multiselect?</td>
+    <td>boolean</td>
+    <td>Whether a user can select multiple answers. Defaults to false</td>
+  </tr>
+  <tr>
+    <td>layout_type?</td>
+    <td>integer</td>
+    <td>The layout type of the poll. Defaults to... DEFAULT!</td>
+</tr>
 </table>
 </div>
 
