@@ -205,18 +205,65 @@ All of the following limits are measured inclusively. Leading and trailing white
 </div>
 
 <div><table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>id</td>	<td>snowflake</td>	<td>id of the message</td></tr>
-<tr><td>channel_id</td>	<td>snowflake</td>	<td>id of the channel the message was sent in</td></tr>
-<tr><td>author [1]</td>	<td>user object</td>	<td>the author of this message (not guaranteed to be a valid user, see below)</td></tr>
-<tr><td>content [2]</td>	<td>string</td>	<td>contents of the message</td></tr>
-<tr><td>timestamp</td>	<td>ISO8601 timestamp</td>	<td>when this message was sent</td></tr>
-<tr><td>edited_timestamp</td>	<td>?ISO8601 timestamp</td>	<td>when this message was edited (or null if never)</td></tr>
-<tr><td>tts</td>	<td>boolean</td>	<td>whether this was a TTS message</td></tr>
-<tr><td>mention_everyone</td> <td>boolean</td>	<td>whether this message mentions everyone</td></tr>
-<tr><td>mentions</td>	<td>array of user objects</td>	<td>users specifically mentioned in the message</td></tr>
-<tr><td>mention_roles</td>	<td>array of role object ids	roles specifically mentioned in this message</td></tr>
-<tr><td>mention_channels? [3]</td>	<td>array of channel mention objects</td>	<td>channels specifically mentioned in this message</td></tr>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+   <th>Description</th>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>snowflake</td>
+    <td>id of the message</td>
+  </tr>
+  <tr>
+    <td>channel_id</td>
+    <td>snowflake</td>
+   <td>id of the channel the message was sent in</td>
+  </tr>
+  <tr>
+     <td>author [1]</td>
+    <td>user object</td>
+    <td>the author of this message (not guaranteed to be a valid user, see below)</td>
+   </tr>
+    <tr>
+      <td>content [2]</td>
+      <td>string</td>
+      <td>contents of the message</td>
+  </tr>
+  <tr>
+    <td>timestamp</td>
+   <td>ISO8601 timestamp</td>
+    <td>when this message was sent</td>
+  </tr>
+  <tr>
+     <td>edited_timestamp</td>
+    <td>?ISO8601 timestamp</td>
+     <td>when this message was edited (or null if never)</td>
+  </tr>
+  <tr>
+     <td>tts</td>
+     <td>boolean</td>
+    <td>whether this was a TTS message</td>
+  </tr>
+  <tr>
+     <td>mention_everyone</td>
+     <td>boolean</td>
+    <td>whether this message mentions everyone</td>
+  </tr>
+  <tr>
+    <td>mentions</td>
+    <td>array of user objects</td>
+    <td>users specifically mentioned in the message</td>
+  </tr> 
+   <tr>
+     <td>mention_roles</td>
+    <td>array of role object ids	roles specifically mentioned in this message</td>
+    </tr>
+   <tr>
+     <td>mention_channels? [3]</td>
+     <td>array of channel mention objects</td>
+     <td>channels specifically mentioned in this message</td>
+  </tr>
 <tr><td>attachments [2]</td>	<td>array of attachment objects</td>	<td>any attached files</td></tr>
 <tr><td>embeds [2]</td>	<td>array of embed objects</td>	<td>any embedded content</td></tr>
 <tr><td>reactions?</td>	<td>array of reaction objects</td>	<td>reactions to the message</td></tr>
@@ -378,15 +425,32 @@ Copy
 <p><b>Message Interaction Metadata Structure</b></p>
 
 <table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>id</td>	<td>snowflake</td>	<td>ID of the interaction</td></tr>
-<tr><td>type</td>	<td>interaction type</td>	<td>Type of interaction</td></tr>
-<tr><td>user</td>	<td>user object</td>	<td>User who triggered the interaction</td></tr>
-
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>snowflake</td>
+    <td>ID of the interaction</td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>interaction type</td>
+    <td>Type of interaction</td>
+  </tr>
+  <tr>
+    <td>user</td>
+    <td>user object</td>
+    <td>User who triggered the interaction</td>
+  </tr>
 </table>
-<p>authorizing_integration_owners	dictionary with keys of application integration types	IDs for installation context(s) related to an interaction. Details in Authorizing Integration </p>
 
+
+<p>authorizing_integration_owners	dictionary with keys of application integration types	IDs for installation context(s) related to an interaction. Details in Authorizing Integration </p>
 </div>
+
 <div>
 <p><b>
 Owners Object</b></p>
@@ -398,16 +462,40 @@ Owners Object</b></p>
 </div>
 
 <div>
-<p><b>Message Reference Object</b></p>
+  <p><b>Message Reference Object</b></p>
 Message Reference Structure
 
 <table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>type? *</td>	<td>integer</td>	<td>type of reference.</td></tr>
-<tr><td>message_id?</td>	<td>snowflake</td>	<td>id of the originating message</td></tr>
-<tr><td>channel_id? **</td>	<td>snowflake</td>	<td>id of the originating message's channel</tD></tr>
-<tr><td>guild_id?</td>	<td>snowflake</td>	<td>id of the originating message's guild</td></tr>
-<tr><td>fail_if_not_exists?</td>	<td>boolean</td>	<td>when sending, whether to error if the referenced message doesn't exist instead of sending as a normal (non-reply) message, default true</td></tr>
+  <tr>
+    <th>Field</th>
+       <th>Type</th>
+       <th>Description</th>
+  </tr>
+  <tr>
+    <td>type? *</td>
+    <td>integer</td>
+    <td>type of reference.</td>
+  </tr>
+  <tr>
+    <td>message_id?</td>
+    <td>snowflake</td>
+    <td>id of the originating message</td>
+  </tr>
+    <tr>
+      <td>channel_id? **</td>
+     <td>snowflake</td>
+     <td>id of the originating message's channel</td>
+  </tr>
+  <tr>
+    <td>guild_id?</td>
+    <td>snowflake</td>
+    <td>id of the originating message's guild</td>
+  </tr>
+  <tr>
+     <td>fail_if_not_exists?</td>
+      <td>boolean</td>
+     <td>when sending, whether to error if the referenced message doesn't exist instead of sending as a normal (non-reply) message, default true</td>
+</tr>
 </table>
 </div>
 
@@ -424,46 +512,152 @@ Message Reference Structure
 Reaction Count Details Structure</b></p>
 
 <table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>burst</td>	<td>integer</td>	<td>Count of super reactions</td></tr>
-<tr><td>normal</td>	<td>integer</td>	<td>Count of normal reactions</td></tr>
+    <tr>
+       <th>Field</th>
+       <th>Type</th>
+      <th>Description</th>
+  </tr>
+    <tr>
+       <td>burst</td>
+      <td>integer</td>
+     <td>Count of super reactions</td>
+  </tr>
+   <tr>
+      <td>normal</td>
+       <td>integer</td>
+       <td>Count of normal reactions</td>
+</tr>
+
+</table>
 
 <br />
 <hr />
 <br />
 
-</table>
-Embed Object
-Embed Structure
+
+<div>
+<p><b>Embed Object</b></p>
+<p>Embed Structure</p>
 
 <table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>title?</td>	<td>string</td>	<td>title of embed</td></tr>
-<tr><td>type?</td>	<td>string</td>	<td>type of embed (always "rich" for webhook embeds)</td></tr>
-<tr><td>description?</td>	<td>string</td>	<td>description of embed</td></tr>
-<tr><td>url?</td>	<td>string</td>	<td>url of embed</td></tr>
-<tr><td>timestamp?</td>	<td>ISO8601 timestamp</td>	<td>timestamp of embed content</td></tr>
-<tr><td>color?</td>	<td>integer</td>	<td>color code of the embed</td></tr>
-<tr><td>footer?</td>	<td>embed footer object</td>	<td>footer information</td></tr>
-<tr><td>image?</td>	<td>embed image object</td>	<td>image information</td></tr>
-<tr><td>thumbnail?</td>	<td>embed thumbnail object</td>	<td>thumbnail information</td></tr>
-<tr><td>video?</td>	<td>embed video object</td>	<td>video information</td></tr>
-<tr><td>provider?</td>	<td>embed provider object</td>	<td>provider information</td></tr>
-<tr><td>author?</td>	<td>embed author object</td>	<td>author information</td></tr>
-<tr><td>fields?</td>	<td>array of embed field objects</td>	<td>fields information, max of 25</td></tr>
+    <tr>
+       <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+   </tr>
+    <tr>
+       <td>title?</td>
+       <td>string</td>
+       <td>title of embed</td>
+  </tr>
+     <tr>
+        <td>type?</td>
+        <td>string</td>
+      <td>type of embed (always "rich" for webhook embeds)</td>
+    </tr>
+    <tr>
+       <td>description?</td>
+      <td>string</td>
+     <td>description of embed</td>
+    </tr>
+    <tr>
+        <td>url?</td>
+       <td>string</td>
+       <td>url of embed</td>
+   </tr>
+    <tr>
+       <td>timestamp?</td>
+       <td>ISO8601 timestamp</td>
+      <td>timestamp of embed content</td>
+  </tr>
+   <tr>
+      <td>color?</td>
+      <td>integer</td>
+      <td>color code of the embed</td>
+  </tr>
+    <tr>
+       <td>footer?</td>
+       <td>embed footer object</td>
+      <td>footer information</td>
+  </tr>
+    <tr>
+      <td>image?</td>
+      <td>embed image object</td>
+     <td>image information</td>
+   </tr>
+   <tr>
+        <td>thumbnail?</td>
+       <td>embed thumbnail object</td>
+       <td>thumbnail information</td>
+  </tr>
+    <tr>
+        <td>video?</td>
+        <td>embed video object</td>
+        <td>video information</td>
+  </tr>
+  <tr>
+      <td>provider?</td>
+       <td>embed provider object</td>
+      <td>provider information</td>
+  </tr>
+  <tr>
+      <td>author?</td>
+      <td>embed author object</td>
+     <td>author information</td>
+  </tr>
+  <tr>
+     <td>fields?</td>
+    <td>array of embed field objects</td>
+      <td>fields information, max of 25</td>
+  </tr>
+</table>
+</div>
 
+
+<br />
+<hr />
+<br />
+
+<div>
+  <p><b>Embed Types</b></p>
+  <table>
+    <tr>
+       <th>Type</th>
+      <th>Description</th>
+  </tr>
+   <tr>
+      <td>rich</td>
+      <td>generic embed rendered from embed attributes</td>
+  </tr>
+  <tr>
+    <td>image</td>
+  <td>image embed</td>
+  </tr>
+    <tr>
+    <td>video</td>
+    <td>video embed</td>
+  </tr>
+    <tr>
+      <td>gifv</td>
+       <td>animated gif image embed rendered as a video embed</td>
+  </tr>
+  <tr>
+      <td>article</td>
+      <td>article embed</td>
+  </tr>
+  <tr><td>link</td>
+  <td>link embed</td>
+  </tr>
+  <tr>
+      <td>poll_result</td>
+      <td>poll result embed</td>
+  </tr>
 </table>
-<p><b>Embed Types</b></p>
-<table>
-<tr><th>Type</th>	<th>Description</th></tr>
-<tr>rich	generic embed rendered from embed attributes</tr>
-<tr>image	image embed</tr>
-<tr>video	video embed</tr>
-<tr>gifv	animated gif image embed rendered as a video embed</tr>
-<tr>article	article embed</tr>
-<tr>link	link embed</tr>
-<tr>poll_result	poll result embed</tr>
-</table>
+</div>
+
+<br />
+<hr />
+<br />
 
 <p><b>Embed Thumbnail Structure</b></p>
 <table>
@@ -819,6 +1013,10 @@ Users in Discord are generally considered the base entity. Users can spawn acros
 </p>
 </div>
 
+<br />
+<hr />
+<br />
+
 <div><p>
 The following restrictions are additionally enforced for usernames:<ul>
 
@@ -828,35 +1026,134 @@ The following restrictions are additionally enforced for usernames:<ul>
 </div>
 
 <div>
-<p><b>User Object</b></p>
-<p>User Structure</p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th>	<th>Required OAuth2 Scope</th></tr>
-<tr><td>id</td>	<td>snowflake</td>	<td>the user's id	identify</td></tr>
-<tr><td>username</td>	<td>string</td>	<td>the user's username, not unique across the platform</td>	<td>identify</td></tr>
-<tr><td>discriminator</td>	<td>string</td>	<td>the user's Discord-tag</td>	<td>identify</td></tr>
-<tr><td>global_name</td>	<td>?string</td>	<td>the user's display name, if it is set. For bots, this is the application name</td>	<td>identify</td></tr>
-<tr><td>avatar</td>	<td>?string</td>	<td>the user's avatar hash</td>	<td>identify</td></tr>
-<tr><td>bot?</td>	<td>boolean</td>	<td>whether the user belongs to an OAuth2 application</td>	<td>identify</td></tr>
-<tr><td>system?</td>	<td>boolean</td>	<td>whether the user is an Official Discord System user (part of the urgent message system)</td>	<td>identify</td></tr>
-<tr><td>mfa_enabled?</td>	<td>boolean</td>	<td>whether the user has two factor enabled on their account</td>	<td>identify</td></tr>
-<tr><td>banner?</td>	<td>?string</td>	<td>the user's banner hash</td>	<td>identify</td></tr>
-<tr><td>accent_color?</td>	<td>?integer</td>	<td>the user's banner color encoded as an integer representation of hexadecimal color code</td>	<td>identify</td></tr>
-<tr><td>locale?</td>	<td>string</td>	<td>the user's chosen language option</td> <td>identify</td></tr>
-<tr><td>verified?</td>	<td>boolean</td>	<td>whether the email on this account has been verified</td>	<td>email</td></tr>
-<tr><td>email?</td>	<td>?string</td>	<td>the user's email</td>	<td>email</td></tr>
-<tr><td>flags?</td>	<td>integer</td>	<td>the flags on a user's account</td>	<td>identify</td></tr>
-<tr><td>premium_type?</td>	<td>integer</td>	<td>the type of Nitro subscription on a user's account</td>	<td>identify</td></tr>
-<tr><td>public_flags?</td>	<td>integer</td>	<td>the public flags on a user's account</td>	<td>identify</td></tr>
-<tr><td>avatar_decoration_data?</td>	<td>?avatar decoration data object</td>	<td>data for the user's avatar decoration</td></tr>
+  <p><b>User Object</b></p>
+  <p>User Structure</p>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Required OAuth2 Scope</th>
+  </tr>
+   <tr>
+      <td>id</td>
+      <td>snowflake</td>
+     <td>the user's id	identify</td>
+  </tr>
+  <tr>
+      <td>username</td>
+    <td>string</td>
+    <td>the user's username, not unique across the platform</td>
+    <td>identify</td>
+  </tr>
+  <tr>
+    <td>discriminator</td>
+    <td>string</td>
+    <td>the user's Discord-tag</td>
+    <td>identify</td>
+  </tr>
+  <tr>
+    <td>global_name</td>
+    <td>?string</td>
+    <td>the user's display name, if it is set. For bots, this is the application name</td>
+    <td>identify</td>
+  </tr>
+  <tr>
+    <td>avatar</td>
+    <td>?string</td>
+    <td>the user's avatar hash</td>
+    <td>identify</td>
+  </tr>
+  <tr>
+    <td>bot?</td>
+    <td>boolean</td>
+    <td>whether the user belongs to an OAuth2 application</td>
+    <td>identify</td>
+  </tr>
+  <tr>
+    <td>system?</td>
+    <td>boolean</td>
+    <td>whether the user is an Official Discord System user (part of the urgent message system)</td>
+    <td>identify</td>
+  </tr>
+  <tr>
+    <td>mfa_enabled?</td>
+   <td>boolean</td>
+    <td>whether the user has two factor enabled on their account</td>
+    <td>identify</td>
+  </tr>
+  <tr>
+    <td>banner?</td>
+   <td>?string</td>
+    <td>the user's banner hash</td>
+    <td>identify</td>
+  </tr>
+  <tr>
+     <td>accent_color?</td>
+    <td>?integer</td>
+    <td>the user's banner color encoded as an integer representation of hexadecimal color code</td>
+      <td>identify</td>
+  </tr>
+  <tr>
+      <td>locale?</td>
+      <td>string</td>
+      <td>the user's chosen language option</td>
+      <td>identify</td>
+   </tr>
+   <tr>
+      <td>verified?</td>
+      <td>boolean</td>
+     <td>whether the email on this account has been verified</td>
+      <td>email</td>
+  </tr>
+  <tr>
+      <td>email?</td>
+      <td>?string</td>
+      <td>the user's email</td>
+      <td>email</td>
+  </tr>
+   <tr>
+       <td>flags?</td>
+      <td>integer</td>
+     <td>the flags on a user's account</td>
+     <td>identify</td>
+   </tr>
+    <tr>
+       <td>premium_type?</td>
+       <td>integer</td>
+      <td>the type of Nitro subscription on a user's account</td>
+      <td>identify</td>
+   </tr>
+   <tr>
+       <td>public_flags?</td>
+       <td>integer</td>
+      <td>the public flags on a user's account</td>
+      <td>identify</td></tr>
+    <tr>
+        <td>avatar_decoration_data?</td>
+       <td>?avatar decoration data object</td>
+      <td>data for the user's avatar decoration</td>
+    </tr>
 </table>
 
 <div>
   <p><b>Visibility Types</b></p>
   <table>
-    <tr><th>Value</th>	<th>Name</th>	<th>Description</th>
-    <tr><td>0</td>	<td>None</td>	<td>invisible to everyone except the user themselves</td></tr>
-    <tr><td>1</td>	<td>Everyone</td></tr>
+    <tr>
+      <th>Value</th>
+      <th>Name</th>
+    <th>Description</th>
+   </tr>
+    <tr>
+      <td>0</td>
+      <td>None</td>
+    <td>invisible to everyone except the user themselves</td>
+  </tr>
+    <tr>
+      <td>1</td>
+    <td>Everyone</td>
+    <td>.</td>
+  </tr>
   </table>
 </div>
 
@@ -926,20 +1223,70 @@ Copy
   "show_age_gate": false
 }
 </code></div>
+
+<br />
+<hr />
+<br />
+
+
 <div><p><code>
-<p><b>Connection Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>id</td>	<td>string</td>	<td>id of the connection account</td></tr>
-<tr><td>name</td>	<td>string</td>	<td>the username of the connection account</td></tr>
-<tr><td>type</td>	<td>string</td>	<td>the service of this connection</td></tr>
-<tr><td>revoked?</td>	<td>boolean</td>	<td>whether the connection is revoked</td></tr>
-<tr><td>integrations?</td>	<td>array</td>	<td>an array of partial server integrations</td></tr>
-<tr><td>verified</td>	<td>boolean</td>	<td>whether the connection is verified</td></tr>
-<tr><td>friend_sync</td>	<td>boolean</td>	<td>whether friend sync is enabled for this connection<td></tr>
-<tr><td>show_activity</td>	<td>boolean</td>	<td>whether activities related to this connection will be shown in presence updates</td></tr>
-<tr><td>two_way_link</td>	<td>boolean</td>	<td>whether this connection has a corresponding third party OAuth2 token</td></tr>
-<tr><td>visibility</td>	<td>integer</td>	<td>visibility of this connection</td></tr>
+  <p><b>Connection Structure</b></p>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>string</td>
+      <td>id of the connection account</td>
+    </tr>
+    <tr>
+        <td>name</td>
+       <td>string</td>
+       <td>the username of the connection account</td>
+    </tr>
+    <tr>
+       <td>type</td>
+       <td>string</td>
+      <td>the service of this connection</td>
+    </tr>
+   <tr>
+      <td>revoked?</td>
+     <td>boolean</td>
+    <td>whether the connection is revoked</td>
+  </tr>
+  <tr>
+    <td>integrations?</td>
+    <td>array</td>
+    <td>an array of partial server integrations</td>
+  </tr>
+  <tr>
+    <td>verified</td>
+    <td>boolean</td>
+    <td>whether the connection is verified</td>
+  </tr>
+  <tr>
+    <td>friend_sync</td>
+    <td>boolean</td>
+    <td>whether friend sync is enabled for this connection<td>
+  </tr>
+  <tr>
+  <td>show_activity</td>
+  <td>boolean</td>
+  <td>whether activities related to this connection will be shown in presence updates</td>
+  </tr>
+  <tr>
+  <td>two_way_link</td>
+  <td>boolean</td>
+  <td>whether this connection has a corresponding third party OAuth2 token</td>
+  </tr>
+  <tr>
+  <td>visibility</td>
+  <td>integer</td>
+  <td>visibility of this connection</td>
+  </tr>
 </table>
 </code></p></div>
 
@@ -1031,13 +1378,41 @@ var lksjdflkj = `
 </code></p></div>
 
 <div><p>
-<table>
-<tr><td>0</td>	<td>Playing</td>	<td>Playing {name}</td>	<td>"Playing Rocket League"</td></tr>
-<tr><td>1</td>	<td>Streaming</td>	<td>Streaming {details}</td>	<td>"Streaming Rocket League"</td></tr>
-<tr><td>2</td>	<td>Listening</td>	<td>Listening to {name}	"Listening to Spotify"</td></tr>
-<tr><td>3</td>	<td>Watching</td>	<td>Watching {name}	"Watching YouTube Together"</td></tr>
-<tr><td>4</td>	<td>Custom</td>	<td>{emoji} {state}</td> <td>":smiley: I am cool"</td></tr>
-<tr><td>5</td>	<td>Competing</td>	<td>Competing in {name}</td>	<td>"Competing in Arena World Champions"</td></tr>
+  <table>
+    <tr>
+     <td>0</td>
+    <td>Playing</td>
+    <td>Playing {name}</td>
+    <td>"Playing Rocket League"</td>
+  </tr>
+  <tr>
+    <td>1</td>
+   <td>Streaming</td>
+   <td>Streaming {details}</td>
+   <td>"Streaming Rocket League"</td>
+  </tr>
+  <tr>
+    <td>2</td>
+  <td>Listening</td>
+    <td>Listening to {name}	"Listening to Spotify"</td>
+  </tr>
+  <tr>
+    <td>3</td>
+   <td>Watching</td>
+   <td>Watching {name}	"Watching YouTube Together"</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Custom</td>
+  <td>{emoji} {state}</td>
+  <td>":smiley: I am cool"</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Competing</td>
+    <td>Competing in {name}</td>
+    <td>"Competing in Arena World Champions"</td>
+ </tr>
 
 </table>
 </p></div>
@@ -1175,14 +1550,46 @@ Subscription status should not be used to grant perks. Use entitlements as an in
 <tr>Guild Delete	Guild became unavailable, or user left/was removed from a guild</tr>
 <tr>Guild Audit Log Entry Create	A guild audit log entry was created</tr>
 <tr><td>Guild Ban</td> <td>Add</td>	<td>User was banned from a guild</td></tr>
-<tr><td>Guild Ban</td> <td>Remove</td>	<td>User was unbanned from a guild</td></tr>
-<tr><td>Guild Emojis</td> <td>Update</td>	<td>Guild emojis were updated</td></tr>
-<tr><td>Guild Stickers</td> <td>Update</td>	<td>Guild stickers were updated</td></tr>
-<tr><td>Guild Integrations</td> <td>Update</td>	<td>Guild integration was updated</td></tr>
-<tr><td>Guild Member</td> <td>Add</td>	<td>New user joined a guild</td></tr>
-<tr><td>Guild Member</td> <td>Remove</td>	<td>User was removed from a guild</td></tr>
-<tr><td>Guild Member</td> <td>Update</td>	<td>Guild member was updated</td></tr>
-<tr><td>Guild Members</td> <td>Chunk</td>	<td>Response to Request Guild Members</td></tr>
+  <tr>
+    <td>Guild Ban</td>
+    <td>Remove</td>
+    <td>User was unbanned from a guild</td>
+  </tr>
+   <tr>
+    <td>Guild Emojis</td>
+    <td>Update</td>
+    <td>Guild emojis were updated</td>
+  </tr>
+  <tr>
+    <td>Guild Stickers</td>
+    <td>Update</td>
+    <td>Guild stickers were updated</td>
+  </tr>
+  <tr>
+    <td>Guild Integrations</td>
+    <td>Update</td>
+    <td>Guild integration was updated</td>
+  </tr>
+  <tr>
+     <td>Guild Member</td>
+     <td>Add</td>
+     <td>New user joined a guild</td>
+   </tr>
+    <tr>
+       <td>Guild Member</td>
+       <td>Remove</td>
+       <td>User was removed from a guild</td>
+  </tr>
+    <tr>
+       <td>Guild Member</td>
+       <td>Update</td>
+       <td>Guild member was updated</td>
+    </tr>
+    <tr>
+        <td>Guild Members</td>
+        <td>Chunk</td>
+        <td>Response to Request Guild Members</td>
+    </tr>
 <tr></td>Guild Role</td> <td>Create</td>	<td>Guild role was created</td></tr>
 <tr><td>Guild Role</td> <td>Update</td>	<td>Guild role was updated</td></tr>
 <tr><td>Guild Role</td> <td>Delete</td>	<td>Guild role was deleted</td></tr>
@@ -1214,14 +1621,37 @@ Subscription status should not be used to grant perks. Use entitlements as an in
 <tr><td>Subscription</td> <td>Delete</td>	<td>Premium App Subscription was deleted</td></tr>
 <tr><td>Typing</td> <td>Start</td>	<td>User started typing in a channel</td></tr>
 <tr><td>User</td> <td>Update</td>	<td>Properties about the user changed</td></tr>
-<tr><td>Voice Channel Effect</td> <td>Send</td>	<td>Someone sent an effect in a voice channel the current user is connected to</td></tr>
-<tr><td>Voice State</td> <td>Update</td>	<td>Someone joined, left, or moved a voice channel</td></tr>
-<tr><td>Voice Server</td> <td>Update</td>	<td>Guild's voice server was updated</td></tr>
-<tr><td>Webhooks</td> <td>Update</td>	<td>Guild channel webhook was created, update, or deleted</td></tr>
-<tr><td>Message Poll Vote</td><td> Add</td>	<td>User voted on a poll</td></tr>
-<tr><td>Message Poll Vote</td> <td>Remove</td>	<td>User removed a vote on a poll</td></tr>
-</table>
-</p>
+   <tr>
+      <td>Voice Channel Effect</td>
+     <td>Send</td>
+     <td>Someone sent an effect in a voice channel the current user is connected to</td>
+   </tr>
+    <tr>
+       <td>Voice State</td>
+       <td>Update</td>
+       <td>Someone joined, left, or moved a voice channel</td>
+    </tr>
+    <tr>
+        <td>Voice Server</td>
+        <td>Update</td>
+        <td>Guild's voice server was updated</td>
+    </tr>
+    <tr>
+      <td>Webhooks</td>
+      <td>Update</td>
+      <td>Guild channel webhook was created, update, or deleted</td>
+    </tr>
+    <tr>
+    <td>Message Poll Vote</td>
+    <td> Add</td>
+    <td>User voted on a poll</td>
+  </tr>
+  <tr>
+    <td>Message Poll Vote</td>
+    <td>Remove</td>
+    <td>User removed a vote on a poll</td>
+  </tr>
+</table></p>
 
 <br />
 <hr />
@@ -1412,15 +1842,43 @@ The poll object has a lot of levels and nested structures. It was also designed 
 </div>
 
 <div>
-<p><b>Poll Object Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>question</td>	<td>Poll Media Object</td>	<td>The question of the poll. Only text is supported.</td></tr>
-<tr><td>answers</td>	<td>List of Poll Answer Objects</td>	<td>Each of the answers available in the poll.</td></tr>
-<tr><td>expiry</td>	<td>?IS08601 timestamp</td>	<td>The time when the poll ends.</td></tr>
-<tr><td>allow_multiselect</td>	<td>boolean</td>	<td>Whether a user can select multiple answers</td></tr>
-<tr><td>layout_type</td>	<td>integer</td> <td>The layout type of the poll</td></tr>
-<tr><td>results?</td>	<td>Poll Results Object</td>	<td>The results of the poll</td></tr>
+  <p><b>Poll Object Structure</b></p>
+  <table>
+    <tr>
+     <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>question</td>
+    <td>Poll Media Object</td>
+    <td>The question of the poll. Only text is supported.</td>
+   </tr>
+   <tr>
+      <td>answers</td>
+      <td>List of Poll Answer Objects</td>
+     <td>Each of the answers available in the poll.</td>
+  </tr>
+  <tr>
+  <td>expiry</td>
+  <td>?IS08601 timestamp</td>
+  <td>The time when the poll ends.</td>
+  </tr>
+  <tr>
+  <td>allow_multiselect</td>
+  <td>boolean</td>
+  <td>Whether a user can select multiple answers</td>
+  </tr>
+  <tr>
+    <td>layout_type</td>
+    <td>integer</td>
+    <td>The layout type of the poll</td>
+  </tr>
+  <tr>
+    <td>results?</td>
+    <td>Poll Results Object</td>
+    <td>The results of the poll</td>
+  </tr>
 </table>
 <p>expiry is marked as nullable to support non-expiring polls in the future, but all polls have an expiry currently.</p>
 </div>
@@ -1468,16 +1926,32 @@ The poll media object is a common object that backs both the question and answer
 </div>
 
 <div>
-<p><b>Poll Media Object Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>text?</td>	<td>string</td>	<td>The text of the field</td></tr>
-<tr><td>emoji?</td>	<td>partial emoji</td>	<td>The emoji of the field text should always be non-null for both questions and answers, but please do not depend on that in the future. The maximum length of text is 300 for the question, and 55 for any answer.</td></tr>
-</table>
-</div>
+  <p><b>Poll Media Object Structure</b></p>
+  <table>
+  <tr>
+    <th>Field</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>text?</td>
+    <td>string</td>
+    <td>The text of the field</td>
+  </tr>
+  <tr>
+    <td>emoji?</td>
+    <td>partial emoji</td>
+    <td>The emoji of the field text should always be non-null for both questions and answers, but please do not depend on that in the future. The maximum length of text is 300 for the question, and 55 for any answer.</td>
+  </tr>
+</table></div>
 <p>
 When creating a poll answer with an emoji, one only needs to send either the id (custom emoji) or name (default emoji) as the only field.
 </p>
+
+<br />
+<hr />
+<br />
+
 <p>
 <b>Poll Answer Object</b></p>
 <p>
@@ -1486,14 +1960,36 @@ The answer_id is a number that labels each answer. As an implementation detail, 
 <p>Currently, there is a maximum of 10 answers per poll.
 </p>
 </div>
+
+<br />
+<hr />
+<br />
+
 <div>
-<p><b>Poll Answer Object Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>answer_id*</td>	<td>integer</td>	<td>The ID of the answer</td></tr>
-<tr><td>poll_media</td>	<td>Poll Media Object</td>	<td>The data of the answer</td></tr>
-</table>
-</div>
+  <p><b>Poll Answer Object Structure</b></p>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+        <td>answer_id*</td>
+        <td>integer</td>
+        <td>The ID of the answer</td>
+    </tr>
+    <tr>
+        <td>poll_media</td>
+        <td>Poll Media Object</td>
+        <td>The data of the answer</td>
+    </tr>
+</table></div>
+
+<br />
+<hr />
+<br />
+
+
 <div><p><code>
 {
   "id": "1278078770116427839", 
