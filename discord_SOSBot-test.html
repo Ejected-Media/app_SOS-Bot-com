@@ -754,18 +754,44 @@ Embeds are deduplicated by URL. If a message contains multiple embeds with the s
 </div>
 
 <div>
-<p><b>Poll Result Embed Fields</b></p>
-
-<table>
-<tr><th>Field</th>	<th>Description</th></tr>
-<tr><td>poll_question_text</td>	<td>question text from the original poll</td></tr>
-<tr><td>victor_answer_votes</td>	<td>number of votes for the answer(s) with the most votes</td></tr>
-<tr><td>total_votes</td>	<td>total number of votes in the poll</td></tr>
-<tr><td>victor_answer_id?</td>	<td>id for the winning answer</td></tr>
-<tr><td>victor_answer_text?</td>	<td>text for the winning answer</td></tr>
-<tr><td>victor_answer_emoji_id?</td>	<td>id for an emoji associated with the winning answer</td></tr>
-<tr><td>victor_answer_emoji_name?</td>	<td>name of an emoji associated with the winning answer</td></tr>
-<tr><td>victor_answer_emoji_animated?</td>	<td>if an emoji associated with the winning answer is animated</td></tr>
+  <p><b>Poll Result Embed Fields</b></p>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+   </tr>
+    <tr>
+        <td>poll_question_text</td>
+       <td>question text from the original poll</td>
+   </tr>
+   <tr>
+        <td>victor_answer_votes</td>
+     <td>number of votes for the answer(s) with the most votes</td>
+   </tr>
+     <tr>
+        <td>total_votes</td>
+        <td>total number of votes in the poll</td>
+   </tr>
+   <tr>
+       <td>victor_answer_id?</td>
+       <td>id for the winning answer</td>
+   </tr>
+     <tr>
+        <td>victor_answer_text?</td>
+      <td>text for the winning answer</td>
+     </tr>
+      <tr>
+        <td>victor_answer_emoji_id?</td>
+        <td>id for an emoji associated with the winning answer</td>
+    </tr>
+      <tr>
+         <td>victor_answer_emoji_name?</td>
+        <td>name of an emoji associated with the winning answer</td>
+   </tr>
+      <tr>
+       <td>victor_answer_emoji_animated?</td>
+       <td>if an emoji associated with the winning answer is animated</td>
+     </tr>
 </table>
 </div>
 
@@ -800,66 +826,101 @@ Embeds are deduplicated by URL. If a message contains multiple embeds with the s
 </div>
 
 <div>
-<p><b>Attachment Flags</b></p>
-<tabel>
-<tr><th>Flag</th>	<th>Value</th>	<th>Description</th></tr>
-<tr><td>IS_REMIX</td>	<td>1 << 2</td>	<td>this attachment has been edited using the remix feature on mobile</td></tr>
+    <p><b>Attachment Flags</b></p>
+    <tabel>
+       <tr>
+          <th>Flag</th>
+          <th>Value</th>
+         <th>Description</th>
+    </tr>
+    <tr>
+       <td>IS_REMIX</td>
+       <td>1 << 2</td>
+       <td>this attachment has been edited using the remix feature on mobile</td>
+    </tr>
 </table>
 </div>
 
-Charge users for premium app functionality with a recurring user or guild subscription.
+<div><p>
+Charge users for premium app functionality with a recurring user or guild subscription.</p>
 
-Before you can add an app subscription to your app, you must Enable Monetization for your app.
-Once you've confirmed eligibility for your app and team, you will be able to set up a SKU (stock-keeping unit) to represent your subscription.
-Types of Subscriptions
-When creating subscriptions, you will need to choose between user or guild subscriptions:
+<p>
+Before you can add an app subscription to your app, you must Enable Monetization for your app.</p>
+<p>
+Once you've confirmed eligibility for your app and team, you will be able to set up a SKU (stock-keeping unit) to represent your subscription.</p>
+</div>
 
-User Subscriptions: Offers premium features to an individual user across any server where your app installed.
-Guild Subscriptions: Provides premium benefits to all members within a specific server.
+<div>
+<p><b>Types of Subscriptions</b></p>
 
-Using Live Entitlements
-If you'd like to test the full payment flow for your app, you can do so by interacting with your Store page or a premium styled button. Any team members associated with your app will automatically see a 100% discount on the price of the subscription, allowing you to purchase without the use of live payment method.
+<p>When creating subscriptions, you will need to choose between user or guild subscriptions:</p>
 
-After checkout, you will have a live subscription that includes a starts_at and ends_at value. If you cancel this subscription, it will remain an active entitlement until the ends_at timestamp. This subscription will renew until canceled and can be used in testing subscription renewals in your app.
+<p><b>User Subscriptions:</b> Offers premium features to an individual user across any server where your app installed.</p>
+<P><b>Guild Subscriptions:</b> Provides premium benefits to all members within a specific server.</p>
 
-You can only delete entitlements created using the create entitlement endpoint. If you need to toggle access to your premium features during your development process, it is best to use Test Entitlements.
+</div>
+<div>
+<p><b>Using Live Entitlements</b></p>
+<p>If you'd like to test the full payment flow for your app, you can do so by interacting with your Store page or a premium styled button. Any team members associated with your app will automatically see a 100% discount on the price of the subscription, allowing you to purchase without the use of live payment method.</p>
 
-Working with Entitlements
-When a user purchases a subscription, an entitlement is created. Entitlements represent the user's access to your consumable or durable item.
+<P>After checkout, you will have a live subscription that includes a starts_at and ends_at value. If you cancel this subscription, it will remain an active entitlement until the ends_at timestamp. This subscription will renew until canceled and can be used in testing subscription renewals in your app.</p>
 
-Depending on your app's features, you can use a combination of Gateway events, the Entitlement HTTP API, and interaction payloads to keep track of user and guild entitlements and grant perks to users who have subscribed to your app
+<p>You can only delete entitlements created using the create entitlement endpoint. If you need to toggle access to your premium features during your development process, it is best to use Test Entitlements.</p>
+</div>
+<div>
+<p><b>Working with Entitlements</b></p>
+<p>When a user purchases a subscription, an entitlement is created. Entitlements represent the user's access to your consumable or durable item.</p>
 
-When users subscribe or renew a subscription with your app, Discord will emit Entitlement Gateway events.
+<p>Depending on your app's features, you can use a combination of Gateway events, the Entitlement HTTP API, and interaction payloads to keep track of user and guild entitlements and grant perks to users who have subscribed to your app</p>
 
-For subscription SKUs, you will receive the following events:
+<p>When users subscribe or renew a subscription with your app, Discord will emit Entitlement Gateway events.</p>
 
-ENTITLEMENT_CREATE: When a user subscribes to your app.
-ENTITLEMENT_UPDATE: When a user renews their subscription.
-ENTITLEMENT_DELETE: When Discord refunds a subscription, removes an entitlement, or when a developer deletes a Test Entitlement.
-Accessing Entitlements with the HTTP API
-For apps requiring background processing or not solely reliant on interactions, keeping track of entitlements is essential. You can utilize the List Entitlements endpoint to list active and expired entitlements. Your app can filter entitlements by a specific user or guild by using the ?user_id=XYZ or ?guild_id=XYZ query params.
+<p>For subscription SKUs, you will receive the following events:<ul>
 
-For example, you might keep track of our entitlements in a database and check if a user still has access to a specific SKU before performing a cron job or other task.
+<li>ENTITLEMENT_CREATE: When a user subscribes to your app.</li>
+<li>ENTITLEMENT_UPDATE: When a user renews their subscription.</li>
+<li>ENTITLEMENT_DELETE: When Discord refunds a subscription, removes an entitlement, or when a developer deletes a Test Entitlement.</li>
+</ul></p>
+</div>
 
-Accessing Entitlements on Interaction Payloads
-Entitlements are also available on the Interaction Payload when a user interacts with your app. You can find the entitlements on the entitlements field of the Interaction Payload when receiving and responding to interactions. You can use this field to determine if the user or guild is subscribed to your app.
+<br/>
+<hr />
+<br />
 
-Prompting Users to Subscribe
-Responding with a premium button gives you the ability to prompt users to subscribe to your app when they attempt to use a premium feature without a subscription.
+<div>
+<p><b>Accessing Entitlements with the HTTP API</b></p>
+<p>For apps requiring background processing or not solely reliant on interactions, keeping track of entitlements is essential. You can utilize the List Entitlements endpoint to list active and expired entitlements. Your app can filter entitlements by a specific user or guild by using the ?user_id=XYZ or ?guild_id=XYZ query params.</p>
 
-You can do this by sending a message with a button with a premium style and a sku_id that allows the user to upgrade to your premium offering.
+<p>For example, you might keep track of our entitlements in a database and check if a user still has access to a specific SKU before performing a cron job or other task.</p>
 
+<p><b>Accessing Entitlements on Interaction Payloads</b></p>
+<p>Entitlements are also available on the Interaction Payload when a user interacts with your app. You can find the entitlements on the entitlements field of the Interaction Payload when receiving and responding to interactions. You can use this field to determine if the user or guild is subscribed to your app.</p>
+</div>
 
-How App Subscriptions Work
+<div>
+<p><b>Prompting Users to Subscribe</b></p>
+<p>Responding with a premium button gives you the ability to prompt users to subscribe to your app when they attempt to use a premium feature without a subscription.</p>
+
+<p>You can do this by sending a message with a button with a premium style and a sku_id that allows the user to upgrade to your premium offering.</p>
+</div>
+
+<div>
+<p><b>How App Subscriptions Work</b></p>
+<p>
 Starting on October 1st, 2024, the ENTITLEMENT_CREATE and ENTITLEMENT_UPDATE event behavior is changing. Please see the Change Log and Entitlement Migration Guide for more information on what is changing and how to prepare.
-When a user purchases your subscription SKU, Discord creates an Entitlement for the user (or guild) and that specific Subscription SKU.
-You will receive an ENTITLEMENT_CREATE event via the Gateway.
-This entitlement will be available via the LIST Entitlements API endpoint.
-This entitlement will be available on Interaction Payloads initiated from the entitled user or users in a guild (for guild subscriptions).
-This subscription will be available via the LIST Subscriptions API endpoint.
-This entitlement is granted and updated with a new ends_at date for each succesful billing interval until the user decides to cancel their subscription.
-When a user cancels their subscription, you will not receive an ENTITLEMENT_UPDATE with a new ends_at value, the entitlement will just expire at the current ends_at value.
+</p>
+<p>
+When a user purchases your subscription SKU, Discord creates an Entitlement for the user (or guild) and that specific Subscription SKU.</p>
+<p>You will receive an ENTITLEMENT_CREATE event via the Gateway.</p>
+<p>
+This entitlement will be available via the LIST Entitlements API endpoint.</p>
+<p>This entitlement will be available on Interaction Payloads initiated from the entitled user or users in a guild (for guild subscriptions).</p>
+<p>This subscription will be available via the LIST Subscriptions API endpoint.</p>
+<p>This entitlement is granted and updated with a new ends_at date for each succesful billing interval until the user decides to cancel their subscription.</p>
+<p>When a user cancels their subscription, you will not receive an ENTITLEMENT_UPDATE with a new ends_at value, the entitlement will just expire at the current ends_at value.</p>
+</div>
 
+<div>
 <p><b>Channel Mention Object</b></p>
   <p>Channel Mention Structure</p>
   <table>
