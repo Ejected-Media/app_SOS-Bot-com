@@ -662,14 +662,38 @@ Reaction Count Details Structure</b></p>
 <hr />
 <br />
 
-<p><b>Embed Thumbnail Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr>url	string	source url of thumbnail (only supports http(s) and attachments)</tr>
-<tr>proxy_url?	string	a proxied url of the thumbnail</tr>
-<tr>height?	integer	height of thumbnail</tr>
-<tr>width?	integer	width of thumbnail</tr>
+<div>
+  <p><b>Embed Thumbnail Structure</b></p>
+  <table>
+    <tr>
+       <th>Field</th>
+       <th>Type</th>
+       <th>Description</th>
+    </tr>
+    <tr>
+      <td>url</td>
+      <td>tring</td>
+      <td>source url of thumbnail (only supports http(s) and attachments)</td>
+  </tr>
+    <tr>
+      <td>proxy_url?</td>
+      <td>string</td>
+      <td>a proxied url of the thumbnail</td>
+  </tr>
+   <tr>
+       <td>height?</td>
+      <td>integer</td>
+      <td>height of thumbnail</td>
+  </tr>
+  <tr>
+      <td>width?</td>
+       <td>integer</td>
+        <td>width of thumbnail</td>
+   </tr>
 </table>
+</div>
+
+<div>
 <p><b>
 Embed Video Structure</b></p>
 <table>
@@ -679,49 +703,147 @@ Embed Video Structure</b></p>
 <tr>height?	integer	height of video</tr>
 <tr>width?	integer	width of video</tr>
 </table>
-<p><b>
-Embed Image Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr>url	string	source url of image (only supports http(s) and attachments)</tr>
-<tr>proxy_url?	string	a proxied url of the image</tr>
-<tr>height?	integer	height of image</tr>
-<tr>width?	integer	width of image</tr>
-</table>
-<p><b>
-Embed Provider Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>name?</td>	<td>string</td>	<td>name of provider</td></tr>
-<tr><td>url?</td>	<td>string</td>	<td>url of provider</td></tr>
+</div>
 
+<div>
+    <p><b>Embed Image Structure</b></p>
+     <table>
+         <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+         </tr>
+        <tr>
+           <td>url</td>
+           <td>string</td>
+          <td>source url of image (only supports http(s) and attachments)</td>
+    </tr>
+     <tr>
+        <td>proxy_url?</td>
+        <td>string</td>
+          <td>a proxied url of the image</td>
+   </tr>
+    <tr>
+    <td>height?</td>
+     <td>integer</td>
+     <td>height of image</td>
+  </tr>
+   <tr>
+       <td>width?</td>
+        <td>integer</td>
+        <td>width of image</td>
+   </tr>
 </table>
-<p>
-<b>Embed Author Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>name</td>	<td>string</td>	<td>name of author</td></tr>
-<tr><td>url?</td>	<td>string</td>	<td>url of author (only supports http(s))</td></tr>
-<tr><td>icon_url?</td>	<td>string</td>	<td>url of author icon (only supports http(s) and attachments)</td></tr>
-<tr><td>proxy_icon_url?</td>	<td>string</td>	<td>a proxied url of author icon</td></tr>
-</table>
-<p>
-<b>Embed Footer Structure</b></p>
-<table>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr>text	string	footer text</tr>
-<tr>icon_url?	string	url of footer icon (only supports http(s) and attachments)</tr>
-<tr>proxy_icon_url?	string	a proxied url of footer icon</tr>
-</table>
+</div>
 
-<table>
-<tr>Embed Field Structure</tr>
-<tr><th>Field</th>	<th>Type</th>	<th>Description</th></tr>
-<tr><td>name</td>	<td>string</td>	<td>name of the field</td></tr>
-<tr><td>value</td>	<td>string</td>	<td>value of the field</td></tr>
-<tr><td>inline?</td>	<td>boolean</td>	<td>whether or not this field should display inline</td></tr>
-
+<div>
+  <p><b>Embed Provider Structure</b></p>
+    <table>
+      <tr>
+           <th>Field</th>
+           <th>Type</th>
+           <th>Description</th>
+      </tr>
+       <tr>
+            <td>name?</td>
+            <td>string</td>
+            <td>name of provider</td>
+    </tr>
+        <tr>
+             <td>url?</td>
+            <td>string</td>
+            <td>url of provider</td>
+     </tr>
 </table>
+</div>
+
+<div>
+  <p><b>Embed Author Structure</b></p>
+    <table>
+       <tr>
+          <th>Field</th>
+          <th>Type</th>
+           <th>Description</th>
+       </tr>
+        <tr>
+            <td>name</td>
+            <td>string</td>
+            <td>name of author</td>
+           </tr>
+           <tr>
+             <td>url?</td>
+             <td>string</td>
+             <td>url of author (only supports http(s))</td>
+         </tr>
+          <tr>
+              <td>icon_url?</td>
+             <td>string</td>
+             <td>url of author icon (only supports http(s) and attachments)</td>
+          </tr>
+         <tr>
+            <td>proxy_icon_url?</td>
+           <td>string</td>
+            <td>a proxied url of author icon</td>
+       </tr>
+</table>
+</div>
+
+
+<div>
+<p><b>Embed Footer Structure</b></p>
+   <table>
+       <tr>
+         <th>Field</th>
+         <th>Type</th>
+        <th>Description</th>
+  </tr>
+  <tr>
+     <td>text</td>
+    <td>string</td>
+     <td>footer text</td>
+ </tr>
+   <tr>
+     <td>icon_url?</td>
+     <td>string</td>
+      <td>url of footer icon (only supports http(s) and attachments)</td>
+  </tr>
+  <tr>
+      <td>proxy_icon_url?</td>
+       <td>string</td>
+       <td>a proxied url of footer icon</td>
+  </tr>
+</table>
+</div>
+
+<div>
+  <p>
+  <b>Embed Field Structure</b></p>
+  <table>
+    <tr>
+       <th>Field</th>
+       <th>Type</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td>name</td>
+       <td>string</td>
+      <td>name of the field</td>
+    </tr>
+    <tr>
+         <td>value</td>
+        <td>string</td>
+        <td>value of the field</td>
+  </tr>
+  <tr>
+       <td>inline?</td>
+        <td>boolean</td>
+         <td>whether or not this field should display inline</td>
+ </tr>
+</table>
+</div>
+
+
+<div>
 <p><b>Embed Limits</b></p>
 <p>To facilitate showing rich content, rich embeds do not follow the traditional limits of message content. However, some limits are still in place to prevent excessively large embeds. The following table describes the limits:</p>
 </div>
